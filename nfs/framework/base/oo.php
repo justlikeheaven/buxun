@@ -74,7 +74,6 @@ class oo extends Component {
      */
 	public static function m($model=''){
 		empty($model) && $model = NFS::$controller;
-
 		$res = false;
 		if(self::include_file(NFS_BASE_ROOT.'model.php')){
 			if(!$res = self::obj(MODEL_ROOT.$model.MODEL_EXT)){
@@ -104,7 +103,6 @@ class oo extends Component {
 			$c .= APP_DIR.DS;
 		}
 		$c.=CONTROLLER_FOLDER_NAME.DS.$class.CONTROLLER_EXT;
-
 		if($res = self::obj($c)){
 			$res->m = oo::m();
 			return $res;

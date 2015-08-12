@@ -18,7 +18,7 @@ class db{
 		}
 	}
 	
-	public function __callstatic($name, $params){
+	public static function __callstatic($name, $params){
 		return call_user_func_array(array(self::$default_driver, $name), $params);
 	}
 

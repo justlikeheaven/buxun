@@ -20,6 +20,8 @@
 		log_error($params['log_error']);
 	}
 	function log_error($param){
+		$logdir = APP_ROOT.APP_DIR.'/webroot/data/logs/';
+		if(!is_dir($logdir))	return;
 		$error = error_get_last();
 		function_exists('fastcgi_finish_request') && fastcgi_finish_request();
 		if ( !is_array( $error) || !in_array($error['type'], array(E_ERROR, E_COMPILE_ERROR, E_CORE_ERROR, E_USER_ERROR, E_RECOVERABLE_ERROR)) ) return;
@@ -37,7 +39,7 @@
 		$error .= '<br/>';
 		$size = file_exists( $file) ? @filesize( $file) : 0;
 
-		file_put_contents(APP_ROOT.APP_DIR.'/webroot/data/logs/'.$param['file'], $error, $size<$param['maxsize'] ? FILE_APPEND : null);
+		file_put_contents($logdir.$param['file'], $error, $size<$param['maxsize'] ? FILE_APPEND : null);
 	}
 	
 	function nfs_error($errno, $errstr, $errfile, $errline){ //捕获错误
@@ -68,6 +70,6 @@
 	}
 
 	
-//}
-set_error_handler( 'nfs_error', defined('E_DEPRECATED') ? E_ALL ^ E_NOTICE ^ E_DEPRECATED : E_ALL ^ E_NOTICE); //注册错误函数
-register_shutdown_function( 'shutdown', array('log_error'=>array('maxsize'=>10240*1024, 'file'=>'phperror.php')));
+
+//set_error_handler( 'nfs_error', defined('E_DEPRECATED') ? E_ALL ^ E_NOTICE ^ E_DEPRECATED : E_ALL ^ E_NOTICE); //注册错误函数
+//register_shutdown_function( 'shutdown', array('log_error'=>array('maxsize'=>10240*1024, 'file'=>'phperror.php')));
