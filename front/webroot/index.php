@@ -19,7 +19,7 @@ if(false===strpos($_SERVER['SERVER_NAME'], 'local') && false===strpos($_SERVER['
 
 define('APP_DIR', 'front');
 define('APP_ROOT', dirname(dirname(__DIR__)).'/');
-require '../../NFS/framework/NFS.php';
+require '../../nfs/framework/NFS.php';
 
 oo::include_file(CONTROLLER_ROOT.'base_c.php');
 NFS::run();
