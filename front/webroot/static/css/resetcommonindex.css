@@ -15,7 +15,7 @@
 .m_cp dl dt span{background: #000; opacity: .6; position: absolute; width: 254px; height: 28px; display: block; line-height: 28px; text-align: center; left: 3px; bottom: 3px; color: #fffeff; font-size: 12px; border-radius: 0 0 12px 12px;}
 .m_cp dl dt span em{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;width: 140px;display: block;float: left;margin-left: 10px;}
 
-.show{position: relative;margin-bottom: 20px;height: 440px;overflow: hidden;}
+.show{position: relative;height: 440px;overflow: hidden;margin-bottom: 10px;}
 .show-r{width: 900px;background: #fff;padding-left: 16px;}
 .show-r ul{width: 920px;}
 .show-r ul li{position: relative; width: 214px;float: left;height: 213px;background: #fff;margin-right: 10px;margin-bottom: 10px;}
@@ -33,7 +33,7 @@
 
  /*走进俪森 */
 
-.box-title{margin-bottom: 20px;}
+.box-title{margin-bottom: 10px;}
 .box-title h2{font-family:"Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53;margin: 0; font-size: 22px; font-weight: 200; line-height: 58px; color: #333;position: relative;padding-left: 40px;}
 .box-title h2 i{display: inline-block;font-style: normal;background: url("../images/sprite_floor.png") no-repeat 0 0;position: absolute; top: 14px; left: 0; width: 21px; line-height: 25px;height: 25px; padding-right: 10px;font-size: 13px; color: #fff; text-align: center; overflow: hidden;}
 .box-title a{float: right;font-size: 13px; margin-top: 20px;}
@@ -73,11 +73,11 @@
 
 .m_kfr{background: #fff;padding: 20px 15px 10px;}
 
-.content{margin-bottom: 40px;}
+
 .link ul li{float: left;margin: 0 10px 10px 0;text-align: center;}
 .link ul li img{display: block;width: 172px;margin-bottom: 10px;}
 
-#flashs { position: relative; z-index: 1; height: 400px }
+#flashs { position: relative; z-index: 1; height: 400px;margin-bottom: 10px; }
 #flashs .bgitem { position: absolute; }
 #flashs .btn { bottom: 48px; margin-right: -450px; padding: 5px 6px; position: absolute; left: 50%; z-index: 7; }
 #flashs .btn span { background: #666; border-radius: 50%; color: #fff; cursor: pointer; display: inline-block; margin-left: 5px; padding: 2px 6px; }
