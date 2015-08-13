@@ -66,6 +66,7 @@ class model extends component {
 	
 	public function getall(){
 		//$this->auto($query, 'select');
+		
 		return db::getall($this->sql(__FUNCTION__));
 	}
 	

@@ -19,14 +19,16 @@ class db{
 	}
 	
 	public static function __callstatic($name, $params){
+		self::$default_driver = dbfactory::driver('pdo');
 		return call_user_func_array(array(self::$default_driver, $name), $params);
 	}
 
 }
 
 class dbconfig{
-	public static function get($driver){
-		return oo::cfg('db.'.$driver);
+	public static function get($driver=''){
+		$name = empty($driver) ? 'db' : 'db.'.$driver;
+		return oo::cfg($name);
 	}
 }
 
@@ -35,7 +37,7 @@ class dbfactory{
 	const DRIVER_TAIL = '_driver';
 
 	public static function driver($driver){
-		$config = dbconfig::get($driver);
+		$config = dbconfig::get();
 		list($driver_type, $desc) = explode('.', $driver);
 		$driver_type .= self::DRIVER_TAIL;
 		if(isset(self::$drivers[$driver])){

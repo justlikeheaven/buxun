@@ -78,6 +78,7 @@ class oo extends Component {
 		if(self::include_file(NFS_BASE_ROOT.'model.php')){
 			if(!$res = self::obj(MODEL_ROOT.$model.MODEL_EXT)){
 				$res = self::base('model');
+				$res->table($model);
 			}
 		}
 
