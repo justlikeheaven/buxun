@@ -45,8 +45,7 @@ p{ word-spacing:-1.5px;}
 .fr { float:right;}
 .pa{ position:absolute;}
 .pr{ position:relative}
-/* -- 购物车外部框架 -- */
-.cart_header , .cart_content , .cart_footer { width:760px; margin:0 auto;}
+
 
 
 
@@ -55,44 +54,25 @@ p{ word-spacing:-1.5px;}
 
 
 /* function */
-span{cursor: pointer;}
-h2 a:hover{ text-decoration: none;}
-input,textarea{ outline:none; }
-textarea{ resize:none;}
-em{ font-style: normal;}
-.f_cb:after,.f_cbli li:after{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:".";}
-.f_cb,.f_cbli li{zoom:1;}
-.f_ib{display:inline-block;*display:inline;*zoom:1;}
-.f_dn{display:none;}
-.f_db{display:block;}
-.f_pr{position:relative;}
-.f_pa{position:absolute;}
-.f_fl{float:left;}
-.f_fr{float:right;}
-.f_prz{position:relative;zoom:1;}
-.f_oh{overflow:hidden;}
-.f_ar{font-family:arial,\5b8b\4f53;}
-.f_fw{font-family:"Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53;}
-.f_fa{font-family:Arial, Helvetica, sans-serif;}
-.f_fst{ font-family: "宋体"; }
-
+.f_fl{float: left;display: inline;}
 
 
 
 /*头部开始*/
-.g_top{ height:120px; }
+.header{ height:120px;font-family:"Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53; }
+.header h1{ float:left; padding: 10px 24px 0 0;}
+.header h2{ float:left; height:60px; margin:40px 0 0 0; color: #939393; font-size: 18px; font-weight: normal;  padding-left: 16px;}
+.header h2 span{display: block; font-weight: normal;padding-top: 5px;color:#99235f;font-size: 20px;}
+.header p{ float:right; margin:44px 0 0 0 ; padding: 0 0 0 69px;  color:#868686; font-size:12px;font-family:"Microsoft Yahei"}
+.header p span{ display:block; font-size:30px; color:#99235f; font-family:Arial, Helvetica, sans-serif;font-weight: normal;}
+
+
 .top_t{ height:30px; line-height:30px;color:#818181;}
 .top_t p{ float:right;color: #818181;}
 .top_t p a{ padding: 0 8px 0 8px; color:#818181;}
 .top_t .a_last{ padding-right:0;}
 
-.top_c h1{ float:left; padding: 10px 24px 0 0;}
-.top_c h2{ float:left; height:60px; margin:40px 0 0 0; color: #939393; font-size: 18px; font-weight: normal;  padding-left: 16px;}
 
-.top_c h2 span{display: block; font-weight: normal;padding-top: 5px;color:#99235f;font-size: 20px;}
-
-.top_c p{ float:right; margin:44px 0 0 0 ; padding: 0 0 0 69px;  color:#868686; font-size:12px;font-family:"Microsoft Yahei"}
-.top_c p span{ display:block; font-size:30px; color:#99235f; font-family:Arial, Helvetica, sans-serif;font-weight: normal;}
 
 
 

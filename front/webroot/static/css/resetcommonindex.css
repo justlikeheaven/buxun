@@ -3,29 +3,40 @@
 
 
 /* 产品中心 */
-.g_cpc{background: #fafafa;padding-top: 20px;}
-.g_cpc h2, .f_pr h2{margin: 0; font-size: 22px; font-weight: 200; line-height: 58px; color: #333;position: relative;padding-left: 40px;}
-.g_cpc h2 i, .f_pr h2 i{display: inline-block;font-style: normal;background: url("../images/sprite_floor.png") no-repeat 0 0;position: absolute; top: 14px; left: 0; width: 21px; line-height: 25px;height: 25px; padding-right: 10px;font-size: 13px; color: #fff; text-align: center; overflow: hidden;}
-.g_cpc h2 a, .f_pr h2 a{float: right;font-size: 13px;}
-.g_cpc h3{padding-left: 888px;height: 24px;margin-bottom: 7px;}
+
+
+
 
 
 .m_cp dl{float: left; width: 260px;}
 .m_cp .lastdl{margin-right: 0;}
 .m_cp dl dt{position: relative; width: 260px;height: 260px;}
 .m_cp dl dt img{display: block;width: 260px;height: 260px;}
-.m_cp dl dt em{background: #000; opacity: .6; position: absolute; width: 254px; height: 28px; display: block; line-height: 28px; text-align: center; left: 3px; bottom: 3px; color: #fffeff; font-size: 12px; border-radius: 0 0 12px 12px;}
+.m_cp dl dt span{background: #000; opacity: .6; position: absolute; width: 254px; height: 28px; display: block; line-height: 28px; text-align: center; left: 3px; bottom: 3px; color: #fffeff; font-size: 12px; border-radius: 0 0 12px 12px;}
+.m_cp dl dt span em{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;width: 140px;display: block;float: left;margin-left: 10px;}
 
-.bg{width:200px;height:230px;position:absolute;left:0;top:0;z-index:50;
-display:none;}
+.show{position: relative;margin-bottom: 20px;height: 440px;overflow: hidden;}
+.show-r{width: 900px;background: #fff;padding-left: 16px;}
+.show-r ul{width: 920px;}
+.show-r ul li{position: relative; width: 214px;float: left;height: 213px;background: #fff;margin-right: 10px;margin-bottom: 10px;}
+.show-r ul li .bg{width:214px;height:214px;position:absolute;left:0;top:0;z-index:50;  display:none;cursor: pointer;}
+.show-r ul li img{width: 216px;}
+.show-r ul li span{background: #000; opacity: .6; position: absolute; width: 210px; height: 28px; display: block; line-height: 28px; text-align: center; left: 3px; bottom: 0; color: #fffeff; font-size: 12px; border-radius: 0 0 12px 12px;}
+.show-r ul li span em{float: left;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;width: 120px;display: block;margin-left: 10px;}
+.m_cp dl dt em strong, .show-r ul li em strong{float: right}
+
+
+.bg{width:200px;height:230px;position:absolute;left:0;top:0;z-index:50;  display:none;}
 
 .text{width:200px;height:230px;position:absolute;left:20px;top:50px;z-index:55;color:#fff;display:none; cursor: pointer; text-align: center;font-weight: normal; width: 158px;}
 
 
  /*走进俪森 */
-.g_zj{padding-top: 20px;}
 
-
+.box-title{margin-bottom: 20px;}
+.box-title h2{font-family:"Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53;margin: 0; font-size: 22px; font-weight: 200; line-height: 58px; color: #333;position: relative;padding-left: 40px;}
+.box-title h2 i{display: inline-block;font-style: normal;background: url("../images/sprite_floor.png") no-repeat 0 0;position: absolute; top: 14px; left: 0; width: 21px; line-height: 25px;height: 25px; padding-right: 10px;font-size: 13px; color: #fff; text-align: center; overflow: hidden;}
+.box-title a{float: right;font-size: 13px; margin-top: 20px;}
 
 
 .m_zjimg p{display:none;}
@@ -44,33 +55,25 @@ display:none;}
 
 
 .test3{width:260px;height:260px;position:relative; float: left;margin: 0 10px 10px 0; overflow: hidden; }
-.bg{width:305px;height:305px;position:absolute;left:0;top:0;z-index:50;
-display:none;cursor: pointer;}
+.test3 .bg{width:305px;height:305px;position:absolute;left:0;top:0;z-index:50;  display:none;cursor: pointer;}
 
 
 
-.line{width:100%;height:1px;border-top:1px solid #d1d7dc;}
 
-.foot-txt{background: #333;color: #fff;width:100%;margin:0 auto;overflow:hidden;text-align: center;padding: 20px 0;}
-.foot-txt p{line-height: 24px;}
-.foot-txt a{color: #fff;}
-.foot-part1{height:180px;float:left;margin-right:50px;padding-right: 50px;border-right:1px solid #d3d3d3;}
-.foot-txt-help li{line-height:24px;text-align:left;}
-.foot-title{text-align:left;font-size:18px;color:#ddd;margin-bottom:20px;font-family: "Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53}
-.foot-part2{width:360px;height:180px;float:left;}
-.footer-bot{width:100%;height:40px;background-color:#ebebeb;}
-.foot-bot{width:1200px;height:40px;line-height:40px;margin:0 auto;}
-.foot-bot a{margin:0 30px;font-size:13px;color:black;}
 
-.show{position: relative;margin-bottom: 20px;}
+
+.footer{background: #333;color: #fff;width:100%;margin:0 auto;overflow:hidden;text-align: center;padding: 20px 0;margin-top: 20px;}
+.footer a{margin: 0 10px;color: #fff;}
+
+
+
 .fix-l{position: absolute;left: 0;top: 0;height: 440px;overflow: hidden;}
-.fix-r{float: left;margin-left: 234px;}
-.show-r ul li{float: left;height: 220px;background: #fff;}
-.show-r ul li img{width: 215px;}
-.info-tra-right{position: absolute; width: 14px; height: 28px; background: url(../images/info_tra.svg) no-repeat;top: 10%; right: -14px; background-position: 0 -51px; z-index: 1;}
+.fix-r{float: left;margin-left: 200px;}
+
+
 .m_kfr{background: #fff;padding: 20px 15px 10px;}
 
-.link{margin-bottom: 40px;}
+.content{margin-bottom: 40px;}
 .link ul li{float: left;margin: 0 10px 10px 0;text-align: center;}
 .link ul li img{display: block;width: 172px;margin-bottom: 10px;}
 
