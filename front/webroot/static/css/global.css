@@ -5,13 +5,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 table{border-collapse:collapse;border-spacing:0;}
 fieldset,img{border:0;}
 address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;}
-del,ins{text-decoration:none;}
 li{list-style:none;}
-caption,th{text-align:left;}
-q:before,q:after{content:'';}
-abbr,acronym{border:0;font-variant:normal;}
-sup{vertical-align:baseline;}
-sub{vertical-align:baseline;} 
 input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
 input,button,textarea,select{*font-size:100%;}
 input,select{vertical-align:middle;}
@@ -35,27 +29,15 @@ a{blr:expression(this.onFocus=this.blur())}/*去掉a标签的虚线框，避免�
 a { color:#666; text-decoration:none;}  /*for ie f6n.net*/
 a:focus{outline:0;} /*for ff f6n.net*/
 a:hover { text-decoration:underline;}
-.vam { vertical-align:middle;}
-.clear{clear:both; height:0; line-height:0; font-size:0;}
+
 p{ word-spacing:-1.5px;}
-.tr { text-align:right;}
-.tl { text-align:left;}
-.center { text-align:center;}
+
 .fl { float:left;}
 .fr { float:right;}
-.pa{ position:absolute;}
-.pr{ position:relative}
-
-
 
 
 /* -- 页面整体布局 -- */
-.header , .content , .footer { width:1100px; margin:0 auto;  }
-
-
-/* function */
-.f_fl{float: left;display: inline;}
-
+.header , .content , .footer, .area-title { width:1100px; margin:0 auto;overflow: hidden; }
 
 
 /*头部开始*/
@@ -63,23 +45,12 @@ p{ word-spacing:-1.5px;}
 .header h1{ float:left; padding: 10px 24px 0 0;}
 .header h2{ float:left; height:60px; margin:40px 0 0 0; color: #939393; font-size: 18px; font-weight: normal;  padding-left: 16px;}
 .header h2 span{display: block; font-weight: normal;padding-top: 5px;color:#99235f;font-size: 20px;}
-.header p{ float:right; margin:44px 0 0 0 ; padding: 0 0 0 69px;  color:#868686; font-size:12px;font-family:"Microsoft Yahei"}
-.header p span{ display:block; font-size:30px; color:#99235f; font-family:Arial, Helvetica, sans-serif;font-weight: normal;}
 
 
-.top_t{ height:30px; line-height:30px;color:#818181;}
-.top_t p{ float:right;color: #818181;}
-.top_t p a{ padding: 0 8px 0 8px; color:#818181;}
-.top_t .a_last{ padding-right:0;}
-
-
-
-
+.footer{background: #333;color: #fff;width:100%;margin:0 auto;overflow:hidden;text-align: center;padding: 20px 0;margin-top: 20px;}
+.footer a{margin: 0 10px;color: #fff;}
 
 
 .clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
 .clearfix{zoom:1;}
 .clearAll{overflow:hidden;_zoom:1;}
-
-
-

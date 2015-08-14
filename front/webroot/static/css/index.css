@@ -1,0 +1,51 @@
+﻿@charset "utf-8";
+
+/*模块title*/
+.area-title{margin-bottom: 10px;}
+.area-title h2{font-family:"Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53;margin: 0; font-size: 22px; font-weight: 200; line-height: 58px; color: #333;position: relative;padding-left: 40px;}
+.area-title h2 i{display: inline-block;font-style: normal;background: url("../images/sprite_floor.png") no-repeat 0 0;position: absolute; top: 14px; left: 0; width: 21px; line-height: 25px;height: 25px; padding-right: 10px;font-size: 13px; color: #fff; text-align: center; overflow: hidden;}
+.area-title a{float: right;font-size: 13px; margin-top: 20px;}
+
+/*banner*/
+#flashs { position: relative; z-index: 1; height: 400px;margin-bottom: 10px; }
+#flashs .bgitem { position: absolute; }
+#flashs .btn { bottom: 48px; margin-right: -450px; padding: 5px 6px; position: absolute; left: 50%; z-index: 7; }
+#flashs .btn span { background: #666; border-radius: 50%; color: #fff; cursor: pointer; display: inline-block; margin-left: 5px; padding: 2px 6px; }
+#flashs .btn span.cur { background: none repeat scroll 0 0 #992360; color: #FFFFFF; }
+
+
+/*最新模块*/
+.new-pro{position: relative;height: 440px;overflow: hidden;margin-bottom: 10px;}
+.new-pro-l{position: absolute;left: 0;top: 0;height: 440px;overflow: hidden;}
+.new-pro-r{width: 900px;background: #fff;padding-left: 16px;float: left;margin-left: 200px;}
+.new-pro-r ul{width: 920px;}
+.new-pro-r ul li{position: relative; width: 214px;float: left;height: 213px;background: #fff;margin-right: 10px;margin-bottom: 10px;}
+.new-pro-r ul li .bg{width:214px;height:214px;position:absolute;left:0;top:0;z-index:50;  display:none;cursor: pointer;}
+.new-pro-r ul li img{width: 216px;}
+.new-pro-r ul li span{background: #000; opacity: .6; position: absolute; width: 210px; height: 28px; display: block; line-height: 28px; text-align: center; left: 3px; bottom: 0; color: #fffeff; font-size: 12px; border-radius: 0 0 12px 12px;}
+.new-pro-r ul li span em{float: left;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;width: 120px;display: block;margin-left: 10px;}
+
+/*最热模块*/
+.hot-pro ul{width: 1200px;}
+.hot-pro ul li{width:268px;height:268px;position:relative; float: left;margin: 0 10px 10px 0; overflow: hidden; }
+.hot-pro ul li img{display: block;width: 268px;height: 268px;}
+.hot-pro ul li span{background: #000; opacity: .6; position: absolute; width: 262px; height: 28px; display: block; line-height: 28px; text-align: center; left: 3px; bottom: 3px; color: #fffeff; font-size: 12px; border-radius: 0 0 12px 12px;}
+.hot-pro ul li em{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;width: 140px;display: block;float: left;margin-left: 10px;}
+.hot-pro .bg{width:305px;height:305px;position:absolute;left:0;top:0;z-index:50;  display:none;cursor: pointer;}
+
+/*推荐商家*/
+.link ul{width: 1200px;}
+.link ul li{float: left;margin: 0 10px 10px 0;text-align: center;}
+.link ul li img{display: block;width: 176px;margin-bottom: 10px;}
+
+/*走进布讯*/
+.m_zjimg p{display:none;}
+.m_zjimg p.tp0{display:block;}
+.m_zjimg .zj{width: 445px;}
+.m_zjimg .u_lst3{left:184px;top:290px;}
+.m_zjimg .u_lst3 li{float: left;width: 19px;height: 19px;margin-right: 9px;}
+.m_zjimg .u_lst3 li.cur{float: left;width: 19px;height: 19px;margin-right: 9px; }
+.m_zjr{width: 640px;}
+.m_zjr dl{height: 63px;}
+.m_zjr dd{width: 520px;color: #5b5b5b;font-size: 14px;line-height: 22px; float: left;padding-left: 15px;}
+.m_zjr dt{display: inline-block; border: 1px solid #99235f;width: 82px;height: 33px;line-height: 33px;text-align: center;color: #99235f; float: left;font-size: 16px;}
