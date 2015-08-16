@@ -8,7 +8,7 @@ function p($vars, $die=0){
 	$die && die();
 }
 
-class Func{
+class func{
 	public static function each($arr, $callback){
 		if(!is_array($arr) || empty($arr)) return null;
 		foreach ($arr as $k=>$v){

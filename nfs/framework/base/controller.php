@@ -1,13 +1,19 @@
 <?php
 class controller extends component{
-	public $m;
-	protected function display($data=array(), $file=''){
-		oo::include_file(NFS_BASE_ROOT.'view.php');
-		view::display($data, $file);
+	
+	protected function display($file=''){
+		$data = $this->vars;
+		$nfs = array('c'=>NFS::$controller, 'a'=>NFS::$action);
+		empty($file) && $file = NFS::$action;
+		include VIEW_ROOT.$file.'.html';
+	}
+	
+	protected function assign($name, $var){
+		$this->vars[$name] = $var;
 	}
 	
 	protected function req($name, $default=null, $callback=null, $type='REQUEST'){
-		return oo::base('request')->param($name, $default, array(array($this, $callback)), $type);
+		return request::param($name, $default, $callback, $type);//array(array($this, $callback))
 	}
 
     protected function json($array){

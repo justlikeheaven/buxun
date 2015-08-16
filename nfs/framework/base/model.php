@@ -59,18 +59,17 @@ class model extends component {
 		return db::get($this->sql(__FUNCTION__));
 	}
 	
-	public function insert($data){
-		//$this->auto($data, __FUNCTION__);
+	public function add($data){
 		return db::execute($this->sql(__FUNCTION__, $data));
 	}
 	
 	public function getall(){
-		//$this->auto($query, 'select');
-		
 		return db::getall($this->sql(__FUNCTION__));
 	}
 	
-	public function update($data){
+	public function update($where, $data){
+		$data['_where'] = $where;
+		echo $this->sql(__FUNCTION__, $data);exit;
 		return db::execute($this->sql(__FUNCTION__, $data));
 	}
 	
@@ -88,10 +87,17 @@ class model extends component {
 				is_string($v) && $v="'{$v}'";
 				$set.="`{$k}`={$v}";
 			}
-			$sql = "UPDATE {$table} SET {$set}";
+			if(is_array($data['_where'])){
+				foreach ($data['_where'] as $k=>$v){
+					$where.="`{$k}`={$v}";
+				}
+			}else{
+				$where = $data['_where'];
+			}
+			$sql = "UPDATE {$table} SET {$set} WHERE {$where}";
 		}else if($method=='delete'){
 			$sql = "DELETE FROM `{$table}`";
-		}else if($method=='insert'){
+		}else if($method=='add'){
 			foreach ($data as $k=>$v){				
 				$key[]="`{$k}`";
 				is_string($v) && $v="'{$v}'";

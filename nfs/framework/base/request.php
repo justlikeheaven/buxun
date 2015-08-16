@@ -12,7 +12,7 @@ class request extends component {
 	 * @param string $type
 	 * @return string
 	 */
-	public function param($name, $default=null, $callback=null, $type='REQUEST'){
+	public static function param($name, $default=null, $callback=null, $type='REQUEST'){
 		eval("\$res = \$_{$type}[{$name}];");
 		if($res){
 			return $res;
@@ -28,7 +28,7 @@ class request extends component {
 		}
 	}
 	
-	public function json($array, $type='encode', $echo=0){
+	public static function json($array, $type='encode', $echo=0){
 		$type=='encode' && $res = json_encode($array);
 		$type=='decode' && $res = json_decode($array);
 		if($echo){

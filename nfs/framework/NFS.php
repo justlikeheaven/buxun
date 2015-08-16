@@ -26,6 +26,11 @@ define('CONTROLLER_EXT', '_c');
 //Model文件修饰符
 define('MODEL_EXT', '_m');
 
+//
+define('CONTROLLER_PARAM', 'c');
+
+define('ACTION_PARAM', 'a');
+
 //默认控制器
 define('DEFAULT_CONTROLLER', 'index');
 
@@ -71,10 +76,8 @@ define('VIEW_ROOT', APP_ROOT.DS.APP_DIR.DS.VIEW_FOLDER_NAME.DS);
 
 require NFS_BASE_ROOT.'component.php';
 require NFS_BASE_ROOT.'oo.php';
-oo::include_file(NFS_BASE_ROOT.'func.php');
-oo::include_file(NFS_BASE_ROOT.'controller.php');
-oo::base('file')->import(NFS_BASE_ROOT.'log.php');
-oo::base('file')->import(NFS_BASE_ROOT.'db.php');
+
+
 class NFS{
 	public static $controller;
 	public static $action;	
@@ -82,10 +85,10 @@ class NFS{
 	
 	public static function run(){
 		
-		self::$controller = $controller = !empty($_REQUEST['c']) ? strtolower($_REQUEST['c']) : DEFAULT_CONTROLLER;
+		self::$controller = $controller = !empty($_REQUEST[CONTROLLER_PARAM]) ? strtolower($_REQUEST[CONTROLLER_PARAM]) : DEFAULT_CONTROLLER;
 		$ctl = oo::c();
 		$resful = '_'.strtolower($_SERVER['REQUEST_METHOD']);
-		if( ($a=strtolower($_REQUEST['a'])) && method_exists($ctl, $a) )	$act = $a;
+		if( ($a=strtolower($_REQUEST[ACTION_PARAM])) && method_exists($ctl, $a) )	$act = $a;
 		elseif(method_exists($ctl, $resful))	$act = $resful;
 		elseif(method_exists($ctl, DEFAULT_ACTION))	$act = DEFAULT_ACTION;
 		else die('error action');
@@ -127,7 +130,11 @@ class NFS{
 		*/
 	}
 	
-    
+    public static function url($c, $a=''){
+    	$res = "/?".CONTROLLER_PARAM."=".$c;
+    	!empty($a) && $res.='&'.ACTION_PARAM."=".$a;
+    	return $res;
+    }
    
 
 	

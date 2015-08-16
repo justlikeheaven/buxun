@@ -75,12 +75,12 @@ class oo extends Component {
 	public static function m($model=''){
 		empty($model) && $model = NFS::$controller;
 		$res = false;
-		if(self::include_file(NFS_BASE_ROOT.'model.php')){
+		
 			if(!$res = self::obj(MODEL_ROOT.$model.MODEL_EXT)){
 				$res = self::base('model');
 				$res->table($model);
 			}
-		}
+		
 
 		return $res;
 	}
@@ -91,7 +91,7 @@ class oo extends Component {
 	 * @return Ambigous <object, boolean>
 	 */
 	public static function c($controller=''){
-		self::include_file(NFS_BASE_ROOT.'controller.php');
+		//self::include_file(NFS_BASE_ROOT.'controller.php');
 		
 		if(empty($controller))	$controller = NFS::$controller;	
 		$path = explode('.', $controller);
@@ -105,7 +105,6 @@ class oo extends Component {
 		}
 		$c.=CONTROLLER_FOLDER_NAME.DS.$class.CONTROLLER_EXT;
 		if($res = self::obj($c)){
-			$res->m = oo::m();
 			return $res;
 		}else{
 			return self::base('controller_auto');
@@ -146,6 +145,10 @@ class oo extends Component {
 		return $res;
 	}
 	
+	public static function autoload($class){
+		return self::base($class);
+	}
+	
 }
-
+spl_autoload_register(array('oo', 'autoload'));
 class app extends oo{}

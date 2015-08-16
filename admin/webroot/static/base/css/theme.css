@@ -898,3 +898,6 @@ table.table.list tr:first-child td {
   background-color: #f0f7fd;
   border-color: #d0e3f0;
 }
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover { 
+  color: #fff;
+}
