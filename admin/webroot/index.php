@@ -9,11 +9,11 @@ header("charset=utf-8");
 date_default_timezone_set('Asia/Shanghai');
 
 if(false===strpos($_SERVER['SERVER_NAME'], 'local') && false===strpos($_SERVER['SERVER_NAME'], 'dev')){
-	define('ENV_PRO', 1);
+	define('ENV', 'pro');
 	error_reporting(0);
 	ini_set('display_errors', 'Off');
 }else{
-	define('ENV_PRO', 0);
+	define('ENV', 'dev');
 	error_reporting(E_ALL ^ E_NOTICE);
 }
 
