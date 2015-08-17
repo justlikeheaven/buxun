@@ -56,6 +56,7 @@ class model extends component {
 	}
 
 	public function get(){
+		
 		return db::get($this->sql(__FUNCTION__));
 	}
 	
@@ -67,9 +68,7 @@ class model extends component {
 		return db::getall($this->sql(__FUNCTION__));
 	}
 	
-	public function update($where, $data){
-		$data['_where'] = $where;
-		echo $this->sql(__FUNCTION__, $data);exit;
+	public function update($data){
 		return db::execute($this->sql(__FUNCTION__, $data));
 	}
 	
@@ -85,16 +84,10 @@ class model extends component {
 		}else if($method=='update'){
 			foreach ($data as $k=>$v){
 				is_string($v) && $v="'{$v}'";
-				$set.="`{$k}`={$v}";
+				$set.="`{$k}`={$v},";
 			}
-			if(is_array($data['_where'])){
-				foreach ($data['_where'] as $k=>$v){
-					$where.="`{$k}`={$v}";
-				}
-			}else{
-				$where = $data['_where'];
-			}
-			$sql = "UPDATE {$table} SET {$set} WHERE {$where}";
+			$set = rtrim($set, ',');
+			$sql = "UPDATE {$table} SET {$set}";
 		}else if($method=='delete'){
 			$sql = "DELETE FROM `{$table}`";
 		}else if($method=='add'){
@@ -107,7 +100,16 @@ class model extends component {
 			$valuestr = implode(', ', $value);
 			$sql = "INSERT INTO {$table} ({$keystr}) VALUES ({$valuestr})";
 		}
-		if($this->sql['where'])	$sql.=" WHERE {$this->sql['where']}";
+		if($this->sql['where'])	{
+			if(is_array($this->sql['where'])){
+				foreach ($this->sql['where'] as $k=>$v){
+					$where.="`{$k}`={$v}";
+				}
+			}else{
+				$where = $this->sql['where'];
+			}
+			$sql.=" WHERE {$where}";
+		}
 		if($this->sql['orderby'])	$sql.=" ORDER BY {$this->sql['orderby']}";
 		if($this->sql['groupby'])	$sql.=" GROUP BY {$this->sql['groupby']}";
 		if($this->sql['limit'])	$sql.=" LIMIT {$this->sql['limit']}";
@@ -118,6 +120,6 @@ class model extends component {
 	}
 	
 	public function get_last_sql(){
-		
+		return $this->last_sql;
 	}
 }

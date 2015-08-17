@@ -14,6 +14,7 @@ define('FRAMEWORK', 'NFS');
 /*
 dev, test, pro自定义环境名称，根据这个读配置文件
 例如定义当前env为dev，那么oo::cfg('db')就会读到cfg/db_dev.php
+默认为空
 */
 !defined('ENV') && define('ENV', '');
 

@@ -128,7 +128,9 @@ class oo extends Component {
 	//获取/设置app下cfg目录的配置文件
 	public static function cfg($key, $value=null){
 		$apath = explode('.', $key);
-		$filename = array_shift($apath).'_'.ENV;
+		$filename = array_shift($apath);
+		$env = ENV;
+		!empty($env) && $filename.='_'.$env;
 		$file = CONFIG_ROOT.$filename.'.php';
 		$cfg = self::include_file($file);
 		!is_array($cfg) && $cfg = array();

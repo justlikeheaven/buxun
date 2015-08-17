@@ -18,9 +18,9 @@ class seller_c extends base_c {
 			'name'=>$this->req('name'),
 			'desc'=>$this->req('desc'),
 		);
-			
+	
 		if($id){ //编辑
-			if(oo::m()->update(array('id'=>$id), $data)){
+			if(oo::m()->where(array('id'=>$id))->update($data)){
 				$msg = "提交成功";
 			}else{
 				$msg = "提交失败";
@@ -41,7 +41,7 @@ class seller_c extends base_c {
 	public function add(){
 		$id = $this->req('id');
 		if($id){ //编辑
-			$seller = oo::m()->get(array('id'=>$id));
+			$seller = oo::m()->where(array('id'=>$id))->get();
 			$this->assign('seller', $seller);	
 		}
 		$this->display('seller_add');
