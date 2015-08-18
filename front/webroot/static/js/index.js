@@ -1,5 +1,21 @@
 /*banner轮播*/
+$(document).ready(function () {
+    //鼠标经过切换图片
+    $(".hot-pro ul li").hover(function () {
+        $(this).find('.bg').show();
 
+    }, function () {
+        $(this).find('.bg').hide();
+    })
+
+    $(".new-pro-r ul li").hover(function () {
+        $(this).find('.bg').show();
+
+    }, function () {
+        $(this).find('.bg').hide();
+
+    })
+});
 
 
 $(function () {
