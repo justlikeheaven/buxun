@@ -31,7 +31,7 @@
       <td><?php echo $v['desc'];?></td>
       <td>
           <a href="<?=NFS::url('seller', 'add').'&id='.$v['id']?>"><i class="fa fa-pencil"></i></a>
-          <a href="#myModal" role="button" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+          <a href="<?=NFS::url('seller', 'delete').'&id='.$v['id']?>"><i class="fa fa-trash-o"></i></a>
       </td>
     </tr>
     <?php } ?>
@@ -39,15 +39,9 @@
 </table>
 
 <ul class="pagination">
-  <li><a href="#">&laquo;</a></li>
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#">&raquo;</a></li>
+  <?=$data['pager']?>
 </ul>
-
+<!--
 <div class="modal small fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -65,7 +59,7 @@
       </div>
     </div>
 </div>
-
+-->
 
            
 	</div>

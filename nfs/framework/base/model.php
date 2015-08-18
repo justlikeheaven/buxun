@@ -50,8 +50,8 @@ class model extends component {
 		return $this;
 	}
 	
-	public function limit($limit){
-		$this->sql['limit'] = $limit;
+	public function limit($start, $num){
+		$this->sql['limit'] = "{$start}, {$num}";
 		return $this;
 	}
 
@@ -60,12 +60,17 @@ class model extends component {
 		return db::get($this->sql(__FUNCTION__));
 	}
 	
-	public function add($data){
-		return db::execute($this->sql(__FUNCTION__, $data));
-	}
-	
 	public function getall(){
 		return db::getall($this->sql(__FUNCTION__));
+	}
+	
+	public function count(){
+		$res = db::get($this->sql(__FUNCTION__));
+		return intval($res['count']);
+	}
+	
+	public function insert($data){
+		return db::execute($this->sql(__FUNCTION__, $data));
 	}
 	
 	public function update($data){
@@ -90,7 +95,7 @@ class model extends component {
 			$sql = "UPDATE {$table} SET {$set}";
 		}else if($method=='delete'){
 			$sql = "DELETE FROM `{$table}`";
-		}else if($method=='add'){
+		}else if($method=='insert'){
 			foreach ($data as $k=>$v){				
 				$key[]="`{$k}`";
 				is_string($v) && $v="'{$v}'";
@@ -99,6 +104,8 @@ class model extends component {
 			$keystr = implode(', ', $key);
 			$valuestr = implode(', ', $value);
 			$sql = "INSERT INTO {$table} ({$keystr}) VALUES ({$valuestr})";
+		}else if($method=='count'){
+			$sql = "SELECT COUNT(*) AS `count` FROM {$table}";
 		}
 		if($this->sql['where'])	{
 			if(is_array($this->sql['where'])){
@@ -112,14 +119,15 @@ class model extends component {
 		}
 		if($this->sql['orderby'])	$sql.=" ORDER BY {$this->sql['orderby']}";
 		if($this->sql['groupby'])	$sql.=" GROUP BY {$this->sql['groupby']}";
-		if($this->sql['limit'])	$sql.=" LIMIT {$this->sql['limit']}";
+		if($method=='get')	$sql.=" LIMIT 1";
+		else if($this->sql['limit'])	$sql.=" LIMIT {$this->sql['limit']}";
 		
 		$this->last_sql = "<i>{$sql}</i>".PHP_EOL;
 		$this->sql = array();
 		return $sql;
 	}
 	
-	public function get_last_sql(){
+	public function getsql(){
 		return $this->last_sql;
 	}
 }

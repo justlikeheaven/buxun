@@ -148,7 +148,14 @@ class oo extends Component {
 	}
 	
 	public static function autoload($class){
-		return self::base($class);
+		
+		if($res = self::base($class)){
+			
+		}
+		else if($res = self::helper($class)){
+			
+		}
+		return $res;
 	}
 	
 }
