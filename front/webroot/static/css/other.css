@@ -34,6 +34,7 @@
 .pro_column ul li{float: left;width: 230px;margin: 0 10px 20px 0;text-align: center;border: #ccc 1px solid;padding: 0 0 10px;}
 .pro_column ul li img{width: 230px;height: 230px;}
 .pro_column ul li span, .pro_column ul li span em{display: block;font-size: 12px;}
+.pro_column ul li a:hover{color:#f60;text-decoration: none;}
 
 /* 放大镜 */
 .ZoomMain {width: 390px;float: left; position: relative; }
