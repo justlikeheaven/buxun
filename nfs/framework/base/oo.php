@@ -73,15 +73,13 @@ class oo extends Component {
      * @return Ambigous <boolean, object>
      */
 	public static function m($model=''){
+		
 		empty($model) && $model = NFS::$controller;
 		$res = false;
-		
-			if(!$res = self::obj(MODEL_ROOT.$model.MODEL_EXT)){
-				$res = self::base('model');
-				$res->table($model);
-			}
-		
-
+		if(!$res = self::obj(MODEL_ROOT.$model.MODEL_EXT)){
+			$res = self::base('model');
+			$res->table($model);
+		}
 		return $res;
 	}
 	
@@ -126,11 +124,14 @@ class oo extends Component {
 	}
 
 	//获取/设置app下cfg目录的配置文件
-	public static function cfg($key, $value=null){
+	public static function cfg($key, $value=null, $envdiff=true){
 		$apath = explode('.', $key);
 		$filename = array_shift($apath);
-		$env = ENV;
-		!empty($env) && $filename.='_'.$env;
+		if($envdiff){
+			$env = ENV;
+			!empty($env) && $filename.='_'.$env;
+		}
+		
 		$file = CONFIG_ROOT.$filename.'.php';
 		$cfg = self::include_file($file);
 		!is_array($cfg) && $cfg = array();

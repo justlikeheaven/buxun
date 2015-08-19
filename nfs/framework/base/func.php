@@ -1,11 +1,10 @@
 <?php
-function p($vars, $die=0){
+function p($vars){
 	$vars = func_get_args();
 	if(count($vars)===1)	$vars = $vars[0];
 	echo "<pre>";
 	var_dump($vars);
 	echo "<pre>";
-	$die && die();
 }
 
 class func{

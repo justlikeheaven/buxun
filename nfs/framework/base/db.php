@@ -4,7 +4,6 @@ class db{
 	static $default_driver;
 
 	public static function driver($driver=null, $default=0){
-		echo 333;
 		if($default){
 			if(is_null($driver)){
 				return self::$default_dirver;

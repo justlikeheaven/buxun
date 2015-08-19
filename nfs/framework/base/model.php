@@ -35,8 +35,9 @@ class model extends component {
 		return $this;
 	}
 	
-	public function table($table){
-		$this->sql['table'] = $table;
+	public function table($table=''){
+		if(empty($table))	return $this->table;
+		$this->table = $table;
 		return $this;
 	}
 	
@@ -83,7 +84,8 @@ class model extends component {
 
 	protected function sql($method='get', $data=null){
 		$fields = empty($this->sql['feilds']) ? '*' : $this->sql['feilds'];
-		$table = $this->sql['table'] ? $this->sql['table'] : $this->table; 
+		$table = $this->table ? $this->table : NFS::$controller;
+		
 		if(in_array($method, array('get', 'getall'))){
 			$sql = "SELECT {$fields} FROM {$table}";
 		}else if($method=='update'){

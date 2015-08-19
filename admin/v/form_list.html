@@ -1,0 +1,70 @@
+<?php view::display('header');?>
+    <div class="content">
+        <div class="header">
+            <h1 class="page-title"><?=$data['form']['desc']?></h1>
+            <ul class="breadcrumb">
+				<li><a href="/">主页</a> </li>
+				<li class="active"><?=$data['form']['desc']?></li>
+			</ul>
+        </div>
+        <div class="main-content">
+            
+<div class="btn-toolbar list-toolbar">
+    <a href="/?c=seller&a=add" class="btn btn-primary">添加</a>
+    <!-- <button class="btn btn-default">Import</button> -->
+    
+  <div class="btn-group">
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+	<?php foreach($data['form']['fields'] as $v){?>
+      <th><?=$v['str'];?></th>
+	  <?php } ?>
+      <th style="width: 3.5em;"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach($data['list'] as $v){ ?>
+    <tr>
+	<?php foreach($data['form']['fields'] as $field=>$info){?>
+      <td><?php echo $v[$field];?></td>
+	  <?php } ?>
+      <td>
+          <a href="<?=NFS::url('seller', 'add').'&id='.$v['id']?>"><i class="fa fa-pencil"></i></a>
+          <a href="<?=NFS::url('seller', 'delete').'&id='.$v['id']?>"><i class="fa fa-trash-o"></i></a>
+      </td>
+    </tr>
+    <?php } ?>
+  </tbody>
+</table>
+
+<ul class="pagination">
+  <?=$data['pager']?>
+</ul>
+<!--
+<div class="modal small fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Delete Confirmation</h3>
+        </div>
+        <div class="modal-body">
+            <p class="error-text"><i class="fa fa-warning modal-icon"></i>Are you sure you want to delete the user?<br>This cannot be undone.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+</div>
+-->
+
+           
+	</div>
+</div>
+<?php view::display('footer');?>
+</body></html>

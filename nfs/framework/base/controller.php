@@ -24,9 +24,11 @@ class controller extends component{
      * 动态加载
      * 
      */
+    /*
     public function __call($c, $args) {
     	if(in_array($c, array('get', 'update', 'delete', 'insert'))){
     		oo::base('controller_auto')->$c($args);
     	}
     }
+    */
 }
