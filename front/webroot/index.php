@@ -16,7 +16,7 @@ if(false===strpos($_SERVER['SERVER_NAME'], 'local') && false===strpos($_SERVER['
 	define('ENV_PRO', 0);
 	error_reporting(E_ALL ^ E_NOTICE);
 }
-
+define('APP_URL', 'http://localhost/buxun/front/webroot/index.php');
 define('APP_DIR', 'front');
 define('APP_ROOT', dirname(dirname(__DIR__)).'/');
 require '../../nfs/framework/NFS.php';

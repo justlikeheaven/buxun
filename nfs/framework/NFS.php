@@ -18,6 +18,7 @@ dev, test, pro自定义环境名称，根据这个读配置文件
 */
 !defined('ENV') && define('ENV', '');
 
+!defined('APP_URL') && define('APP_URL', '/');
 //开始时间
 define('TIME', time());
 
@@ -80,7 +81,7 @@ define('CONTROLLER_ROOT', APP_ROOT.DS.APP_DIR.DS.CONTROLLER_FOLDER_NAME.DS);
 define('MODEL_ROOT', APP_ROOT.DS.MODEL_FOLDER_NAME.DS);
 define('CONFIG_ROOT', APP_ROOT.DS.APP_DIR.DS.CONFIG_FOLDER_NAME.DS);
 define('VIEW_ROOT', APP_ROOT.DS.APP_DIR.DS.VIEW_FOLDER_NAME.DS);
-
+require NFS_BASE_ROOT.'func.php';
 require NFS_BASE_ROOT.'component.php';
 require NFS_BASE_ROOT.'oo.php';
 
@@ -138,7 +139,7 @@ class NFS{
 	}
 	
     public static function url($c, $a=''){
-    	$res = "/?".CONTROLLER_PARAM."=".$c;
+    	$res = APP_URL."?".CONTROLLER_PARAM."=".$c;
     	!empty($a) && $res.='&'.ACTION_PARAM."=".$a;
     	return $res;
     }
