@@ -7,9 +7,9 @@ class controller_auto extends controller {
 	public function _init(){
 		$this->id = $this->req('id');
 		if(!$this->form = oo::cfg('form.'.NFS::$controller, null, false)){
-			echo 'no '.NFS::$controller.' form cfg';
+			echo 'no '.NFS::$controller.' cfg in form.php';
 		}
-		!$this->form['tpl'] && $this->form['tpl'] = 'form';
+		empty($this->form['tpl']) && $this->form['tpl'] = 'form';
 		$this->assign('form', $this->form);
 		$this->m = oo::m();
 	}
@@ -36,7 +36,15 @@ class controller_auto extends controller {
 	
 	public function _post(){
 		foreach ($this->form['fields'] as $field=>$info){
-			$data[$field] = $this->req($field);
+			if($info['type']=='auto'){
+				if($info['action']=='insert'){//如果只是在创建的时候写入自动值
+					!$this->id && $data[$field] = $info['value'];
+				}else{
+					$data[$field] = $info['value'];
+				}
+			}else{
+				$data[$field] = $this->req($field);
+			}
 		}
 
 		if($this->id){ //编辑
@@ -53,7 +61,7 @@ class controller_auto extends controller {
 			}
 		}
 		$this->assign('msg', $msg);
-		$this->assign('url', NFS::url('seller'));
+		$this->assign('url', NFS::url());
 		$this->display('msg');
 	}
     
@@ -73,7 +81,7 @@ class controller_auto extends controller {
 			}
 		}
 		$this->assign('msg', $msg);
-		$this->assign('url', NFS::url('seller'));
+		$this->assign('url', NFS::url());
 		$this->display('msg');
 	}
 	

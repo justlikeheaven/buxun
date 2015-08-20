@@ -10,7 +10,7 @@
         <div class="main-content">
             
 <div class="btn-toolbar list-toolbar">
-    <a href="/?c=seller&a=add" class="btn btn-primary">添加</a>
+    <a href="/?c=<?=NFS::$controller?>&a=add" class="btn btn-primary">添加</a>
     <!-- <button class="btn btn-default">Import</button> -->
     
   <div class="btn-group">
@@ -19,7 +19,11 @@
 <table class="table">
   <thead>
     <tr>
-	<?php foreach($data['form']['fields'] as $v){?>
+	<?php 
+	foreach($data['form']['fields'] as $v){
+		if($v['type']=='hidden') continue;
+	
+	?>
       <th><?=$v['str'];?></th>
 	  <?php } ?>
       <th style="width: 3.5em;"></th>
@@ -28,12 +32,14 @@
   <tbody>
   <?php foreach($data['list'] as $v){ ?>
     <tr>
-	<?php foreach($data['form']['fields'] as $field=>$info){?>
+	<?php foreach($data['form']['fields'] as $field=>$info){
+		if($info['type']=='hidden') continue;
+		?>
       <td><?php echo $v[$field];?></td>
 	  <?php } ?>
       <td>
-          <a href="<?=NFS::url('seller', 'add').'&id='.$v['id']?>"><i class="fa fa-pencil"></i></a>
-          <a href="<?=NFS::url('seller', 'delete').'&id='.$v['id']?>"><i class="fa fa-trash-o"></i></a>
+          <a href="<?=NFS::url('', 'add').'&id='.$v['id']?>"><i class="fa fa-pencil"></i></a>
+          <a href="<?=NFS::url('', 'delete').'&id='.$v['id']?>"><i class="fa fa-trash-o"></i></a>
       </td>
     </tr>
     <?php } ?>
@@ -67,4 +73,5 @@
 	</div>
 </div>
 <?php view::display('footer');?>
-</body></html>
+</body>
+</html>

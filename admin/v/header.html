@@ -72,16 +72,24 @@
 
 	</div>
 </div>
-    
-<? var_dump($nfs);?>
-
 <div class="sidebar-nav">
 <ul>
-<li><a href="#" data-target=".dashboard-menu" class="nav-header" data-toggle="collapse"><i class="fa"></i> 网站设置<i class="fa fa-collapse"></i></a></li>
-<li><ul class="dashboard-menu nav nav-list collapse in">
-		<li <?php if($nfs['c']=='seller' && $nfs['a']=='get') echo 'class="active"';?>><a href="/?c=seller&a=get"><span class="fa fa-caret-right"></span> 商家管理</a></li>
-		<li ><a href="users.html"><span class="fa fa-caret-right"></span> 商品管理</a></li>
-		<li ><a href="user.html"><span class="fa fa-caret-right"></span> 商品类别</a></li>
-</ul></li>
+<?php
+$menu = oo::cfg('menu', null, 0);
+foreach($menu as $k=>$v){
+?>
+
+	<li><a href="#" data-target=".dashboard-menu-<?=$k?>" class="nav-header" data-toggle="collapse"><i class="fa"></i> <?=$v['desc']?><i class="fa fa-collapse"></i></a></li>
+	<li>
+		<ul class="dashboard-menu-<?=$k?> nav nav-list collapse in">
+			<?php
+			foreach($v['children'] as $c=>$n){
+			?>
+			<li <?php if(NFS::$controller==$c) echo 'class="active"';?>><a href="<?=NFS::url($c)?>"><span class="fa fa-caret-right"></span> <?=$n?></a></li>
+			<?php } ?>
+		</ul>
+	</li>
+<?php } ?>
+
 </ul>
 </div>

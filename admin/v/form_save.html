@@ -18,11 +18,12 @@
 <div class="row">
   <div class="col-md-4">
     <br>
-	<form id="tab" action="<?=NFS::url('seller')?>" method="post">
+	<form id="tab" action="<?=NFS::url()?>" method="post">
     <div id="myTabContent" class="tab-content">
        <div class="tab-pane active in" id="home">
        <?php
 		foreach($data['form']['fields'] as $field=>$info){
+			if($info['type']=='auto') continue;
 			$input = '';
 			echo <<<EOF
 			<div class="form-group">

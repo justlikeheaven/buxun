@@ -138,7 +138,8 @@ class NFS{
 		*/
 	}
 	
-    public static function url($c, $a=''){
+    public static function url($c='', $a=''){
+    	empty($c) && $c = NFS::$controller;
     	$res = APP_URL."?".CONTROLLER_PARAM."=".$c;
     	!empty($a) && $res.='&'.ACTION_PARAM."=".$a;
     	return $res;
