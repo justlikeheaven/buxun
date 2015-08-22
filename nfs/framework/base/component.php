@@ -4,10 +4,9 @@
  */
 abstract class component{
     
-    protected $caller = null;
-    public function __construct(){
-    	//$this->set_caller();
-        method_exists($this, '_init') && $this->_init();
+	protected $caller = null;
+	public function __construct(){
+        		method_exists($this, '_init') && $this->_init();
 	}
 	
 	public function index(){

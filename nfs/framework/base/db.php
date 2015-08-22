@@ -175,7 +175,7 @@ class pdo_driver extends dbdriver implements dbdriver_template{
 	public function insert($table, $data){
 		
 	}
-	/*
+	
 	public function getColumn($sql, $param=null){
 		$stmt = $this->statement($sql, $param);
 		
@@ -183,6 +183,6 @@ class pdo_driver extends dbdriver implements dbdriver_template{
 			return $stmt->fetchColumn();
 		}
 	}
-	*/
+	
 
 }

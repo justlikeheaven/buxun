@@ -21,7 +21,7 @@ class file{
 	
 	public static function upload($param, $folder, $func=''){
 		if(!is_array($_FILES[$param]) || empty($_FILES[$param])){
-			$res['fail'][] = -1;
+			$res['error'][] = -1;
 			return $res;
 		}
 		
@@ -38,7 +38,7 @@ class file{
 
 		self::mkdir($folder);
 		foreach ($files['tmp_name'] as $k=>$v){
-			self::parse_error($files[$k]);
+			//self::parse_error($files[$k]);
 			if(is_uploaded_file($v)){
 				$name_e = explode('.', $files['name'][$k]);
 				$type = array_pop($name_e);
@@ -51,11 +51,11 @@ class file{
 				if(move_uploaded_file($v, $folder.'/'.$filename)){
 					$res['success'][] = $filename;
 				}else{
-					$res['fail'][] = -2;
+					$res['error'][] = -2;
 					break;
 				}
 			}else{
-				$res['fail'][] =-3;
+				$res['error'][] =-3;
 			}
 		}
 		if($res['success'] && !$res['fail']){
@@ -76,14 +76,13 @@ class file{
 	
 	public static function mkdir($dir, $mode=0777){
 		if(is_dir($dir)) return true;
-		else{
-			$dirs = explode('/', $dir);
-			foreach ($dirs as $v) {
-				$curdir .= $v.'/';
-				if(!is_dir($curdir)){
-					mkdir($curdir);
-					chmod($curdir, $mode);
-				}
+		
+		$dirs = explode('/', $dir);
+		foreach ($dirs as $v) {
+			$curdir .= $v.'/';
+			if(!is_dir($curdir)){
+				mkdir($curdir);
+				chmod($curdir, $mode);
 			}
 		}
 	}

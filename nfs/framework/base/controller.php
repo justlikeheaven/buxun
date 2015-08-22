@@ -16,19 +16,7 @@ class controller extends component{
 		return request::param($name, $default, $callback, $type);//array(array($this, $callback))
 	}
 
-    protected function json($array){
-    	return oo::base('request')->json($array, 'encode', 1);
-    }
-   
-    /**
-     * 动态加载
-     * 
-     */
-    /*
-    public function __call($c, $args) {
-    	if(in_array($c, array('get', 'update', 'delete', 'insert'))){
-    		oo::base('controller_auto')->$c($args);
+	protected function json($array){
+    		return oo::base('request')->json($array, 'encode', 1);
     	}
-    }
-    */
 }

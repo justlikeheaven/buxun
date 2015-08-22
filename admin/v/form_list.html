@@ -21,7 +21,7 @@
     <tr>
 	<?php 
 	foreach($data['form']['fields'] as $v){
-		if($v['type']=='hidden') continue;
+		if($v['type']=='hidden' || $v['hide']=='list') continue;
 	
 	?>
       <th><?=$v['str'];?></th>
@@ -33,7 +33,7 @@
   <?php foreach($data['list'] as $v){ ?>
     <tr>
 	<?php foreach($data['form']['fields'] as $field=>$info){
-		if($info['type']=='hidden') continue;
+		if($info['type']=='hidden' || $info['hide']=='list') continue;
 		?>
       <td><?php echo $v[$field];?></td>
 	  <?php } ?>

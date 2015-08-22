@@ -132,199 +132,48 @@
             <h2 class="fl"><i>2F</i>最新</h2>
             <a href="<?=NFS::url('product')?>">更多&gt;&gt;</a>
         </div>
-        <div class="new-pro content clearfix">
+        <div class="new-pro content clearfix"><!-- 针织 -->
             <div class="new-pro-l">
                 <img src="static/temp/left.jpg" alt=""/>
-
                 <div class="info-tra-right"></div>
             </div>
             <div class="new-pro-r">
                 <ul class="clearfix">
+					<?php foreach($data['list']['zz']['list'] as $v){ ?>
                     <li>
                         <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
+                            <a href="<?=NFS::url('product')?>" title="<?=$v['name']?>">
+                                <img src="<?=oo::cfg('common.imgurl').$v['img_product']?>" alt="<?=$v['name']?> title="<?=$v['name']?>" />
                             </a>
                         </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
+                        <a href="<?=NFS::url('product')?>" title="<?=$v['name']?>">
+                            <img src="<?=oo::cfg('common.imgurl').$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
+                            <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
                         </a>
                     </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo3.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo4.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo3.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo3.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo4.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
-        <div class="new-pro content clearfix">
+        <div class="new-pro content clearfix"><!-- 梭织 -->
             <div class="new-pro-l">
                 <img src="static/temp/left.jpg" alt=""/>
             </div>
             <div class="new-pro-r">
                 <ul class="clearfix">
+					<?php foreach($data['list']['sz']['list'] as $v){ ?>
                     <li>
                         <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
+                            <a href="<?=NFS::url('product')?>" title="<?=$v['name']?>">
+                                <img src="<?=oo::cfg('common.imgurl').$v['img']?>" alt="<?=$v['name']?> title="<?=$v['name']?>" />
                             </a>
                         </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
+                        <a href="<?=NFS::url('product')?>" target="_blank" title="<?=$v['name']?>">
+                            <img src="<?=oo::cfg('common.imgurl').$v['img']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
+                            <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
                         </a>
                     </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo4.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo4.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo3.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo3.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                                <img src="static/temp/peo3.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            </a>
-                        </div>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                            <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                        </a>
-                    </li>
+					<?php } ?>
                 </ul>
             </div>
         </div>

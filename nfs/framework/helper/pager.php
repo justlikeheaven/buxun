@@ -7,7 +7,7 @@ class pager{
 	public static $total; //总共有多少个记录
 	public static $last; //总共多少页
 	
-	public static function init($page, $num, $total){
+	public static function init($page, $total, $num=10){
 		self::$page = max(1, $page);
 		self::$start = $num*(self::$page-1);
 		self::$num = $num;
@@ -16,14 +16,18 @@ class pager{
 	}
 	
 	public static function get(){
+		if(self::$total<=self::$num) return;
+		
 		$request = $_REQUEST;
 		$request['page'] = 1;
 		$first_href = http_build_query($request);
 		
-		$first=<<<EOF
+		
+		if(self::$page>1){
+			$first=<<<EOF
 		<li><a href="?{$first_href}">&laquo;</a></li>
 EOF;
-		if(self::$page>1){
+
 			$request['page'] = self::$page-1;
 			$prev_href = http_build_query($request);
 			$prev=<<<EOF
@@ -59,13 +63,14 @@ EOF;
 			<li><a href="?{$next_href}">&gt;</a></li>
 EOF;
 
+			$request['page'] = self::$last;
+			$last_href = http_build_query($request);
+			$last=<<<EOF
+			<li><a href="?{$last_href}">&raquo;</a></li>
+EOF;
 		}
 		
-		$request['page'] = self::$last;
-		$last_href = http_build_query($request);
-		$last=<<<EOF
-		<li><a href="?{$last_href}">&raquo;</a></li>
-EOF;
+		
 
 		$res = $first.$prev.$head.$cur.$foot.$next.$last;
 		return $res;

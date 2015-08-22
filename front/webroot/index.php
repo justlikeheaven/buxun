@@ -22,7 +22,4 @@ define('APP_DIR', 'front');
 define('APP_ROOT', dirname(dirname(__DIR__)).'/');
 require '../../nfs/framework/NFS.php';
 
-oo::include_file(CONTROLLER_ROOT.'base_c.php');
 NFS::run();
-
-

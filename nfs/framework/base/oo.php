@@ -73,7 +73,6 @@ class oo extends Component {
      * @return Ambigous <boolean, object>
      */
 	public static function m($model=''){
-		
 		empty($model) && $model = NFS::$controller;
 		$res = false;
 		if(!$res = self::obj(MODEL_ROOT.$model.MODEL_EXT)){
@@ -89,8 +88,6 @@ class oo extends Component {
 	 * @return Ambigous <object, boolean>
 	 */
 	public static function c($controller=''){
-		//self::include_file(NFS_BASE_ROOT.'controller.php');
-		
 		if(empty($controller))	$controller = NFS::$controller;	
 		$path = explode('.', $controller);
 		$c = APP_ROOT.DS;
@@ -101,11 +98,15 @@ class oo extends Component {
 			$class = $controller;
 			$c .= APP_DIR.DS;
 		}
+		//自动表单
+		$form = self::cfg("form.{$class}");
 		$c.=CONTROLLER_FOLDER_NAME.DS.$class.CONTROLLER_EXT;
 		if($res = self::obj($c)){
 			return $res;
+		}else if($form){
+			return self::base('controller_form');
 		}else{
-			return self::base('controller_auto');
+			return self::base('controller');
 		}
 	}
 	
@@ -124,13 +125,17 @@ class oo extends Component {
 	}
 
 	//获取/设置app下cfg目录的配置文件
-	public static function cfg($key, $value=null, $envdiff=true){
+	public static function cfg($key, $value=null){
 		$apath = explode('.', $key);
 		$filename = array_shift($apath);
-		if($envdiff){
-			$env = ENV;
-			!empty($env) && $filename.='_'.$env;
+		
+		$env = ENV;
+		if(!empty($env)){
+			if(file_exists(CONFIG_ROOT.$filename.'_'.$env.'.php')){ //不同环境不同配置
+				$filename .= "_{$env}";
+			}
 		}
+		
 		
 		$file = CONFIG_ROOT.$filename.'.php';
 		$cfg = self::include_file($file);
@@ -152,8 +157,7 @@ class oo extends Component {
 		
 		if($res = self::base($class)){
 			
-		}
-		else if($res = self::helper($class)){
+		}else if($res = self::helper($class)){
 			
 		}
 		return $res;

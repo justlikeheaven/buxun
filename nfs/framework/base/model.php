@@ -4,17 +4,18 @@ class model extends component {
 	protected $dbobj;
 	protected $auto;
 	protected $table;
-    protected $mongo;
+    
 
 	public $columns = null;
-    public $prefix;
-    public $debug = 0;
+    	public $prefix;
+    	public $debug = 0;
 	protected $sql = null;
 	public $last_sql;
 	
 	protected function _init(){
 		//$db = $this->db ? $this->db : 'mysql.default';
 		//$this->dbobj = db::driver($db);
+		
 	}
 	
 	/**
@@ -30,7 +31,7 @@ class model extends component {
 	}
 	
 	public function fields($fields){
-		is_array($friends) && $fields = implode(', ', $fields);
+		is_array($fields) && $fields = implode(', ', $fields);
 		$this->sql['fields'] = $fields;
 		return $this;
 	}
@@ -51,13 +52,13 @@ class model extends component {
 		return $this;
 	}
 	
-	public function limit($start, $num){
-		$this->sql['limit'] = "{$start}, {$num}";
+	public function limit($start, $num=''){
+		$this->sql['limit'] = $start;
+		!empty($num) && $this->sql['limit'] .= ", {$num}";
 		return $this;
 	}
 
 	public function get(){
-		
 		return db::get($this->sql(__FUNCTION__));
 	}
 	
@@ -83,7 +84,7 @@ class model extends component {
 	}
 
 	protected function sql($method='get', $data=null){
-		$fields = empty($this->sql['feilds']) ? '*' : $this->sql['feilds'];
+		$fields = empty($this->sql['fields']) ? '*' : $this->sql['fields'];
 		$table = $this->table ? $this->table : NFS::$controller;
 		
 		if(in_array($method, array('get', 'getall'))){
