@@ -141,11 +141,13 @@
                 <ul class="clearfix">
 					<?php foreach($data['list']['zz']['list'] as $v){ ?>
                     <li>
+					<!--
                         <div class="bg">
                             <a href="<?=NFS::url('product')?>" title="<?=$v['name']?>">
                                 <img src="<?=oo::cfg('common.imgurl').$v['img_product']?>" alt="<?=$v['name']?> title="<?=$v['name']?>" />
                             </a>
                         </div>
+						-->
                         <a href="<?=NFS::url('product')?>" title="<?=$v['name']?>">
                             <img src="<?=oo::cfg('common.imgurl').$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
                             <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
@@ -163,13 +165,15 @@
                 <ul class="clearfix">
 					<?php foreach($data['list']['sz']['list'] as $v){ ?>
                     <li>
+					<!--
                         <div class="bg">
                             <a href="<?=NFS::url('product')?>" title="<?=$v['name']?>">
-                                <img src="<?=oo::cfg('common.imgurl').$v['img']?>" alt="<?=$v['name']?> title="<?=$v['name']?>" />
+                                <img src="<?=oo::cfg('common.imgurl').$v['img_product']?>" alt="<?=$v['name']?> title="<?=$v['name']?>" />
                             </a>
                         </div>
+						-->
                         <a href="<?=NFS::url('product')?>" target="_blank" title="<?=$v['name']?>">
-                            <img src="<?=oo::cfg('common.imgurl').$v['img']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
+                            <img src="<?=oo::cfg('common.imgurl').$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
                             <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
                         </a>
                     </li>

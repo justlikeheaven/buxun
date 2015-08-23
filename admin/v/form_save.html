@@ -93,6 +93,22 @@ EOF;
 					});
 				</script>
 EOF;
+			}else if($info['type']=='editor'){
+				$upload_url = NFS::url('', 'ckupload');
+				$input = <<<EOF
+				<script src="/static/base/plug/ckeditor/ckeditor.js"></script>
+				<textarea id="editor_{$field}"  name="{$field}" >{$data['res'][$field]}</textarea>
+				<!-- <div id="editor_{$field}">
+					<h1>Hello world!</h1>
+					<p>I'm an instance of <a href="http://ckeditor.com">CKEditor</a>.</p>
+				</div> -->
+				<script>
+				CKEDITOR.config.height = 150;
+				CKEDITOR.config.width = 'auto';
+				CKEDITOR.config.filebrowserImageUploadUrl = "{$upload_url}";
+				CKEDITOR.replace('editor_{$field}');
+				</script>
+EOF;
 			}else{
 				$input = <<<EOF
 				<input type="text" value="{$data['res'][$field]}" name="{$field}" class="form-control">

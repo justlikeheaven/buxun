@@ -14,15 +14,7 @@ class controller_form extends controller {
 		$this->assign('form', $this->form);
 		$this->m = oo::m();
 	}
-	
-	/*
-	public function __call($name, $args){
-		p($name, $args);
-		$m = oo::m(NFS::$controller)->$name($args);
-		p($m);
-		//p($name, $args);
-	}
-	*/
+
 	public function _get(){
 		$total = $this->m->count();
 		$page = $this->req('page');
@@ -63,11 +55,13 @@ class controller_form extends controller {
 	}
     
 	public function add(){
+		$res = array();
 		if($this->id){ //编辑
 			$res = $this->m->where(array('id'=>$this->id))->get();
-			method_exists($this, 'before_add') && $this->before_add($res);
-			$this->assign('res', $res);	
+			
 		}
+		method_exists($this, 'before_add') && $this->before_add($res);
+		$this->assign('res', $res);
 		$this->display("{$this->form['tpl']}_save");
 	}
 	
@@ -90,7 +84,7 @@ class controller_form extends controller {
 				break;
 			}
 		}
-
+		
 		$upload = file::upload($imgfield, 'data/pics/');//上传图片
 		if($upload['error']){
 			echo -1;
@@ -99,5 +93,20 @@ class controller_form extends controller {
 		}else{
 			echo -1;
 		}
+	}
+	
+	public function ckupload(){
+		$dir = 'data/pics/';
+		$upload = file::upload('upload', $dir);//上传图片
+		if($upload['error']){
+			echo -1;
+		}else if($upload['success']){
+			$url = APP_URL.$dir.$upload['success'][0];
+			$fn = $this->req('CKEditorFuncNum');
+			echo "<script>window.parent.CKEDITOR.tools.callFunction('{$fn}', '{$url}');</script>";
+		}else{
+			echo -1;
+		}
+		
 	}
 }

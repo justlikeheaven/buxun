@@ -31,6 +31,7 @@ return array(
 			'price'=>array('type'=>'text', 'str'=>'价格'),
 			'img_model'=>array('type'=>'img', 'str'=>'模特效果图', 'hide'=>'list'),
 			'img_product'=>array('type'=>'img', 'str'=>'布料高清图', 'hide'=>'list'),
+			'desc'=>array('type'=>'editor', 'str'=>'详情', 'hide'=>'list'),
 			'ctime'=>array('type'=>'auto', 'action'=>'insert', 'value'=>time(), 'str'=>'创建时间'),
 			'mtime'=>array('type'=>'auto', 'value'=>time(), 'str'=>'修改时间'),
 		),
