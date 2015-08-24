@@ -172,8 +172,10 @@ class pdo_driver extends dbdriver implements dbdriver_template{
 		return $stmt->fetchAll($fetchStyle);
 	}
 	
-	public function insert($table, $data){
-		
+	public function insert($sql, $param=null){
+		$stmt = $this->statement($sql, $param);		
+		$stmt->execute();
+		return $this->db->lastInsertId($fetchStyle);
 	}
 	
 	public function getColumn($sql, $param=null){

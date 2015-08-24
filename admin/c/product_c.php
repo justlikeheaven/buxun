@@ -35,12 +35,15 @@ class product_c extends controller_form  {
 				}
 			}
 		}
-		$hot = intval($data['hot']) ? 1 : 0;
-		$sql = "INSERT INTO #table (`product_id`, `hot`) VALUES ({$this->id}, {$hot}) ON DUPLICATE KEY UPDATE `hot`={$hot}";
-
-		oo::m('product_hot')->execute($sql);
+		
 
 		unset($data['hot']);
+	}
+	
+	protected function after_post(&$data){
+		$hot = intval($data['hot']) ? 1 : 0;
+		$sql = "INSERT INTO #table (`product_id`, `hot`) VALUES ({$this->id}, {$hot}) ON DUPLICATE KEY UPDATE `hot`={$hot}";
+		oo::m('product_hot')->execute($sql);
 	}
 }
 

@@ -73,7 +73,7 @@ class model extends component {
 	}
 	
 	public function insert($data){
-		return db::execute($this->sql(__FUNCTION__, $data));
+		return db::insert($this->sql(__FUNCTION__, $data));
 	}
 	
 	public function update($data){

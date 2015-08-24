@@ -43,16 +43,19 @@ class controller_form extends controller {
 			}
 		}
 		$msg = "提交失败";
+		$odata = $data;
 		method_exists($this, 'before_post') && $this->before_post($data);
 		if($this->id){ //编辑
 			if(oo::m()->where(array('id'=>$this->id))->update($data)){
 				$msg = "提交成功";
 			}
 		}else{ //添加
-			if(oo::m()->insert($data)){
+			if($this->id = oo::m()->insert($data)){
 				$msg = "提交成功";
 			}
 		}
+		$data = array_merge($odata, $data);
+		method_exists($this, 'after_post') && $this->after_post($data);
 		$this->assign('msg', $msg);
 		$this->assign('url', NFS::url());
 		$this->display('msg');
