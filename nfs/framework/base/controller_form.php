@@ -62,6 +62,7 @@ class controller_form extends controller {
 		$res = array();
 		if($this->id){ //编辑
 			$res = oo::m()->where(array('id'=>$this->id))->get();
+			method_exists($this, 'before_add') && $this->before_edit($res);
 		}
 		method_exists($this, 'before_add') && $this->before_add($res);
 		$this->assign('res', $res);

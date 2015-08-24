@@ -5,7 +5,11 @@ class product_c extends controller_form  {
 		$res['form']['cateid']['list'] = oo::m('product_cate')->fields('id as value, name as str')->getall();
 		$res['form']['sellerid']['list'] = oo::m('seller')->fields('id as value, name as str')->getall();
 		$res['form']['hot']['list'] = array(array('value'=>0,'str'=>'否'), array('value'=>1,'str'=>'是'));
-		$res['hot'] = oo::m('product_hot')->where(array('product_id'=>$this->id, 'hot'=>1))->count() ? 1 : 0;
+		
+	}
+	
+	protected function before_edit(&$res){
+		$res['hot'] = oo::m('product_hot')->where(array('product_id'=>$this->id, 'hot'=>1))->count() ? 1 : 0;	
 	}
 	
 	protected function after_get(&$list){
