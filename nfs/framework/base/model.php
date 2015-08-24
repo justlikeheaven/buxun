@@ -27,6 +27,7 @@ class model extends component {
 	}
 	
 	public function execute($sql){
+		$sql = str_replace('#table', $this->table, $sql);
 		return db::execute($sql);
 	}
 	
@@ -113,8 +114,9 @@ class model extends component {
 		if($this->sql['where'])	{
 			if(is_array($this->sql['where'])){
 				foreach ($this->sql['where'] as $k=>$v){
-					$where.="`{$k}`={$v}";
+					$cond[] = "`{$k}`={$v}";
 				}
+				$where = implode(' AND ', $cond);
 			}else{
 				$where = $this->sql['where'];
 			}

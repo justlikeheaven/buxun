@@ -12,14 +12,13 @@ class controller_form extends controller {
 		empty($this->form['tpl']) && $this->form['tpl'] = 'form';
 
 		$this->assign('form', $this->form);
-		$this->m = oo::m();
 	}
 
 	public function _get(){
-		$total = $this->m->count();
+		$total = oo::m()->count();
 		$page = $this->req('page');
 		pager::init($page, $total);
-		$list = $this->m->limit(pager::$start, pager::$num)->getall();
+		$list = oo::m()->limit(pager::$start, pager::$num)->getall();
 		method_exists($this, 'after_get') && $this->after_get($list);
 		$this->assign('pager', pager::get());
 		$this->assign('list', $list);
@@ -34,6 +33,11 @@ class controller_form extends controller {
 				}else{
 					$data[$field] = $info['value'];
 				}
+			}elseif($info['type']=='file'){
+				$upload = file::upload($field, 'data/pics/');//上传图片
+				if($upload['success']){
+					$data[$field] = $upload['success'][0];
+				}
 			}else{
 				$data[$field] = $this->req($field);
 			}
@@ -41,11 +45,11 @@ class controller_form extends controller {
 		$msg = "提交失败";
 		method_exists($this, 'before_post') && $this->before_post($data);
 		if($this->id){ //编辑
-			if($this->m->where(array('id'=>$this->id))->update($data)){
+			if(oo::m()->where(array('id'=>$this->id))->update($data)){
 				$msg = "提交成功";
 			}
 		}else{ //添加
-			if($this->m->insert($data)){
+			if(oo::m()->insert($data)){
 				$msg = "提交成功";
 			}
 		}
@@ -57,8 +61,7 @@ class controller_form extends controller {
 	public function add(){
 		$res = array();
 		if($this->id){ //编辑
-			$res = $this->m->where(array('id'=>$this->id))->get();
-			
+			$res = oo::m()->where(array('id'=>$this->id))->get();
 		}
 		method_exists($this, 'before_add') && $this->before_add($res);
 		$this->assign('res', $res);

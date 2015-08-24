@@ -1,13 +1,11 @@
 <?php
 class product_c extends controller_form  {
-	protected function _init(){
-		parent::_init();
-		
-	}
 	
 	protected function before_add(&$res){
 		$res['form']['cateid']['list'] = oo::m('product_cate')->fields('id as value, name as str')->getall();
 		$res['form']['sellerid']['list'] = oo::m('seller')->fields('id as value, name as str')->getall();
+		$res['form']['hot']['list'] = array(array('value'=>0,'str'=>'否'), array('value'=>1,'str'=>'是'));
+		$res['hot'] = oo::m('product_hot')->where(array('product_id'=>$this->id, 'hot'=>1))->count() ? 1 : 0;
 	}
 	
 	protected function after_get(&$list){
@@ -33,8 +31,12 @@ class product_c extends controller_form  {
 				}
 			}
 		}
-		
-			 
+		$hot = intval($data['hot']) ? 1 : 0;
+		$sql = "INSERT INTO #table (`product_id`, `hot`) VALUES ({$this->id}, {$hot}) ON DUPLICATE KEY UPDATE `hot`={$hot}";
+
+		oo::m('product_hot')->execute($sql);
+
+		unset($data['hot']);
 	}
 }
 

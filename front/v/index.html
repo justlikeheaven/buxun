@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>布讯-最专业的布料批发</title>
-        <meta name="keywords" content="最专业的布料批发"/>
-        <meta name="description" content="布讯,布料批发,女装面料,纺织面料,针织面料,梭织面料,复合面料,风衣面料,连衣裙面料"/>
-
-        <link href="static/css/global.css" rel="stylesheet" type="text/css"/>
-        <link href="static/css/index.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-
-        <div class="header">
-           <h1>
-               <a href="/" title=""><img src="static/images/logo.png" alt="" title="布讯"/></a>
-           </h1>
-           <h2>
-               专业的布料批发平台 <span>连衣裙面料 小西服面料 风衣/外套面料</span>
-           </h2>
-        </div>
-
+<?php view::display('header');?>
         <div class="ban_bg" style="height:400px; width:100%;" id="flashs">
             <a href='<?=NFS::url('product')?>' target="_blank" title="">
                 <div title="" src="static/temp/banner1.jpg" alt="" class="bgitem" id="flashbg0" style="height:400px; width: 100%; margin:auto;"></div>
@@ -35,94 +14,23 @@
         </div>
         <div class="hot-pro content">
             <ul class="clearifx">
+				<?php 
+				foreach($data['hot'] as $v){
+					$href = NFS::url('product');
+					echo <<<EOF
                 <li>
                     <div class="bg">
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
+                        <a href="{$href}" title="{$v['name']}">
+                            <img src="{$v['img_product']}" alt="{$v['name']}" title="{$v['name']}"/>
                         </a>
                     </div>
-                    <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                        <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
+                    <a href="{$href}" title="{$v['name']}">
+                        <img src="{$v['img_model']}" alt="{$v['name']}" title="{$v['name']}"/>
+                        <span><em>{$v['name']}</em><strong>{$v['price']}</strong></span>
                     </a>
                 </li>
-                <li>
-                    <div class="bg">
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        </a>
-                    </div>
-                    <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                        <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                    </a>
-                </li>
-                <li>
-                    <div class="bg">
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo3.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        </a>
-                    </div>
-                    <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                        <img src="static/temp/peo4.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                    </a>
-                </li>
-                <li>
-                    <div class="bg">
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo4.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        </a>
-                    </div>
-                    <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                        <img src="static/temp/peo3.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                    </a>
-                </li>
-                <li>
-                    <div class="bg">
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        </a>
-                    </div>
-                    <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                        <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                    </a>
-                </li>
-                <li>
-                    <div class="bg">
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        </a>
-                    </div>
-                    <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                        <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                    </a>
-                </li>
-                <li>
-                    <div class="bg">
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        </a>
-                    </div>
-                    <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                        <img src="static/temp/peo1.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                    </a>
-                </li>
-                <li>
-                    <div class="bg">
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                            <img src="static/temp/peo2.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        </a>
-                    </div>
-                    <a href="<?=NFS::url('product')?>" target="_blank" title="高档弹性雪纺面料90887-2">
-                        <img src="static/temp/peo3.jpg" alt="高档弹性雪纺面料90887-2" title="高档弹性雪纺面料90887-2"/>
-                        <span><em>50S支平纹棉针织上衣面料6001</em><strong>￥119.00</strong></span>
-                    </a>
-                </li>
+EOF;
+} ?>
             </ul>
         </div>
         <!-- 最热 end ]] -->
@@ -139,15 +47,8 @@
             </div>
             <div class="new-pro-r">
                 <ul class="clearfix">
-					<?php foreach($data['list']['zz']['list'] as $v){ ?>
+		<?php foreach($data['list']['zz']['list'] as $v){ ?>
                     <li>
-					<!--
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" title="<?=$v['name']?>">
-                                <img src="<?=oo::cfg('common.imgurl').$v['img_product']?>" alt="<?=$v['name']?> title="<?=$v['name']?>" />
-                            </a>
-                        </div>
-						-->
                         <a href="<?=NFS::url('product')?>" title="<?=$v['name']?>">
                             <img src="<?=oo::cfg('common.imgurl').$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
                             <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
@@ -163,21 +64,14 @@
             </div>
             <div class="new-pro-r">
                 <ul class="clearfix">
-					<?php foreach($data['list']['sz']['list'] as $v){ ?>
+		<?php foreach($data['list']['sz']['list'] as $v){ ?>
                     <li>
-					<!--
-                        <div class="bg">
-                            <a href="<?=NFS::url('product')?>" title="<?=$v['name']?>">
-                                <img src="<?=oo::cfg('common.imgurl').$v['img_product']?>" alt="<?=$v['name']?> title="<?=$v['name']?>" />
-                            </a>
-                        </div>
-						-->
                         <a href="<?=NFS::url('product')?>" target="_blank" title="<?=$v['name']?>">
                             <img src="<?=oo::cfg('common.imgurl').$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
                             <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
                         </a>
                     </li>
-					<?php } ?>
+		<?php } ?>
                 </ul>
             </div>
         </div>
@@ -252,32 +146,24 @@
            <div class="m_zjr fl">
                <dl>
                    <dt>销售团队</dt>
-                   <dd>：作为布讯的销售员，我感到骄傲，我们用心服务每一个客户</dd>
+                   <dd>作为布讯的销售员，我感到骄傲，我们用心服务每一个客户</dd>
                </dl>
                <dl>
                    <dt>研发团队</dt>
-                   <dd>：我们很辛苦，但是我们是累并快乐着，看着客户认可我们研的面料，我感到无比的欣慰和自豪</dd>
+                   <dd>我们很辛苦，但是我们是累并快乐着，看着客户认可我们研的面料，我感到无比的欣慰和自豪</dd>
                </dl>
                <dl>
                    <dt>印花团队</dt>
-                   <dd>：我们精确的描绘出最美丽的花型，给您提升品牌价值</dd>
+                   <dd>我们精确的描绘出最美丽的花型，给您提升品牌价值</dd>
                </dl>
                <dl>
                    <dt>生产团队</dt>
-                   <dd>：我们肩负着品质的使命，我们任劳任怨，只要您满意就是对我们最大的认可</dd>
+                   <dd>我们肩负着品质的使命，我们任劳任怨，只要您满意就是对我们最大的认可</dd>
                </dl>
                <dl>
                    <dt>仓储团队</dt>
-                   <dd>：我们严格把控发出去的每米面料。采用一级包装，让客户无忧收货</dd>
+                   <dd>我们严格把控发出去的每米面料。采用一级包装，让客户无忧收货</dd>
                </dl>
            </div>
        </div>
-       <!-- 走进布讯 end -->
-       <div class="footer">
-          <p><a href="">关于我们</a>|<a href="">联系我们</a>|<a href="">合作伙伴</a></p>
-       </div>
-
-        <script type="text/javascript" src="static/js/jquery.js"></script>
-        <script type="text/javascript" src="static/js/index.js"></script>
-    </body>
-</html>
+<?php view::display('footer');?>

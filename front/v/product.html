@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>布讯-最专业的布料批发</title>
-    <meta name="keywords" content="最专业的布料批发"/>
-    <meta name="description" content="布讯,布料批发,女装面料,纺织面料,针织面料,梭织面料,复合面料,风衣面料,连衣裙面料"/>
-
-    <link href="static/css/global.css" rel="stylesheet" type="text/css"/>
-    <link href="static/css/other.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-    <div class="header">
-        <h1>
-            <a href="/" title=""><img src="static/images/logo.png" alt="" title="布讯"/></a>
-        </h1>
-        <h2>
-            专业的布料批发平台 <span>连衣裙面料 小西服面料 风衣/外套面料</span>
-        </h2>
-    </div>
+<?php view::display('header');?>
     <!-- product details[[ -->
     <div class="wrapper">
         <div class="pro_curmbs">
@@ -286,23 +267,4 @@
 
     </div>
     <!-- product details]] -->
-
-    <div class="footer">
-        <p><a href="">关于我们</a>|<a href="">联系我们</a>|<a href="">合作伙伴</a></p>
-    </div>
-
-    <script type="text/javascript" src="static/js/jquery.js"></script>
-    <script type="text/javascript" src="static/js/zoom.js"></script>
-    <!--<script>-->
-        <!--$(document).ready(function(){-->
-
-            <!--$(".slideMain ul li").click(function(index){-->
-                <!--var index = $(this).index()-->
-                <!--var chkImg = $(".slideMain ul li img").eq(index).attr("src");-->
-                <!--$(".zoom img").attr("src",chkImg);-->
-            <!--})-->
-        <!--})-->
-
-    <!--</script>-->
-</body>
-</html>
+<?php view::display('footer');?>
