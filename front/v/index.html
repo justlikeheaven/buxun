@@ -2,6 +2,7 @@
 view::display('header');
 $imgurl = oo::cfg('common.imgurl');
 ?>
+<link href="static/css/index.css" rel="stylesheet" type="text/css"/>
         <div class="ban_bg" style="height:400px; width:100%;" id="flashs">
             <a href='<?=NFS::url('product')?>' target="_blank" title="">
                 <div title="" src="static/temp/banner1.jpg" alt="" class="bgitem" id="flashbg0" style="height:400px; width: 100%; margin:auto;"></div>
@@ -169,4 +170,8 @@ EOF;
                </dl>
            </div>
        </div>
+       
 <?php view::display('footer');?>
+<script type="text/javascript" src="static/js/index.js"></script>
+</body>
+</html>
