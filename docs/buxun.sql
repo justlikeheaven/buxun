@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 年 08 月 24 日 20:16
+-- 生成日期: 2015 年 08 月 25 日 17:48
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.4.7
 
@@ -19,6 +19,21 @@ SET time_zone = "+00:00";
 --
 -- 数据库: `buxun`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `banner`
+--
+
+DROP TABLE IF EXISTS `banner`;
+CREATE TABLE IF NOT EXISTS `banner` (
+  `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `href` varchar(100) NOT NULL COMMENT '链接',
+  `img` varchar(50) NOT NULL COMMENT '图片地址',
+  `desc` varchar(50) NOT NULL DEFAULT '' COMMENT '描述',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='banner';
 
 -- --------------------------------------------------------
 
@@ -40,6 +55,25 @@ CREATE TABLE IF NOT EXISTS `product` (
   `mtime` int(10) NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='布料';
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `product_detail`
+--
+
+DROP TABLE IF EXISTS `product_detail`;
+CREATE TABLE IF NOT EXISTS `product_detail` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `product_id` int(10) unsigned NOT NULL COMMENT '商品id',
+  `chengfen` varchar(50) NOT NULL DEFAULT '' COMMENT '成分及含量',
+  `fukuan` varchar(50) NOT NULL DEFAULT '' COMMENT '幅宽',
+  `kezhong` varchar(50) NOT NULL DEFAULT '' COMMENT '克重',
+  `yongtu` varchar(50) NOT NULL DEFAULT '' COMMENT '主要用途',
+  `huohao` varchar(50) NOT NULL DEFAULT '' COMMENT '货号',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `product_id` (`product_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='商品详情';
 
 -- --------------------------------------------------------
 
@@ -68,6 +102,8 @@ CREATE TABLE IF NOT EXISTS `seller` (
   `name` varchar(100) NOT NULL COMMENT '名称',
   `desc` text NOT NULL COMMENT '描述',
   `img` varchar(100) NOT NULL COMMENT '商家图片',
+  `address` varchar(200) NOT NULL DEFAULT '' COMMENT '地址',
+  `tel` varchar(20) NOT NULL DEFAULT '' COMMENT '电话',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='商家';
 

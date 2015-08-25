@@ -18,7 +18,7 @@ class controller_form extends controller {
 		$total = oo::m()->count();
 		$page = $this->req('page');
 		pager::init($page, $total);
-		$list = oo::m()->limit(pager::$start, pager::$num)->getall();
+		$list = oo::m()->limit(pager::$start, pager::$num)->orderby('id desc')->getall();
 		method_exists($this, 'after_get') && $this->after_get($list);
 		$this->assign('pager', pager::get());
 		$this->assign('list', $list);
@@ -46,10 +46,12 @@ class controller_form extends controller {
 		$odata = $data;
 		method_exists($this, 'before_post') && $this->before_post($data);
 		if($this->id){ //编辑
+			method_exists($this, 'before_update') && $this->before_update($data);
 			if(oo::m()->where(array('id'=>$this->id))->update($data)){
 				$msg = "提交成功";
 			}
 		}else{ //添加
+			method_exists($this, 'before_insert') && $this->before_insert($data);
 			if($this->id = oo::m()->insert($data)){
 				$msg = "提交成功";
 			}
@@ -65,7 +67,7 @@ class controller_form extends controller {
 		$res = array();
 		if($this->id){ //编辑
 			$res = oo::m()->where(array('id'=>$this->id))->get();
-			method_exists($this, 'before_add') && $this->before_edit($res);
+			method_exists($this, 'before_edit') && $this->before_edit($res);
 		}
 		method_exists($this, 'before_add') && $this->before_add($res);
 		$this->assign('res', $res);
@@ -108,7 +110,7 @@ class controller_form extends controller {
 		if($upload['error']){
 			echo -1;
 		}else if($upload['success']){
-			$url = APP_URL.$dir.$upload['success'][0];
+			$url = IMG_URL.$dir.$upload['success'][0];
 			$fn = $this->req('CKEditorFuncNum');
 			echo "<script>window.parent.CKEDITOR.tools.callFunction('{$fn}', '{$url}');</script>";
 		}else{

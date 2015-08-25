@@ -14,17 +14,11 @@ class request extends component {
 	 */
 	public static function param($name, $default=null, $callback=null, $type='REQUEST'){
 		eval("\$res = \$_{$type}[{$name}];");
+		$callback && $res = call_user_func($callback, $res);
 		if($res){
 			return $res;
 		}else if($default){
 			return $default;
-		}else if( is_array($callback) && !empty($callback) ){
-			$call = array(array(), array());
-			$callback[0] && $call[0] = $callback[0];
-			$callback[1] && $call[1] = $callback[1];
-			return call_user_func_array($call[0], $call[1]);
-		}else{
-			return $res;
 		}
 	}
 	

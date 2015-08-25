@@ -4,12 +4,11 @@ $imgurl = oo::cfg('common.imgurl');
 ?>
 <link href="static/css/index.css" rel="stylesheet" type="text/css"/>
         <div class="ban_bg" style="height:400px; width:100%;" id="flashs">
-            <a href='<?=NFS::url('product')?>' target="_blank" title="">
-                <div title="" src="static/temp/banner1.jpg" alt="" class="bgitem" id="flashbg0" style="height:400px; width: 100%; margin:auto;"></div>
+			<?php foreach($data['banner'] as $v){ ?>
+            <a href='<?=$v['href']?>' title="<?=$v['desc']?>">
+                <div title="" src="<?=$imgurl.$v['img']?>" alt="" class="bgitem" id="flashbg0" style="height:400px; width: 100%; margin:auto;"></div>
             </a>
-            <a href='<?=NFS::url('product')?>' target="_blank" title="">
-                <div title="" src="static/temp/banner2.jpg" alt="" class="bgitem" id="flashbg1" style="height:400px; width: 100%; margin:auto;"></div>
-            </a>
+            <?php } ?>
         </div>
         <!-- 最热 start [[ -->
         <div class="area-title clearfix">
@@ -20,7 +19,7 @@ $imgurl = oo::cfg('common.imgurl');
             <ul class="clearifx">
 	<?php
 	foreach($data['hot'] as $v){
-		$href = NFS::url('product');
+		$href = NFS::url('product', array('id'=>$v['id']));
 		echo <<<EOF
                 <li>
                     <div class="bg">
@@ -42,7 +41,7 @@ EOF;
         <!-- 最新 start [[ -->
         <div class="area-title clearfix">
             <h2 class="fl"><i>2F</i>最新</h2>
-            <a href="<?=NFS::url('product')?>">更多&gt;&gt;</a>
+            <a href="<?=NFS::url('product.list')?>">更多&gt;&gt;</a>
         </div>
         <div class="new-pro content clearfix"><!-- 针织 -->
             <div class="new-pro-l">
@@ -53,7 +52,7 @@ EOF;
                 <ul class="clearfix">
 		<?php foreach($data['list']['zz']['list'] as $v){ ?>
                     <li>
-                        <a href="<?=NFS::url('product')?>" title="<?=$v['name']?>">
+                        <a href="<?=NFS::url('product', array('id'=>$v['id']))?>" title="<?=$v['name']?>">
                             <img src="<?=$imgurl.$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
                             <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
                         </a>
@@ -70,7 +69,7 @@ EOF;
                 <ul class="clearfix">
 		<?php foreach($data['list']['sz']['list'] as $v){ ?>
                     <li>
-                        <a href="<?=NFS::url('product')?>" target="_blank" title="<?=$v['name']?>">
+                        <a href="<?=NFS::url('product', array('id'=>$v['id']))?>" title="<?=$v['name']?>">
                             <img src="<?=$imgurl.$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
                             <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
                         </a>
@@ -84,7 +83,7 @@ EOF;
         <!-- 推荐商家 start -->
         <div class="area-title clearfix">
             <h2 class="fl"><i>3F</i>推荐商家</h2>
-            <a href="<?=NFS::url('product')?>">更多&gt;&gt;</a>
+            <a href="<?=NFS::url('seller.list')?>">更多&gt;&gt;</a>
         </div>
 
         <div class="content link">
@@ -132,7 +131,7 @@ EOF;
        <!-- 走进布讯 start -->
        <div class="area-title clearfix">
            <h2 class="fl"><i>4F</i>走进布讯</h2>
-           <a href="<?=NFS::url('product')?>">更多&gt;&gt;</a>
+           
        </div>
        <div class="content clearfix">
            <div class="m_zjimg fl">
@@ -172,6 +171,6 @@ EOF;
        </div>
        
 <?php view::display('footer');?>
-<script type="text/javascript" src="static/js/index.js"></script>
+<script type="text/javascript" src="/static/js/index.js"></script>
 </body>
 </html>

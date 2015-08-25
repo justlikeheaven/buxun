@@ -9,7 +9,9 @@ class product_c extends controller_form  {
 	}
 	
 	protected function before_edit(&$res){
-		$res['hot'] = oo::m('product_hot')->where(array('product_id'=>$this->id, 'hot'=>1))->count() ? 1 : 0;	
+		$res['hot'] = oo::m('product_hot')->where(array('product_id'=>$this->id, 'hot'=>1))->count() ? 1 : 0;
+		$product_detail = oo::m('product_detail')->where(array('product_id'=>$this->id))->get();
+		$res = array_merge($res, $product_detail)	;
 	}
 	
 	protected function after_get(&$list){
@@ -36,14 +38,24 @@ class product_c extends controller_form  {
 			}
 		}
 		
-
-		unset($data['hot']);
+		$unset_fields = array('hot', 'chengfen', 'fukuan', 'kezhong', 'yongtu', 'huohao');
+		foreach ($unset_fields as $v){
+			unset($data[$v]);
+		}
+		
 	}
-	
+
 	protected function after_post(&$data){
 		$hot = intval($data['hot']) ? 1 : 0;
 		$sql = "INSERT INTO #table (`product_id`, `hot`) VALUES ({$this->id}, {$hot}) ON DUPLICATE KEY UPDATE `hot`={$hot}";
 		oo::m('product_hot')->execute($sql);
+		
+		
+		$sql = "INSERT INTO #table (`product_id`, `chengfen`, `fukuan`, `kezhong`, `yongtu`, `huohao`) VALUES 
+		({$this->id}, '{$data['chengfen']}', '{$data['fukuan']}', '{$data['kezhong']}', '{$data['yongtu']}', '{$data['huohao']}') 
+		ON DUPLICATE KEY UPDATE `chengfen`='{$data['chengfen']}', `fukuan`='{$data['fukuan']}',
+		`kezhong`='{$data['kezhong']}', `yongtu`='{$data['yongtu']}',`huohao`='{$data['huohao']}'";
+		oo::m('product_detail')->execute($sql);
 	}
 }
 

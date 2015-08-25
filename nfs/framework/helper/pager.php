@@ -34,7 +34,7 @@ EOF;
 			<li><a href="?{$prev_href}">&lt;</a></li>
 EOF;
 
-			for($i=1;$i<self::$page;$i++){
+			for($i=1;$i<self::$last;$i++){
 				$request['page'] = $i;
 				$head_href = http_build_query($request);
 				$head.=<<<EOF
@@ -49,7 +49,7 @@ EOF;
 		<li><a href="#" class="active">{$curpage}</a></li>
 EOF;
 		if(self::$page<self::$last){
-			for($i=self::$page+1;$i<=self::$total;$i++){
+			for($i=self::$page+1;$i<=self::$last;$i++){
 				$request['page'] = $i;
 				$foot_href = http_build_query($request);
 				$foot.=<<<EOF

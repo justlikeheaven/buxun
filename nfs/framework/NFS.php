@@ -138,10 +138,12 @@ class NFS{
 		*/
 	}
 	
-    public static function url($c='', $a=''){
+    public static function url($path='', $params=array()){
+    	list($c, $a) = explode('.', $path);
     	empty($c) && $c = NFS::$controller;
     	$res = APP_URL."?".CONTROLLER_PARAM."=".$c;
     	!empty($a) && $res.='&'.ACTION_PARAM."=".$a;
+    	is_array($params) && !empty($params) && $res .= '&'.http_build_query($params);
     	return $res;
     }
    

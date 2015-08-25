@@ -5,6 +5,10 @@ class index_c extends controller{
 	}
 
 	public function index(){
+		//banner
+		$banner = oo::m('banner')->getall();
+		$this->assign('banner', $banner);
+		
 		//获取最热
 		$hot = db::getall("SELECT * FROM `product_hot` AS ph, `product` AS p WHERE ph.product_id=p.id AND ph.hot=1");
 		$this->assign('hot', $hot);

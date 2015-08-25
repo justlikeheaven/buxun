@@ -1,4 +1,7 @@
-<?php view::display('header');?>
+<?php
+view::display('header');
+$ctl = NFS::$controller;
+?>
     <div class="content">
         <div class="header">
             <h1 class="page-title"><?=$data['form']['desc']?></h1>
@@ -38,8 +41,8 @@
       <td><?php echo $v[$field];?></td>
 	  <?php } ?>
       <td>
-          <a href="<?=NFS::url('', 'add').'&id='.$v['id']?>"><i class="fa fa-pencil"></i></a>
-          <a href="<?=NFS::url('', 'delete').'&id='.$v['id']?>"><i class="fa fa-trash-o"></i></a>
+          <a href="<?=NFS::url("{$ctl}.add").'&id='.$v['id']?>"><i class="fa fa-pencil"></i></a>
+          <a href="<?=NFS::url("{$ctl}.delete").'&id='.$v['id']?>"><i class="fa fa-trash-o"></i></a>
       </td>
     </tr>
     <?php } ?>
