@@ -54,16 +54,17 @@ $imgurl = oo::cfg('common.imgurl');
                           产品分类： <span>雪纺、乱麻、弹性丝系列</span>
                       </div> -->
                       <div class="pd_short">
-                          成分及含量：<?=$data['res']['chengfen']?><br/>
-                          幅宽：<?=$data['res']['fukuan']?><br/>
-                          克重：<?=$data['res']['kezhong']?><br/>
-                          主要用途：<?=$data['res']['yongtu']?><br/>
-                          货号：<?=$data['res']['huohao']?><br/>
-						  <?=$data['res']['depot_address'] ? "仓库地址：{$data['res']['depot_address']}" : ""?><br/>
-						  <?=$data['res']['shop_address'] ? "门市地址：{$data['res']['shop_address']}" : ""?><br/>
-						  <?=$data['res']['tel'] ? "门市电话：{$data['res']['tel']}" : ""?><br/>
-						  <?=$data['res']['mobile'] ? "手机号码：{$data['res']['mobile']}" : ""?><br/>
-						  <?=$data['res']['price'] ? "参考价：{$data['res']['price']}" : ""?><br/>
+ 						  <?=$data['res']['chengfen'] ? "成分及含量：{$data['res']['chengfen']}<br/>" : ""?>
+						  <?=$data['res']['fukuan'] ? "幅宽：{$data['res']['fukuan']}<br/>" : ""?>
+						  <?=$data['res']['kezhong'] ? "克重：{$data['res']['kezhong']}<br/>" : ""?>
+						  <?=$data['res']['yongtu'] ? "主要用途：{$data['res']['yongtu']}<br/>" : ""?>
+						  <?=$data['res']['huohao'] ? "货号：{$data['res']['huohao']}<br/>" : ""?>
+						  <?=$data['res']['depot_address'] ? "仓库地址：{$data['res']['depot_address']}<br/>" : ""?>
+						  <?=$data['res']['shop_address'] ? "门市地址：{$data['res']['shop_address']}<br/>" : ""?>
+						  <?=$data['res']['tel'] ? "门市电话：{$data['res']['tel']}<br/>" : ""?>
+						  <?=$data['res']['mobile'] ? "手机号码：{$data['res']['mobile']}<br/>" : ""?>
+						  <?=$data['res']['fax'] ? "传真：{$data['res']['fax']}<br/>" : ""?>
+						  <?=$data['res']['price'] ? "参考价：{$data['res']['price']}<br/>" : ""?>
                       </div>
                   </div>
                 </div>
