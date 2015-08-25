@@ -2,6 +2,7 @@
 class product_c extends controller{
 	public function index(){
 		$id = $this->req('id', 0, 'intval');
+		if(!$id) $this->redirect('index');
 		$res = oo::m()->where(array('id'=>$id))->get();
 		$product_detail = oo::m('product_detail')->where(array('product_id'=>$id))->get();
 		if(is_array($product_detail)){

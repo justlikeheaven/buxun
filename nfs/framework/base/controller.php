@@ -19,4 +19,14 @@ class controller extends component{
 	protected function json($array){
     		return oo::base('request')->json($array, 'encode', 1);
     	}
+    	
+    	protected function redirect($path){
+    		list($c, $a) = explode('.', $path);
+    		empty($c) && die('redirect error');
+    		
+    		$url = APP_URL."?".CONTROLLER_PARAM."=".$c;
+    		!empty($a) && $url.='&'.ACTION_PARAM."=".$a;
+    		header("Location:{$url}");
+    		exit;
+    	}
 }
