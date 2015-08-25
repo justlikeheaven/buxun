@@ -16,8 +16,10 @@ return array(
 		'fields'=>array(
 			'name'=>array('type'=>'text', 'str'=>'名称'),
 			'desc'=>array('type'=>'textarea', 'str'=>'描述'),
-			'address'=>array('type'=>'textarea', 'str'=>'地址'),
-			'tel'=>array('type'=>'text', 'str'=>'电话'),
+			'shop_address'=>array('type'=>'textarea', 'str'=>'门市地址'),
+			'depot_address'=>array('type'=>'textarea', 'str'=>'仓库地址'),
+			'tel'=>array('type'=>'text', 'str'=>'门市电话'),
+			'mobile'=>array('type'=>'text', 'str'=>'手机号码'),
 			'img'=>array('type'=>'file', 'str'=>'logo', 'hide'=>'list'),
 		),
 	),
