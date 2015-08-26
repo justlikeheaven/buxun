@@ -1,10 +1,13 @@
-<?php view::display('header');?>
+<?php
+view::display('header');
+$ctl = NFS::$controller;
+?>
     <div class="content">
         <div class="header">
             <h1 class="page-title"><?=$data['form']['desc']?></h1>
             <ul class="breadcrumb">
 				<li><a href="/">主页</a> </li>
-				<li><a href="<?php echo NFS::url('seller')?>"><?=$data['form']['desc']?></a> </li>
+				<li><a href="<?php echo NFS::url()?>"><?=$data['form']['desc']?></a> </li>
 				<li class="active">添加</li>
 			</ul>
         </div>
@@ -51,7 +54,7 @@ EOF;
 				<script src="/static/base/plug/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
 				<link rel="stylesheet" type="text/css" href="/static/base/plug/uploadify/uploadify.css">
 EOF;
-				$upload_url = NFS::url('', 'upload');
+				$upload_url = NFS::url("{$ctl}.upload");
 				if(!empty($data['res'][$field])){
 					$imgs = explode(',', $data['res'][$field]);
 					foreach($imgs as $v){
@@ -95,7 +98,7 @@ EOF;
 				</script>
 EOF;
 			}else if($info['type']=='editor'){
-				$upload_url = NFS::url('', 'ckupload');
+				$upload_url = NFS::url("{$ctl}.ckupload");
 				$input = <<<EOF
 				<script src="/static/base/plug/ckeditor/ckeditor.js"></script>
 				<textarea id="editor_{$field}"  name="{$field}" >{$data['res'][$field]}</textarea>
