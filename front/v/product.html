@@ -9,7 +9,7 @@ $imgurl = oo::cfg('common.imgurl');
         <div class="pro_curmbs">
             <span>当前位置：</span>
             <a href="/" title="首页">首页</a>&gt;&gt;
-            <span><?=$data['res']['name']?></span>
+            <span><?=$data['res']['product']['name']?></span>
         </div>
         -->
         <div class="clearfix">
@@ -17,7 +17,7 @@ $imgurl = oo::cfg('common.imgurl');
                 <div class="clearfix">
                   <div class="ZoomMain">
                       <div class="zoom">
-                          <img width="390" height="390" src="<?=$imgurl.$data['res']['img_model'];?>" />
+                          <img width="390" height="390" src="<?=$imgurl.$data['res']['product']['img_model'];?>" />
                       </div>
                       <!-- 如果只有一张小图 则隐藏这个div [[ -->
 					  <!--
@@ -49,22 +49,22 @@ $imgurl = oo::cfg('common.imgurl');
                   </div>
 
                   <div class="propar">
-                      <h4 class="corange"> <?=$data['res']['name']?></h4>
+                      <h4 class="corange"> <?=$data['res']['product']['name']?></h4>
                       <!-- <div class="pd_columns">
                           产品分类： <span>雪纺、乱麻、弹性丝系列</span>
                       </div> -->
                       <div class="pd_short">
- 						  <?=$data['res']['chengfen'] ? "成分及含量：{$data['res']['chengfen']}<br/>" : ""?>
-						  <?=$data['res']['fukuan'] ? "幅宽：{$data['res']['fukuan']}<br/>" : ""?>
-						  <?=$data['res']['kezhong'] ? "克重：{$data['res']['kezhong']}<br/>" : ""?>
-						  <?=$data['res']['yongtu'] ? "主要用途：{$data['res']['yongtu']}<br/>" : ""?>
-						  <?=$data['res']['huohao'] ? "货号：{$data['res']['huohao']}<br/>" : ""?>
-						  <?=$data['res']['depot_address'] ? "仓库地址：{$data['res']['depot_address']}<br/>" : ""?>
-						  <?=$data['res']['shop_address'] ? "门市地址：{$data['res']['shop_address']}<br/>" : ""?>
-						  <?=$data['res']['tel'] ? "门市电话：{$data['res']['tel']}<br/>" : ""?>
-						  <?=$data['res']['mobile'] ? "手机号码：{$data['res']['mobile']}<br/>" : ""?>
-						  <?=$data['res']['fax'] ? "传真：{$data['res']['fax']}<br/>" : ""?>
-						  <?=$data['res']['price'] ? "参考价：{$data['res']['price']}<br/>" : ""?>
+ 						  <?=$data['res']['product']['chengfen'] ? "成分及含量：{$data['res']['product']['chengfen']}<br/>" : ""?>
+						  <?=$data['res']['product']['fukuan'] ? "幅宽：{$data['res']['product']['fukuan']}<br/>" : ""?>
+						  <?=$data['res']['product']['kezhong'] ? "克重：{$data['res']['product']['kezhong']}<br/>" : ""?>
+						  <?=$data['res']['product']['yongtu'] ? "主要用途：{$data['res']['product']['yongtu']}<br/>" : ""?>
+						  <?=$data['res']['product']['huohao'] ? "货号：{$data['res']['product']['huohao']}<br/>" : ""?>
+						  <?=$data['res']['seller']['depot_address'] ? "仓库地址：{$data['res']['seller']['depot_address']}<br/>" : ""?>
+						  <?=$data['res']['seller']['shop_address'] ? "门市地址：{$data['res']['seller']['shop_address']}<br/>" : ""?>
+						  <?=$data['res']['seller']['tel'] ? "门市电话：{$data['res']['seller']['tel']}<br/>" : ""?>
+						  <?=$data['res']['seller']['mobile'] ? "手机号码：{$data['res']['seller']['mobile']}<br/>" : ""?>
+						  <?=$data['res']['seller']['fax'] ? "传真：{$data['res']['seller']['fax']}<br/>" : ""?>
+						  <?=$data['res']['product']['price'] ? "参考价：{$data['res']['product']['price']}<br/>" : ""?>
                       </div>
                   </div>
                 </div>
@@ -74,7 +74,7 @@ $imgurl = oo::cfg('common.imgurl');
 					  <p style="color: #99235f;font-size: 24px;font-weight: bold;padding: 12px 0 5px 0;margin: 0;"> 面料展示</p>
 					  <p style="margin: 0;color: #5b5b5b;font-weight: bold;font-size: 16px;">WHOLESALE FABRIC DISPLAY</p>
 				  </div>
-				  <?=$data['res']['desc']?>
+				  <?=$data['res']['product']['desc']?>
 				  <?php view::display('product_notice');?>
                 </div>
             </div>
