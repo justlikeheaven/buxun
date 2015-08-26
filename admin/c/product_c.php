@@ -11,7 +11,7 @@ class product_c extends controller_form  {
 	protected function before_edit(&$res){
 		$res['hot'] = oo::m('product_hot')->where(array('product_id'=>$this->id, 'hot'=>1))->count() ? 1 : 0;
 		$product_detail = oo::m('product_detail')->where(array('product_id'=>$this->id))->get();
-		$res = array_merge($res, $product_detail)	;
+		is_array($product_detail) && $res = array_merge($res, $product_detail)	;
 	}
 	
 	protected function after_get(&$list){

@@ -47,7 +47,6 @@ class controller_form extends controller {
 		method_exists($this, 'before_post') && $this->before_post($data);
 		if($this->id){ //编辑
 			method_exists($this, 'before_update') && $this->before_update($data);
-			var_dump($data);exit;
 			if(oo::m()->where(array('id'=>$this->id))->update($data)){
 				$msg = "提交成功";
 			}
