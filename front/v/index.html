@@ -13,7 +13,7 @@ $imgurl = oo::cfg('common.imgurl');
         <!-- 最热 start [[ -->
         <div class="area-title clearfix">
             <h2 class="fl"><i>1F</i>最热</h2>
-            <a href="<?=NFS::url('product')?>">更多&gt;&gt;</a>
+            <!-- <a href="<?=NFS::url('product')?>">更多&gt;&gt;</a> -->
         </div>
         <div class="hot-pro content">
             <ul class="clearifx">
@@ -41,7 +41,7 @@ EOF;
         <!-- 最新 start [[ -->
         <div class="area-title clearfix">
             <h2 class="fl"><i>2F</i>最新</h2>
-            <a href="<?=NFS::url('product.list')?>">更多&gt;&gt;</a>
+            <a href="<?=NFS::url('list')?>">更多&gt;&gt;</a>
         </div>
         <div class="new-pro content clearfix"><!-- 针织 -->
             <div class="new-pro-l">
@@ -83,7 +83,7 @@ EOF;
         <!-- 推荐商家 start -->
         <div class="area-title clearfix">
             <h2 class="fl"><i>3F</i>推荐商家</h2>
-            <a href="<?=NFS::url('seller.list')?>">更多&gt;&gt;</a>
+            <a href="<?=NFS::url('list', array('cid'=>2))?>">更多&gt;&gt;</a>
         </div>
 
         <div class="content link">
