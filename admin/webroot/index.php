@@ -10,7 +10,7 @@ date_default_timezone_set('Asia/Shanghai');
 
 if(false===strpos($_SERVER['SERVER_NAME'], 'local') && false===strpos($_SERVER['SERVER_NAME'], 'dev')){
 	define('ENV', 'pro');
-	define('IMG_URL', 'http://106.186.118.61:84/');
+	define('IMG_URL', 'http://123.57.92.9:81/');
 	error_reporting(0);
 	ini_set('display_errors', 'Off');
 }else{

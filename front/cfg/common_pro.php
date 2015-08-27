@@ -1,4 +1,4 @@
 <?php
 return array(
-	'imgurl'=>'http://106.186.118.61:84/data/pics/',
+	'imgurl'=>'http://123.57.92.9:81/data/pics/',
 );

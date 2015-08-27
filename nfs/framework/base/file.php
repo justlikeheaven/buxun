@@ -21,7 +21,7 @@ class file{
 	
 	public static function upload($param, $folder, $func=''){
 		if(!is_array($_FILES[$param]) || empty($_FILES[$param])){
-			$res['error'][] = -1;
+			$res['error'] = -1;
 			return $res;
 		}
 		
@@ -37,6 +37,10 @@ class file{
 		}
 
 		self::mkdir($folder);
+		if(!is_writeable($folder)){
+			$res['error'] = -9;
+			return $res;
+		}
 		foreach ($files['tmp_name'] as $k=>$v){
 			//self::parse_error($files[$k]);
 			if(is_uploaded_file($v)){
@@ -51,11 +55,11 @@ class file{
 				if(move_uploaded_file($v, $folder.'/'.$filename)){
 					$res['success'][] = $filename;
 				}else{
-					$res['error'][] = -2;
+					$res['error'] = -2;
 					break;
 				}
 			}else{
-				$res['error'][] =-3;
+				$res['error'] =-3;
 			}
 		}
 		if($res['success'] && !$res['fail']){

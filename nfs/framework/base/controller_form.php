@@ -37,6 +37,8 @@ class controller_form extends controller {
 				$upload = file::upload($field, 'data/pics/');//上传图片
 				if($upload['success']){
 					$data[$field] = $upload['success'][0];
+				}else{
+					$msg = "图片上传失败";
 				}
 			}else{
 				$data[$field] = $this->req($field);
