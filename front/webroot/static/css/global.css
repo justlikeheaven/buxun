@@ -29,7 +29,7 @@ h6 { font-size:10px;}
 a{blr:expression(this.onFocus=this.blur())}/*去掉a标签的虚线框，避免出现奇怪的选中区域*/
 a { color:#666; text-decoration:none;}
 a:focus{outline:0;} /*for*/
-a:hover { text-decoration:underline;}
+a:hover {color: #c81623;}
 
 
 .fl { float:left;}
@@ -42,13 +42,14 @@ a:hover { text-decoration:underline;}
 
 /*头部开始*/
 .header{ height:120px;font-family:"Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53; }
-.header h1{ float:left; padding: 10px 24px 0 0;}
+.header h1{ float:left; padding: 10px 24px 0 0;width: 189px;height: 100px;line-height: 100px;}
 .header h2{ float:left; height:60px; margin:40px 0 0 0; color: #939393; font-size: 18px; font-weight: normal;  padding-left: 16px;}
-.header h2 span{display: block; font-weight: normal;padding-top: 5px;color:#99235f;font-size: 20px;}
+.header h2 span{display: block; font-weight: normal;padding-top: 5px;color:#c81623;font-size: 20px;}
 
 
 .footer{background: #333;color: #fff;width:100%;margin:0 auto;overflow:hidden;text-align: center;padding: 20px 0;margin-top: 20px;}
 .footer a{margin: 0 10px;color: #fff;}
+.footer a:hover{color: #f3f3f3;}
 
 
 .clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}

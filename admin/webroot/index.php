@@ -15,6 +15,7 @@ if(false===strpos($_SERVER['SERVER_NAME'], 'local') && false===strpos($_SERVER['
 	ini_set('display_errors', 'Off');
 }else{
 	define('ENV', 'dev');
+	define('APP_URL', 'http://localhost/buxun/admin/webroot/index.php');
 	define('IMG_URL', 'http://local.admin.buxun.com/');
 	error_reporting(E_ALL ^ E_NOTICE);
 }
