@@ -13,6 +13,7 @@ class login_c extends controller {
 		if(!$query){
 			$this->msg('账号错误');
 		}else if(md5($password.$query['salt']) == $query['password']){
+			
 			$this->redirect('index');
 		}else{
 			$this->msg('密码错误');

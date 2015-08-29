@@ -18,7 +18,7 @@ dev, test, pro自定义环境名称，根据这个读配置文件
 */
 !defined('ENV') && define('ENV', '');
 
-!defined('APP_URL') && define('APP_URL', '/');
+
 //开始时间
 define('TIME', time());
 
@@ -140,7 +140,7 @@ class NFS{
     public static function url($path='', $params=array()){
     	list($c, $a) = explode('.', $path);
     	empty($c) && $c = NFS::$controller;
-    	$res = APP_URL."?".CONTROLLER_PARAM."=".$c;
+    	$res = "?".CONTROLLER_PARAM."=".$c;
     	!empty($a) && $res.='&'.ACTION_PARAM."=".$a;
     	is_array($params) && !empty($params) && $res .= '&'.http_build_query($params);
     	return $res;

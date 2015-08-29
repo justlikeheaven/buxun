@@ -24,7 +24,7 @@ class controller extends component{
     		list($c, $a) = explode('.', $path);
     		empty($c) && die('redirect error');
     		
-    		$url = APP_URL."?".CONTROLLER_PARAM."=".$c;
+    		$url = "?".CONTROLLER_PARAM."=".$c;
     		!empty($a) && $url.='&'.ACTION_PARAM."=".$a;
     		header("Location:{$url}");
     		exit;

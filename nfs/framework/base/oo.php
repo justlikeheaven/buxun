@@ -98,10 +98,10 @@ class oo extends Component {
 			$class = $controller;
 			$c .= APP_DIR.DS;
 		}
-		//自动表单
-		//$form = self::cfg("form.{$class}");
-		$c.=CONTROLLER_FOLDER_NAME.DS.$class.CONTROLLER_EXT;
 		
+		
+		$c.=CONTROLLER_FOLDER_NAME.DS.$class.CONTROLLER_EXT;
+		$form = self::cfg("form.{$class}");//自动表单
 		if($res = self::obj($c)){
 			return $res;
 		}else if($form){
