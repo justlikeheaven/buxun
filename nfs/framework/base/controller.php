@@ -29,4 +29,10 @@ class controller extends component{
     		header("Location:{$url}");
     		exit;
     	}
+    	
+    	protected function msg($msg){
+    		$this->assign('msg', $msg);
+		$this->assign('url', NFS::url());
+		$this->display('msg');
+    	}
 }

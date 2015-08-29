@@ -160,9 +160,6 @@ class oo extends Component {
 			
 		}else if($res = self::helper($class)){
 			
-		}else if(false!==strpos($class, '_c')){
-			$class = substr($class, 0, -2);
-			$res = self::c($class);
 		}
 		return $res;
 	}

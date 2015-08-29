@@ -114,6 +114,7 @@ class model extends component {
 		if($this->sql['where'])	{
 			if(is_array($this->sql['where'])){
 				foreach ($this->sql['where'] as $k=>$v){
+					is_string($v) && $v = "'{$v}'";
 					$cond[] = "`{$k}`={$v}";
 				}
 				$where = implode(' AND ', $cond);

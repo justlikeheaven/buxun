@@ -5,6 +5,7 @@ class controller_form extends controller {
 	protected $m;
 	
 	protected function _init(){
+		
 		$this->id = $this->req('id');
 		if(!$this->form = oo::cfg('form.'.NFS::$controller)){
 			echo 'no '.NFS::$controller.' cfg in form.php';

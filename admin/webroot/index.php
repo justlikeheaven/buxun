@@ -22,8 +22,8 @@ if(false===strpos($_SERVER['SERVER_NAME'], 'local') && false===strpos($_SERVER['
 define('APP_DIR', 'admin');
 define('APP_ROOT', dirname(dirname(__DIR__)).'/');
 require '../../nfs/framework/NFS.php';
-$_SESSION['username']='zz';
 
+file::import(CONTROLLER_ROOT.'base_c.php');
 NFS::run();
 
 
