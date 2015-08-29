@@ -10,9 +10,11 @@ return array(
 		)
 	),
 	'user'=>array(
-		'desc'=>'用户',
+		'desc'=>'安全',
 		'children'=>array(
-			'user'=>'用户管理',
+			'menu'=>'菜单',
+			'admin_group'=>'权限',
+			'admin'=>'管理员',
 		)
 	),
 );

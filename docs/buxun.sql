@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: 127.0.0.1
--- 生成日期: 2015 年 08 月 25 日 17:48
+-- 生成日期: 2015 年 08 月 29 日 06:12
 -- 服务器版本: 5.5.27
 -- PHP 版本: 5.4.7
 
@@ -23,13 +23,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL COMMENT '账号',
+  `password` char(32) NOT NULL COMMENT '密码',
+  `salt` char(6) NOT NULL DEFAULT '' COMMENT '盐值, 用于混淆密码',
+  `groupid` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '组id, 0为超级用户组',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='管理员';
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `banner`
 --
 
 DROP TABLE IF EXISTS `banner`;
 CREATE TABLE IF NOT EXISTS `banner` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
-  `href` varchar(100) NOT NULL COMMENT '链接',
+  `href` varchar(100) NOT NULL DEFAULT '' COMMENT '链接',
   `img` varchar(50) NOT NULL COMMENT '图片地址',
   `desc` varchar(50) NOT NULL DEFAULT '' COMMENT '描述',
   PRIMARY KEY (`id`)
@@ -55,6 +72,21 @@ CREATE TABLE IF NOT EXISTS `product` (
   `mtime` int(10) NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='布料';
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `product_cate`
+--
+
+DROP TABLE IF EXISTS `product_cate`;
+CREATE TABLE IF NOT EXISTS `product_cate` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL COMMENT '名称',
+  `desc` varchar(300) NOT NULL COMMENT '描述',
+  `img` varchar(100) NOT NULL DEFAULT '' COMMENT '图片',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='布料分类';
 
 -- --------------------------------------------------------
 
@@ -101,9 +133,12 @@ CREATE TABLE IF NOT EXISTS `seller` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL COMMENT '名称',
   `desc` text NOT NULL COMMENT '描述',
-  `img` varchar(100) NOT NULL COMMENT '商家图片',
-  `address` varchar(200) NOT NULL DEFAULT '' COMMENT '地址',
-  `tel` varchar(20) NOT NULL DEFAULT '' COMMENT '电话',
+  `img` varchar(100) NOT NULL DEFAULT '' COMMENT '商家图片',
+  `shop_address` varchar(100) NOT NULL DEFAULT '' COMMENT '门市地址',
+  `depot_address` varchar(100) NOT NULL DEFAULT '' COMMENT '仓库地址',
+  `tel` varchar(20) NOT NULL DEFAULT '' COMMENT '门市电话',
+  `mobile` varchar(11) NOT NULL DEFAULT '' COMMENT '手机号码',
+  `fax` varchar(50) NOT NULL DEFAULT '' COMMENT '传真',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='商家';
 

@@ -1,6 +1,7 @@
 <?php
-view::display('header');
 $ctl = NFS::$controller;
+$act = $data['res']['id'] ? 'edit' : 'add';
+view::display('header');
 ?>
     <div class="content">
         <div class="header">
@@ -8,7 +9,7 @@ $ctl = NFS::$controller;
             <ul class="breadcrumb">
 				<li><a href="/">主页</a> </li>
 				<li><a href="<?php echo NFS::url()?>"><?=$data['form']['desc']?></a> </li>
-				<li class="active">添加</li>
+				<li class="active"><?=$act=='edit' ? '编辑': '添加'?></li>
 			</ul>
         </div>
         <div class="main-content">
@@ -20,12 +21,13 @@ $ctl = NFS::$controller;
        <div class="tab-pane active in" id="home">
        <?php
 		foreach($data['form']['fields'] as $field=>$info){
-			if($info['type']=='auto') continue;
+			if($info['type']=='auto' || (is_array($info['hide']) && in_array($act, $info['hide']))) continue;
 			$input = '';
+			$flag = !isset($info['default']) ? '<font color="red">*</font>' : '';
 			$tip = !empty($info['desc']) ? "({$info['desc']})" : '';
 			echo <<<EOF
 			<div class="form-group">
-        				<label>{$info['str']}{$tip}</label>
+        				<label>{$flag}{$info['str']}{$tip}</label>
 EOF;
 			if($info['type']=='text'){
 				$input = <<<EOF
@@ -117,7 +119,7 @@ EOF;
 				$img = '';
 				if(!empty($data['res'][$field])){
 					$img = <<<EOF
-					<div id='{$field}_upload_prew'><img width="100px" height="100px" src="/data/pics/{$data['res'][$field]}" /></div>
+					<div id='{$field}_upload_prew'><img src="/data/pics/{$data['res'][$field]}" /></div>
 EOF;
 				}
 				$input = <<<EOF

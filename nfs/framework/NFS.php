@@ -101,7 +101,6 @@ class NFS{
 		elseif(method_exists($ctl, DEFAULT_ACTION))	$act = DEFAULT_ACTION;
 		else die('error action');
 		self::$action = $act;
-
 		$ctl->$act();
 		
 		/**

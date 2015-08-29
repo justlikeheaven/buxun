@@ -99,8 +99,9 @@ class oo extends Component {
 			$c .= APP_DIR.DS;
 		}
 		//自动表单
-		$form = self::cfg("form.{$class}");
+		//$form = self::cfg("form.{$class}");
 		$c.=CONTROLLER_FOLDER_NAME.DS.$class.CONTROLLER_EXT;
+		
 		if($res = self::obj($c)){
 			return $res;
 		}else if($form){
@@ -154,11 +155,14 @@ class oo extends Component {
 	}
 	
 	public static function autoload($class){
-		
+
 		if($res = self::base($class)){
 			
 		}else if($res = self::helper($class)){
 			
+		}else if(false!==strpos($class, '_c')){
+			$class = substr($class, 0, -2);
+			$res = self::c($class);
 		}
 		return $res;
 	}

@@ -13,7 +13,7 @@ $ctl = NFS::$controller;
         <div class="main-content">
             
 <div class="btn-toolbar list-toolbar">
-    <a href="/?c=<?=NFS::$controller?>&a=add" class="btn btn-primary">添加</a>
+    <a href="/?c=<?=NFS::$controller?>&a=save" class="btn btn-primary">添加</a>
     <!-- <button class="btn btn-default">Import</button> -->
     
   <div class="btn-group">
@@ -23,11 +23,11 @@ $ctl = NFS::$controller;
   <thead>
     <tr>
 	<?php 
-	foreach($data['form']['fields'] as $v){
-		if($v['type']=='hidden' || $v['hide']=='list') continue;
+	foreach($data['form']['fields'] as $info){
+		if($info['type']=='hidden' || (is_array($info['hide']) && in_array('list', $info['hide']))) continue;
 	
 	?>
-      <th><?=$v['str'];?></th>
+      <th><?=$info['str'];?></th>
 	  <?php } ?>
       <th style="width: 3.5em;"></th>
     </tr>
@@ -36,12 +36,12 @@ $ctl = NFS::$controller;
   <?php foreach($data['list'] as $v){ ?>
     <tr>
 	<?php foreach($data['form']['fields'] as $field=>$info){
-		if($info['type']=='hidden' || $info['hide']=='list') continue;
+		if($info['type']=='hidden' || (is_array($info['hide']) && in_array('list', $info['hide']))) continue;
 		?>
       <td><?php echo $v[$field];?></td>
 	  <?php } ?>
       <td>
-          <a href="<?=NFS::url("{$ctl}.add").'&id='.$v['id']?>"><i class="fa fa-pencil"></i></a>
+          <a href="<?=NFS::url("{$ctl}.save").'&id='.$v['id']?>"><i class="fa fa-pencil"></i></a>
           <a href="<?=NFS::url("{$ctl}.delete").'&id='.$v['id']?>"><i class="fa fa-trash-o"></i></a>
       </td>
     </tr>

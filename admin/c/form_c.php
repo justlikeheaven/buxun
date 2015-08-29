@@ -1,18 +1,18 @@
 <?php
-class base_c extends form_c {
+class form_c extends controller_form {
 	protected $result = array('result'=>0, 'msg'=>'error'); 
 	public static $err = array(
 		-1 => '非法请求',
 	);
 	
-	//protected function _init(){
-		//echo 'base init';exit;
+	//public function __construct(){
+		//echo 'init';
 		//$this->_login();
 	//}
 	
 	protected function _login(){
 		if(!$_SESSION['username']){
-			//$this->redirect('index.login');
+			$this->redirect('index.login');
 		}
 	}
 	

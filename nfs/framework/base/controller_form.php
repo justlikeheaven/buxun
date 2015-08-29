@@ -6,11 +6,11 @@ class controller_form extends controller {
 	
 	protected function _init(){
 		$this->id = $this->req('id');
-		if(!$this->form = oo::cfg('form.'.NFS::$controller, null, false)){
+		if(!$this->form = oo::cfg('form.'.NFS::$controller)){
 			echo 'no '.NFS::$controller.' cfg in form.php';
 		}
+		
 		empty($this->form['tpl']) && $this->form['tpl'] = 'form';
-
 		$this->assign('form', $this->form);
 	}
 
@@ -41,7 +41,9 @@ class controller_form extends controller {
 					$msg = "图片上传失败";
 				}
 			}else{
-				$data[$field] = $this->req($field);
+				$value = $this->req($field);
+				$default = isset($info['default']) ? $info['default'] : '';
+				$data[$field] = empty($value) ? $default : $value;
 			}
 		}
 		$msg = "提交失败";
@@ -65,13 +67,15 @@ class controller_form extends controller {
 		$this->display('msg');
 	}
     
-	public function add(){
+	public function save(){
 		$res = array();
 		if($this->id){ //编辑
 			$res = oo::m()->where(array('id'=>$this->id))->get();
 			method_exists($this, 'before_edit') && $this->before_edit($res);
+		}else{
+			method_exists($this, 'before_add') && $this->before_add();
 		}
-		method_exists($this, 'before_add') && $this->before_add($res);
+		method_exists($this, 'before_save') && $this->before_save($res);
 		$this->assign('res', $res);
 		$this->display("{$this->form['tpl']}_save");
 	}

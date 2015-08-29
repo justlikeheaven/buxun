@@ -29,7 +29,7 @@ class product_c extends controller_form  {
 	
 	protected function before_post(&$data){
 		foreach ($this->form['fields'] as $k=>$v){
-			if($v['type']=='img'){
+			if($v['type']=='uploadify'){
 				if(empty($data[$k])){
 					unset($data[$k]);
 				}else{
