@@ -92,8 +92,8 @@ class NFS{
 	public static $cfg;
 	
 	public static function run(){
-		
 		self::$controller = $controller = !empty($_REQUEST[CONTROLLER_PARAM]) ? strtolower($_REQUEST[CONTROLLER_PARAM]) : DEFAULT_CONTROLLER;
+		
 		$ctl = oo::c();
 		$resful = '_'.strtolower($_SERVER['REQUEST_METHOD']);
 		if( ($a=strtolower($_REQUEST[ACTION_PARAM])) && method_exists($ctl, $a) )	$act = $a;

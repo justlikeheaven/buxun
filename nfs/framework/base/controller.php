@@ -22,6 +22,7 @@ class controller extends component{
     	
     	protected function redirect($path){
     		list($c, $a) = explode('.', $path);
+    		
     		empty($c) && die('redirect error');
     		
     		$url = "?".CONTROLLER_PARAM."=".$c;

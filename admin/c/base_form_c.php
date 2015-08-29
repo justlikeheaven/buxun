@@ -4,11 +4,9 @@ class base_form_c extends controller_form {
 	public static $err = array(
 		-1 => '非法请求',
 	);
+	
 	public function __construct(){
-		echo 'base cons';
-	}
-	protected function _init(){
-		echo 'base init.. ';
+		parent::__construct();
 		$this->_login();
 	}
 	

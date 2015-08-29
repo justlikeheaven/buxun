@@ -6,8 +6,7 @@ class base_c extends controller {
 	);
 	
 	protected function _init(){
-		echo 'base init.. ';
-		//$this->_login();
+		$this->_login();
 	}
 	
 	protected function _login(){

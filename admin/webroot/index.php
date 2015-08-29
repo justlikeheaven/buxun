@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * 项目入口文件
  * 
@@ -23,7 +24,4 @@ define('APP_DIR', 'admin');
 define('APP_ROOT', dirname(dirname(__DIR__)).'/');
 require '../../nfs/framework/NFS.php';
 
-file::import(CONTROLLER_ROOT.'base_c.php');
 NFS::run();
-
-

@@ -4,8 +4,7 @@ class controller_form extends controller {
 	protected $form;
 	protected $m;
 	
-	protected function _init(){
-		
+	public function __construct(){
 		$this->id = $this->req('id');
 		if(!$this->form = oo::cfg('form.'.NFS::$controller)){
 			echo 'no '.NFS::$controller.' cfg in form.php';
@@ -16,6 +15,7 @@ class controller_form extends controller {
 	}
 
 	public function _get(){
+
 		$total = oo::m()->count();
 		$page = $this->req('page');
 		pager::init($page, $total);

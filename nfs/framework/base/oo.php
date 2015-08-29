@@ -160,6 +160,8 @@ class oo extends Component {
 			
 		}else if($res = self::helper($class)){
 			
+		}else if(false!==strpos($class, '_c') && $res = self::c(str_replace('_c', '', $class))){
+			return $res;
 		}
 		return $res;
 	}

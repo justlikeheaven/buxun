@@ -5,6 +5,7 @@ class login_c extends controller {
 		$this->display('login');
 	}
 	
+	//登录验证
 	public function login(){
 		$where['username'] = $this->req('username', '', 'trim');
 		
@@ -13,10 +14,17 @@ class login_c extends controller {
 		if(!$query){
 			$this->msg('账号错误');
 		}else if(md5($password.$query['salt']) == $query['password']){
-			
+			$_SESSION['username'] = $query['username'];
 			$this->redirect('index');
 		}else{
 			$this->msg('密码错误');
 		}
+	}
+	
+	//退出系统
+	public function out(){
+		session_unset();
+		session_destroy();
+		$this->redirect('login');
 	}
 }

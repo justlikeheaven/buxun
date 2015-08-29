@@ -1,5 +1,5 @@
 <?php
-class product_c extends controller_form  {
+class product_c extends base_form_c {
 	
 	protected function before_add(&$res){
 		$res['form']['cateid']['list'] = oo::m('product_cate')->fields('id as value, name as str')->getall();
