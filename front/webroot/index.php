@@ -16,7 +16,7 @@ if(false===strpos($_SERVER['SERVER_NAME'], 'local') && false===strpos($_SERVER['
 	define('ENV', 'dev');
 	error_reporting(E_ALL ^ E_NOTICE);
 }
-var_dump(ENV);
+
 define('APP_DIR', 'front');
 define('APP_ROOT', dirname(dirname(__DIR__)).'/');
 require '../../nfs/framework/NFS.php';
