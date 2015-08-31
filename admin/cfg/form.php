@@ -58,8 +58,9 @@ return array(
 	'menu'=>array(
 		'desc'=>'菜单',
 		'fields'=>array(
+			'pid'=>array('type'=>'select', 'str'=>'所属菜单'),
 			'name'=>array('type'=>'text', 'str'=>'名称'),
-			'route'=>array('type'=>'text', 'str'=>'路由', 'desc'=>'eg. product/get'),
+			'route'=>array('type'=>'text', 'str'=>'路由', 'desc'=>'eg. product/get', 'default'=>''),
 		),
 	),
 	'admin_group'=>array(

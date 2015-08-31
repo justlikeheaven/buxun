@@ -82,8 +82,8 @@
 <div class="sidebar-nav">
 <ul>
 <?php
-$menu = oo::cfg('menu', null, 0);
-foreach($menu as $k=>$v){
+
+foreach($data['menu'] as $k=>$v){
 ?>
 
 	<li><a href="#" data-target=".dashboard-menu-<?=$k?>" class="nav-header" data-toggle="collapse"><i class="fa"></i> <?=$v['desc']?><i class="fa fa-collapse"></i></a></li>

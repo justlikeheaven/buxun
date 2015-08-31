@@ -1,5 +1,6 @@
 <?php
 class controller extends component{
+	protected $vars;
 	
 	protected function display($file=''){
 		$data = $this->vars;

@@ -114,8 +114,8 @@ class controller_form extends controller {
 	public function ckupload(){
 		$dir = 'data/pics/';
 		$upload = file::upload('upload', $dir);//上传图片
-		if($upload['error']){
-			echo -1;
+		if(isset($upload['error'])){
+			echo 'upload error '.$upload['error'];
 		}else if($upload['success']){
 			$url = IMG_URL.$dir.$upload['success'][0];
 			$fn = $this->req('CKEditorFuncNum');
