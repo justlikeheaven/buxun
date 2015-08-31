@@ -1,4 +1,4 @@
 <?php
 return array(
-	'imgurl'=>'http://local.admin.buxun.com/data/pics/',
+	'imgurl'=>'http://localhost/buxun/admin/webroot/data/pics/',
 );

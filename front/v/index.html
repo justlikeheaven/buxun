@@ -45,36 +45,40 @@ EOF;
         </div>
         <div class="new-pro content clearfix"><!-- 针织 -->
             <div class="new-pro-l">
-                <img src="static/temp/left.jpg" alt=""/>
+                <img src="<?=$imgurl.$data['list']['sz']['img']?>" alt=""/>
                 <div class="info-tra-right"></div>
             </div>
             <div class="new-pro-r">
                 <ul class="clearfix">
-		<?php foreach($data['list']['zz']['list'] as $v){ ?>
+					<?php if(!empty($data['list']['sz']['list'])){
+						foreach($data['list']['sz']['list'] as $v){
+					?>
                     <li>
                         <a href="<?=NFS::url('product', array('id'=>$v['id']))?>" title="<?=$v['name']?>">
                             <img src="<?=$imgurl.$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
                             <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
                         </a>
                     </li>
-                    <?php } ?>
+		            <?php } }?>
                 </ul>
             </div>
         </div>
         <div class="new-pro content clearfix"><!-- 梭织 -->
             <div class="new-pro-l">
-                <img src="static/temp/left.jpg" alt=""/>
+                <img src="<?=$imgurl.$data['list']['zz']['img']?>" alt=""/>
             </div>
             <div class="new-pro-r">
                 <ul class="clearfix">
-		<?php foreach($data['list']['sz']['list'] as $v){ ?>
+		<?php if(!empty($data['list']['zz']['list'])){
+			foreach($data['list']['zz']['list'] as $v){
+		?>
                     <li>
                         <a href="<?=NFS::url('product', array('id'=>$v['id']))?>" title="<?=$v['name']?>">
                             <img src="<?=$imgurl.$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
                             <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
                         </a>
                     </li>
-		<?php } ?>
+		<?php } } ?>
                 </ul>
             </div>
         </div>

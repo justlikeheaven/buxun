@@ -74,7 +74,7 @@ class controller_form extends controller {
 			$res = oo::m()->where(array('id'=>$this->id))->get();
 			method_exists($this, 'before_edit') && $this->before_edit($res);
 		}else{
-			method_exists($this, 'before_add') && $this->before_add();
+			method_exists($this, 'before_add') && $this->before_add($res);
 		}
 		method_exists($this, 'before_save') && $this->before_save($res);
 		$this->assign('res', $res);
