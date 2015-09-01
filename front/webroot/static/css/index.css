@@ -3,7 +3,7 @@
 /*模块title*/
 .area-title{margin-bottom: 10px;}
 .area-title h2{font-family:"Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53;font-size: 22px;color: #333;font-weight: 100;}
-.area-title h2 i{display: inline-block;font-style: normal;background: url("../images/sprite_floor.png") no-repeat 0 0;vertical-align: middle; width: 21px; line-height: 22px;height: 22px; padding-right: 10px;font-size: 13px; color: #fff; text-align: center; overflow: hidden;margin-right: 10px;}
+.area-title h2 i{display: inline-block;font-style: normal;background: url("../images/sprite_floor.png") no-repeat 0 0;vertical-align: top; width: 21px; line-height: 22px;height: 22px; padding-right: 10px;font-size: 13px; color: #fff; text-align: center; overflow: hidden;margin-right: 10px;}
 .area-title a{float: right;font-size: 13px; margin-top: 20px;}
 
 /*banner*/
