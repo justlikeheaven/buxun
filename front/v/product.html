@@ -2,7 +2,10 @@
 view::display('header');
 $imgurl = oo::cfg('common.imgurl');
 ?>
-<link href="static/css/other.css" rel="stylesheet" type="text/css"/>
+<!-- build:css css/other.css -->
+    <link href="static/dest/css/global.css" rel="stylesheet" type="text/css"/>
+    <link href="static/dest/css/other.css" rel="stylesheet" type="text/css"/>
+<!-- endbuild -->
     <!-- product details[[ -->
     <div class="wrapper">
     <!-- 
@@ -94,6 +97,6 @@ $imgurl = oo::cfg('common.imgurl');
     <!-- product details]] -->
     
 <?php view::display('footer');?>
-<script type="text/javascript" src="static/js/zoom.js"></script>
+<script type="text/javascript" src="static/dest/js/zoom.js?v=20150901"></script>
 </body>
 </html>

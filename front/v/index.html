@@ -2,7 +2,10 @@
 view::display('header');
 $imgurl = oo::cfg('common.imgurl');
 ?>
-<link href="static/css/index.css" rel="stylesheet" type="text/css"/>
+<!-- build:css css/index.css -->
+    <link href="static/dest/css/global.css" rel="stylesheet" type="text/css"/>
+    <link href="static/dest/css/index.css" rel="stylesheet" type="text/css"/>
+<!-- endbuild -->
         <div class="ban_bg" style="height:400px; width:100%;" id="flashs">
 			<?php foreach($data['banner'] as $v){ ?>
             <a href='<?=$v['href']?>' title="<?=$v['desc']?>">
