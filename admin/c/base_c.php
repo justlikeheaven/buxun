@@ -6,6 +6,23 @@ class base_c extends controller {
 	);
 	
 	protected function _init(){
+		$menuquery = oo::m('menu')->getall();
+		/*
+		'base'=>array(
+		'desc'=>'网站设置',
+		'children'=>array(
+			'banner'=>'轮播图',
+			'seller'=>'商家',
+			'product_cate'=>'商品类别',
+			'product'=>'商品',
+		)
+	),
+	*/
+		foreach ($menuquery as $v){
+			if($v['pid'])	$menu[$v['pid']]['children'][$v['route']] = $v['name'];
+			else $menu[$v['id']]['name'] = $v['name'];
+		}
+		$this->assign('menu', $menu);
 		$this->_login();
 	}
 	

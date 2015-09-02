@@ -2,9 +2,9 @@
 function p($vars){
 	$vars = func_get_args();
 	if(count($vars)===1)	$vars = $vars[0];
-	//echo "<pre>";
+	echo "<pre>";
 	var_dump($vars);
-	//echo "</pre>";
+	echo "</pre>";
 }
 
 class func{
