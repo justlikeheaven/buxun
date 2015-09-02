@@ -8,7 +8,7 @@
 header("charset=utf-8"); 
 date_default_timezone_set('Asia/Shanghai');
 
-if(false===strpos($_SERVER['SERVER_NAME'], 'local') && false===strpos($_SERVER['SERVER_NAME'], 'dev')){
+if(false===strpos($_SERVER['SERVER_NAME'], 'local') && false===strpos($_SERVER['SERVER_NAME'], 'dev') && false===strpos($_SERVER['SERVER_NAME'], '192.168')){
 	define('ENV', 'pro');
 	error_reporting(0);
 	ini_set('display_errors', 'Off');
