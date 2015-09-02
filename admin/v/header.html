@@ -82,21 +82,21 @@
 <div class="sidebar-nav">
 <ul>
 <?php
-
+if(is_array($data['menu'])){
 foreach($data['menu'] as $k=>$v){
 ?>
 
-	<li><a href="#" data-target=".dashboard-menu-<?=$k?>" class="nav-header" data-toggle="collapse"><i class="fa"></i> <?=$v['desc']?><i class="fa fa-collapse"></i></a></li>
+	<li><a href="#" data-target=".dashboard-menu-<?=$k?>" class="nav-header" data-toggle="collapse"><i class="fa"></i> <?=$v['name']?><i class="fa fa-collapse"></i></a></li>
 	<li>
 		<ul class="dashboard-menu-<?=$k?> nav nav-list collapse in">
 			<?php
+			if(is_array($v['children'])){
 			foreach($v['children'] as $c=>$n){
 			?>
 			<li <?php if(NFS::$controller==$c) echo 'class="active"';?>><a href="<?=NFS::url($c)?>"><span class="fa fa-caret-right"></span> <?=$n?></a></li>
-			<?php } ?>
+			<?php } } ?>
 		</ul>
 	</li>
-<?php } ?>
-
+<?php } } ?>
 </ul>
 </div>
