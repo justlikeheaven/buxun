@@ -85,7 +85,6 @@
 if(is_array($data['menu'])){
 foreach($data['menu'] as $k=>$v){
 ?>
-
 	<li><a href="#" data-target=".dashboard-menu-<?=$k?>" class="nav-header" data-toggle="collapse"><i class="fa"></i> <?=$v['name']?><i class="fa fa-collapse"></i></a></li>
 	<li>
 		<ul class="dashboard-menu-<?=$k?> nav nav-list collapse in">
@@ -98,6 +97,5 @@ foreach($data['menu'] as $k=>$v){
 		</ul>
 	</li>
 <?php } } ?>
-
 </ul>
 </div>
