@@ -1,12 +1,30 @@
 ﻿@charset "utf-8";
 
 .layout{width: 1000px;margin: 0 auto;}
-.seller-header{background: #880805;padding: 40px 0;}
+.seller-banner{background: url("../temp/seller-banner.jpg") center;height: 606px;border-top: #ccc 1px solid;border-bottom: #ccc 1px solid;}
+.seller-header{background: url("../images/bg-sell-top.png") repeat-x;height: 135px;line-height: 135px;}
+.seller-header .layout{position: relative;}
 .seller-logo{color: #fff;}
+.bg-sell-txt{background: url("../images/bg-sell-txt.png") no-repeat;width: 364px;height: 66px;position: absolute;top: 75px;right: 30px;display: block;}
 .seller-logo img{width: 100px;height: 55px;vertical-align: middle;margin-right: 20px;}
-.seller-show{background: #ececec}
-.recommend-line{ position: relative; padding: 20px 0; text-align: center; }
+.sell-list{background: #fff;}
+.recommend-line{ position: relative; padding: 20px 0; text-align: center;background: #fff; }
 .recommend-line:before, .recommend-line:after{ display: block; position: absolute; top: 28px; width: 44%; content: ""; border-top: 1px solid #c81623; }
-.recommend-line>a{ display: inline-block; font-size: 16px; color: #c81623; }
+.recommend-line>a{ display: inline-block; font-size: 22px;font-weight: 700; color: #c81623; }
 .recommend-line:after{ right: 0; }
 .recommend-line:before{left: 0;}
+.sell-list ul{width: 1100px;}
+.sell-list ul li{width: 300px;float :left;border: #fff 12px solid;background: #fff;margin: 0 14px 14px 0;padding-bottom: 10px;}
+.sell-list ul li img{width: 300px;height: 300px;margin-bottom: 10px;}
+.sell-txt .fl{float: left; width: 154px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;line-height: 28px}
+.sell-price{background: url("../images/btn-buy.png");width: 142px;height: 28px;line-height: 32px;display: inline-block;text-align: right;color: #880805;padding-right: 3px;}
+.bg-hot{background: url("../images/bg-hot.gif");}
+.bg-hot ul li{background: #e0263e;border: #e0263e 12px solid;}
+.bg-hot ul li a{color: #fff;}
+.bg-news{background: url("../images/bg-hot.gif")}
+.bg-news ul li{background: #f2d458;border: #f2d458 12px solid;}
+.bg-news ul li a{color: #333;}
+.seller-about{padding: 20px 0;}
+.seller-about h3{color: #e0263e; font-size: 24px; font-weight: bold; padding: 12px 0; margin: 0;}
+.seller-about img{float: left;margin: 10px 10px 10px 0;border: #f3f3f3 1px solid;padding: 10px;background: #fff;}
+.seller-about p{line-height: 24px; color: #333; margin-top: 10px; text-indent: 2em;}
