@@ -6,6 +6,12 @@ class base_c extends controller {
 	);
 	
 	protected function _init(){
+		$menuquery = oo::m('menu')->getall();
+		foreach ($menuquery as $v){
+			if($v['pid'])	$menu[$v['pid']]['children'][$v['route']] = $v['name'];
+			else $menu[$v['id']]['name'] = $v['name'];
+		}
+		$this->assign('menu', $menu);
 		$this->_login();
 	}
 	
