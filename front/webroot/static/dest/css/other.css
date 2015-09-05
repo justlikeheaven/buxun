@@ -53,3 +53,21 @@
 .littleImg .slideMain ul li { float: left; margin-right: 6px; cursor: pointer; width: 50px; height: 50px; border: 1px solid #dbdbdb; }
 .littleImg .slideMain ul li.selected { border-color: #999; }
 .littleImg .slideMain ul li img { float: left; width: 50px; height: 50px; }
+
+/*page*/
+.hide{display: none!important;}
+.page{text-align: center;}
+.page span{font-size: 14px; vertical-align: middle;}
+.page .btn{display: inline-block;border: #ededed 1px solid; height: 32px;line-height: 32px;width: 68px;cursor: pointer;color: #992360;}
+.page .btn span{float: none;}
+.page .btn i{background-image: url("../images/arrow.png");width: 9px;height: 10px;display: inline-block;margin: 0 3px;}
+.page .num{line-height: 32px;color:#992360;width: 32px; }
+.page .prev i{background-position: 0 0}
+.page .btn .disabled{color: #ccc;}
+.page .prev .disabled i{background-position: -22px 0}
+.page .next .disabled i{background-position: -44px 0}
+.page .next i{background-position: -65px 0}
+.page span{display: inline-block;}
+.page a{display: inline-block;line-height: 32px;border: #ededed 1px solid; height: 32px;width: 32px;text-align: center;cursor: pointer}
+.page span.dot{padding: 0 10px;}
+.page a.current{background: #992360;color: #fff;}
