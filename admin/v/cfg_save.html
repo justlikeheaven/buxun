@@ -1,0 +1,47 @@
+<?php
+include VIEW_ROOT.'header.html';
+$ctl = NFS::$controller;
+$act = $data['res']['id'] ? 'edit' : 'add';
+?>
+    <div class="content">
+        <div class="header">
+            <h1 class="page-title"><?=$data['form']['desc']?></h1>
+            <ul class="breadcrumb">
+				<li><a href="/">主页</a> </li>
+				<li><a href="<?php echo NFS::url()?>"><?=$data['form']['desc']?></a> </li>
+				<li class="active"><?=$act=='edit' ? '编辑': '添加'?></li>
+			</ul>
+        </div>
+        <div class="main-content">
+<div class="row">
+  <div class="col-md-4">
+    <br>
+    <form id="tab" action="<?=NFS::url()?>" method="post" enctype="multipart/form-data">
+    <div id="myTabContent" class="tab-content">
+       <div class="tab-pane active in" id="home">
+		<?php
+		foreach($data['res'] as $k=>$v){
+			echo <<<EOF
+			<div class="form-group">
+        		<label>{$k}</label>
+EOF;
+			$input = <<<EOF
+				<input type="text" value="{$v}" name="{$k}" class="form-control">
+EOF;
+			echo $input;
+			echo '</div>';
+		}
+		
+?>
+      </div>
+    </div>
+
+    <div class="btn-toolbar list-toolbar">
+      <input type="submit" class="btn btn-primary" value="提交" />
+    </div>
+    <input type="hidden" name="id" value="<?=$data['res']['id'];?>" />
+	</form>
+  </div>
+</div>
+<?php view::display('footer');?>
+</body></html>

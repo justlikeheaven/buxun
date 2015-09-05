@@ -1,0 +1,68 @@
+<?php
+include VIEW_ROOT.'header.html';
+$ctl = NFS::$controller;
+?>
+<div class="content">
+	<div class="header">
+		<h1 class="page-title"><?=$data['form']['desc']?></h1>
+		<ul class="breadcrumb">
+			<li><a href="index.php">主页</a> </li>
+			<li class="active"><?=$data['form']['desc']?></li>
+		</ul>
+	</div>
+	<div class="main-content">
+		
+		<div class="btn-toolbar list-toolbar">
+			<a href="?c=<?=NFS::$controller?>&a=save" class="btn btn-primary">添加</a>
+			<!-- <button class="btn btn-default">Import</button> -->
+			
+		  <div class="btn-group">
+		  </div>
+		</div>
+		<table class="table">
+		  <thead>
+			<tr>
+			  <th>名称</th>
+			  <th style="width: 3.5em;"></th>
+			</tr>
+		  </thead>
+		  <tbody>
+		  <?php foreach($data['files'] as $v){ ?>
+			<tr>
+			  <td><?php echo $v;?></td>
+			  <td>
+				  <a href="<?=NFS::url("{$ctl}.save").'&id='.$v?>"><i class="fa fa-pencil"></i></a>
+				  <a href="#myModal" role="button" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+				  
+			  </td>
+			</tr>
+			<?php } ?>
+		  </tbody>
+		</table>
+
+		<ul class="pagination">
+		  <?=$data['pager']?>
+		</ul>
+
+		<div class="modal small fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">注意</h3>
+				</div>
+				<div class="modal-body">
+					<p class="error-text"><i class="fa fa-warning modal-icon"></i>确定不是手抖？<br>没有后悔药买的哦</p>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">取消</button>
+					<a class="btn btn-danger" href="<?=NFS::url("{$ctl}.delete").'&id='.$v?>">确定</a>
+				</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php view::display('footer');?>
+</body>
+</html>

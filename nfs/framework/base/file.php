@@ -95,7 +95,7 @@ class file{
 		$files = array();
 		if(is_dir($dir)) {
 			if($files = scandir($dir)) {
-				$files = array_slice($files,2);
+				$files = array_slice($files, 2);
 			}
 		}
 		return $files;
