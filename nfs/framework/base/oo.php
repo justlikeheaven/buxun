@@ -160,7 +160,9 @@ class oo extends Component {
 			
 		}else if($res = self::helper($class)){
 			
-		}else if(false!==strpos($class, '_c') && $res = self::c(str_replace('_c', '', $class))){
+		}else if(false!==strpos($class, CONTROLLER_EXT) && $res = self::c(str_replace(CONTROLLER_EXT, '', $class))){
+			return $res;
+		}else if(false!==strpos($class, MODEL_EXT) && $res = self::m(str_replace(MODEL_EXT, '', $class))){
 			return $res;
 		}
 		return $res;
