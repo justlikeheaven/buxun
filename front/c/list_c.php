@@ -7,7 +7,9 @@ class list_c extends controller{
 
 		$total = oo::m('product')->where($where)->count();
 		$page = $this->req('page');
-		pager::init($page, $total);
+		pager::settpl(oo::cfg('pager'));
+		pager::init($page, $total, 1);
+		$this->assign('pager', pager::get());
 		$list = oo::m('product')->limit(pager::$start, pager::$num)->orderby('id desc')->where($where)->getall();
 		$this->assign('list', $list);
 		

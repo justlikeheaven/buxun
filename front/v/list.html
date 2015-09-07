@@ -49,30 +49,14 @@ EOF;
         <!-- page[[ -->
         <!-- 根据hide来控制显示隐藏 -->
         <div class="page clearfix">
-            <!-- 上一页按钮 根据在span上添加删除 disabled： 按钮可不可点-->
-            <div class="btn prev"><a class="javascript:;"><i class="i-prev"></i>上一页</a></div>
-            <!-- 首页 -->
-            <a class="num">1</a>
-            <!-- 页码 根据current 来控制当前所在页  dot: 省略号 [[ -->
-            <a href="javascript:;">2</a>
-            <a href="javascript:;" class="current">3</a>
-            <a href="javascript:;">4</a>
-            <a href="javascript:;">5</a>
-            <span class="dot">...</span>
-            <!-- 页码 ]]-->
-            <!-- 末页 -->
-            <a class="num">10</a>
-            <!-- 下一页按钮 -->
-            <div class="btn next">
-				<a href="javascript:;">下一页<i class="i-prev"></i></a>
-			</div>
-            <div class="total"> 共 100 页， </div>
+            <?=$data['pager'];?>
             <div class="form">
                 <span class="text">到第</span>
                 <input class="input" type="number" value="51" min="1" max="100" aria-label="页码输入框">
                 <span class="text">页</span>
                 <a href="javascript:;"  class="button">确定</a>
             </div>
+			
         </div>
         <!-- page]] -->
     </div>
