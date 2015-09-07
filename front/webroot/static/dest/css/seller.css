@@ -24,7 +24,9 @@
 .bg-news{background: url("../images/bg-hot.gif")}
 .bg-news ul li{background: #f2d458;border: #f2d458 12px solid;}
 .bg-news ul li a{color: #333;}
-.seller-about{padding: 20px 0;}
+.seller-about{padding: 20px 0;margin-bottom:20px;}
 .seller-about h3{color: #e0263e; font-size: 24px; font-weight: bold; padding: 12px 0; margin: 0;}
-.seller-about img{float: left;margin: 10px 10px 10px 0;border: #f3f3f3 1px solid;padding: 10px;background: #fff;}
-.seller-about p{line-height: 24px; color: #333; margin-top: 10px; text-indent: 2em;}
+.seller-about img{float: left;margin: 10px 20px 10px 0;border: #f3f3f3 1px solid;padding: 10px;background: #fff;width: 440px; height: 260px;}
+.seller-txt{width:510px;float:left;line-height: 24px; color: #333; margin-top: 10px; text-indent: 2em;height:96px;overflow:hidden;}
+.seller-contact{width:510px;float:left;margin-top:20px;border-top:#ccc 1px dotted;padding-top:20px;}
+.seller-contact h4{font-size:16px;font-weight:700;margin-bottom:15px;}
