@@ -8,6 +8,5 @@ return array(
 	'foot'=>'<a href=\'$href\'>$index</a>',
 	'last'=>'<a class=\'num\' href=\'$href\'>$index</a>',
 	'next'=>'<div class=\'btn next\'><a href=\'{$href}\'>下一页<i class=\'i-prev\'></i></a></div>',
-	'total'=>'<div class=\'total\'> 共 {$total} 页， </div>',
-	'visible'=>5,
+	//'total'=>'<div class=\'total\'> 共 {$total} 页， </div>',
 );

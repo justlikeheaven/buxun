@@ -12,20 +12,42 @@ class pager{
 	}
 	
 	public static function init($page, $total, $num=1){
-		if(empty(self::$tpl)){
-			self::$tpl = array(
-				'prev'=>'<li><a href=\'{$href}\'>&lt;</a></li>',
-				'first'=>'<li><a href=\'{$href}\'>{$index}</a></li>',
-				'head'=>'<li><a href=\'{$href}\'>{$index}</a></li>',
-				'current'=>'<li><a href=\'#\' class=\'active\'>{$index}</a></li>',
-				'dot'=>'<span class="dot">...</span>',
-				'foot'=>'<li><a href=\'{$href}\'>{$index}</a></li>',
-				'last'=>'<li><a href=\'{$href}\'>{$index}</a></li>',
-				'next'=>'<li><a href=\'{$href}\'>&gt</a></li>',
-				'total'=>'<div class=\'total\'> 共 {$total} 页， </div>',
-				'visible'=>2,
-			);
-		}
+		
+		$tpl_default = array(
+			'prev'=>'<li><a href=\'{$href}\'>&lt;</a></li>',
+			'first'=>'<li><a href=\'{$href}\'>{$index}</a></li>',
+			'head'=>'<li><a href=\'{$href}\'>{$index}</a></li>',
+			'current'=>'<li><a href=\'#\' class=\'active\'>{$index}</a></li>',
+			'dot'=>'<span class="dot">...</span>',
+			'foot'=>'<li><a href=\'{$href}\'>{$index}</a></li>',
+			'last'=>'<li><a href=\'{$href}\'>{$index}</a></li>',
+			'next'=>'<li><a href=\'{$href}\'>&gt</a></li>',
+			'total'=>'<div class=\'total\'> 共 {$total} 页 </div>',
+			'jumpto'=>'<div class=\'form\'>
+	                <span class=\'text\'>到第</span>
+	                <input class=\'input\' id=\'jumpto\' type=\'number\' value=\'{$jump}\' min=\'1\' max=\'{$totalpage}\' aria-label=\'页码输入框\'>
+	                <span class=\'text\'>页</span>
+	                <script>
+	                function jumpto(){
+	                	var query = window.location.search;
+	                	var pageindex = query.lastIndexOf(\'page=\');
+	                	var pjf = \'\';
+	                	if(pageindex!=-1){
+	                		query = query.substring(0, pageindex);
+	                	}else{
+	                		pjf = \'&\';
+		                	if(query.indexOf(\'?\')==-1){
+		                		pjf = \'?\';
+		                	}
+	                	}
+	                	location.href = query+pjf+\'page=\'+document.getElementById(\"jumpto\").value;
+	                }
+	                </script>
+	                <a href=\'javascript:void(0);\'  onclick=\'jumpto();\' class=\'button\'>确定</a></div>',
+			'visible'=>5,
+		);
+		(empty(self::$tpl) || !is_array(self::$tpl) ) && self::$tpl = array();
+		self::$tpl = array_merge($tpl_default, self::$tpl);
 		self::$page = max(1, $page);
 		self::$start = $num*(self::$page-1);
 		self::$num = $num;
@@ -95,16 +117,28 @@ class pager{
 			eval("\$next = \"$next\";");
 			
 			//最后一页
+			
 			$index = $request['page'] = self::$last;
 			$href = '?'.http_build_query($request);
 			$last = self::$tpl['last'];
 			eval("\$last = \"$last\";");
+			
 		}
+		
+		//展示共多少页
 		$total = self::$last;
 		$str = self::$tpl['total'];
 		eval("\$total = \"$str\";");
 
-		$res = $prev.$first.$headdot.$head.$cur.$foot.$footdot.$last.$next.$total;
+		//跳转
+		$totalpage = self::$last;
+		$jump = rand(1, self::$last);
+		$href = '?'.http_build_query($request);
+		$jumpto = self::$tpl['jumpto'];
+		eval("\$jumpto = \"$jumpto\";");
+		
+		//拼装显示
+		$res = $prev.$first.$headdot.$head.$cur.$foot.$footdot.$last.$next.$total.$jumpto;
 		return $res;
 	}
 
