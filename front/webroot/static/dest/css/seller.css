@@ -26,7 +26,12 @@
 .bg-news ul li a{color: #333;}
 .seller-about{padding: 20px 0;margin-bottom:20px;}
 .seller-about h3{color: #e0263e; font-size: 24px; font-weight: bold; padding: 12px 0; margin: 0;}
-.seller-about img{float: left;margin: 10px 20px 10px 0;border: #f3f3f3 1px solid;padding: 10px;background: #fff;width: 440px; height: 260px;}
 .seller-txt{width:510px;float:left;line-height: 24px; color: #333; margin-top: 10px; text-indent: 2em;height:96px;overflow:hidden;}
 .seller-contact{width:510px;float:left;margin-top:20px;border-top:#ccc 1px dotted;padding-top:20px;}
 .seller-contact h4{font-size:16px;font-weight:700;margin-bottom:15px;}
+.seller-about-pic{width: 440px;height: 260px;float: left;overflow: hidden;margin: 10px 20px 10px 0;}
+#flashs { position: relative; z-index: 1;margin-bottom: 10px; border: #f3f3f3 1px solid;padding: 10px;background: #fff;}
+#flashs .bgitem { position: absolute; width: 440px;height: 260px;}
+#flashs .btn { bottom: 10px; margin-left: -60px; padding: 5px 6px; position: absolute; left: 50%; z-index: 7; }
+#flashs .btn span { background: #666;color: #fff; cursor: pointer; display: inline-block; margin-left: 5px; padding: 0 10px;font-size: 12px;height: 20px;line-height: 20px;}
+#flashs .btn span.cur { background: #e0263e; color: #FFFFFF; }
