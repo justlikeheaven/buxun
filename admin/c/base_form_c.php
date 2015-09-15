@@ -21,19 +21,7 @@ class base_form_c extends controller_form {
 			$this->redirect('login.index');
 		}
 	}
-	
-	function json($res=null, $msg=null){
-		if(is_null($res)){
-			$res = $this->result;
-		}else if(is_array($res) && !empty($res)){
-			$res =  array_merge($this->result, array('result'=>$res));
-		}else{
-			$res['result'] = $res;
-		}
-		if(is_null($msg))	$res['msg'] = 'ok';
-		
-		return parent::json($res);
-	}
+
 	
 	
 	
