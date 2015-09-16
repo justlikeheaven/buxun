@@ -57,17 +57,17 @@ $(function () {
         }).eq(0).trigger("mouseleave")
     });
 
-    //function lazyLoad(obj) {
-    //    $(document).ready(function () {
-    //        $("." + obj + " div").each(function (i, o) {
-    //            $(this).css("background", "url(" + $(this).attr("src") + ") no-repeat center bottom")
-    //        })
-    //    });
-    //    var oo = $("." + obj + " div:eq(0)");
-    //    oo.css("background", "url(" + oo.attr("src") + ") no-repeat center bottom")
-    //}
-    //
-    //lazyLoad("ban_bg");
+    function lazyLoad(obj) {
+        $(document).ready(function () {
+            $("." + obj + " div").each(function (i, o) {
+                $(this).css("background", "url(" + $(this).attr("src") + ") no-repeat center bottom")
+            })
+        });
+        var oo = $("." + obj + " div:eq(0)");
+        oo.css("background", "url(" + oo.attr("src") + ") no-repeat center bottom")
+    }
+    
+    lazyLoad("ban_bg");
 
 
 
