@@ -57,17 +57,17 @@ $imgurl = oo::cfg('common.imgurl');
                           产品分类： <span>雪纺、乱麻、弹性丝系列</span>
                       </div> -->
                       <div class="pd_short">
+                      	  <?=$data['res']['seller']['name'] ? "厂家名称：<a href='".NFS::url('seller', array('id'=>$data['res']['seller']['id']))."'>{$data['res']['seller']['name']}</a><br/>" : ""?>
+						  <?=$data['res']['seller']['shop_address'] ? "门市地址：{$data['res']['seller']['shop_address']}<br/>" : ""?>
+						  <?=$data['res']['seller']['tel'] ? "门市电话：{$data['res']['seller']['tel']}<br/>" : ""?>
+						  <?=$data['res']['seller']['depot_address'] ? "仓库地址：{$data['res']['seller']['depot_address']}<br/>" : ""?>
+						  <?=$data['res']['seller']['mobile'] ? "手机号码：{$data['res']['seller']['mobile']}<br/>" : ""?>
+						  <?=$data['res']['seller']['fax'] ? "传真：{$data['res']['seller']['fax']}<br/>" : ""?>
+						  <?=$data['res']['product']['huohao'] ? "货号：{$data['res']['product']['huohao']}<br/>" : ""?>
  						  <?=$data['res']['product']['chengfen'] ? "成分及含量：{$data['res']['product']['chengfen']}<br/>" : ""?>
 						  <?=$data['res']['product']['fukuan'] ? "幅宽：{$data['res']['product']['fukuan']}<br/>" : ""?>
 						  <?=$data['res']['product']['kezhong'] ? "克重：{$data['res']['product']['kezhong']}<br/>" : ""?>
 						  <?=$data['res']['product']['yongtu'] ? "主要用途：{$data['res']['product']['yongtu']}<br/>" : ""?>
-						  <?=$data['res']['product']['huohao'] ? "货号：{$data['res']['product']['huohao']}<br/>" : ""?>
-						  <?=$data['res']['seller']['depot_address'] ? "仓库地址：{$data['res']['seller']['depot_address']}<br/>" : ""?>
-						  <?=$data['res']['seller']['name'] ? "厂家名称：<a href='".NFS::url('seller', array('id'=>$data['res']['seller']['id']))."'>{$data['res']['seller']['name']}</a><br/>" : ""?>
-						  <?=$data['res']['seller']['shop_address'] ? "门市地址：{$data['res']['seller']['shop_address']}<br/>" : ""?>
-						  <?=$data['res']['seller']['tel'] ? "门市电话：{$data['res']['seller']['tel']}<br/>" : ""?>
-						  <?=$data['res']['seller']['mobile'] ? "手机号码：{$data['res']['seller']['mobile']}<br/>" : ""?>
-						  <?=$data['res']['seller']['fax'] ? "传真：{$data['res']['seller']['fax']}<br/>" : ""?>
 						  <?=$data['res']['product']['price'] ? "参考价：{$data['res']['product']['price']}<br/>" : ""?>
                       </div>
                   </div>
