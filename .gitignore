@@ -1,5 +1,7 @@
 #data
 admin/webroot/data/
 front/webroot/data/
-db_pro.php
-db_dev.php
+front/cfg/db_pro.php
+front/cfg/db_dev.php
+admin/cfg/db_pro.php
+admin/cfg/db_dev.php
