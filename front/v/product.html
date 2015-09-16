@@ -63,6 +63,7 @@ $imgurl = oo::cfg('common.imgurl');
 						  <?=$data['res']['product']['yongtu'] ? "主要用途：{$data['res']['product']['yongtu']}<br/>" : ""?>
 						  <?=$data['res']['product']['huohao'] ? "货号：{$data['res']['product']['huohao']}<br/>" : ""?>
 						  <?=$data['res']['seller']['depot_address'] ? "仓库地址：{$data['res']['seller']['depot_address']}<br/>" : ""?>
+						  <?=$data['res']['seller']['name'] ? "厂家名称：<a href='".NFS::url('seller', array('id'=>$data['res']['seller']['id']))."'>{$data['res']['seller']['name']}</a><br/>" : ""?>
 						  <?=$data['res']['seller']['shop_address'] ? "门市地址：{$data['res']['seller']['shop_address']}<br/>" : ""?>
 						  <?=$data['res']['seller']['tel'] ? "门市电话：{$data['res']['seller']['tel']}<br/>" : ""?>
 						  <?=$data['res']['seller']['mobile'] ? "手机号码：{$data['res']['seller']['mobile']}<br/>" : ""?>
