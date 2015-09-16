@@ -1,5 +1,6 @@
 #!/bin/bash
-cd ~/path/to/project
-git remote update -p
-git checkout -f origin/master
-git submodule update --init
+cd /alidata/www/buxun_dev/
+git pull origin dev
+#git remote update -p
+#git checkout -f origin/master
+#git submodule update --init
