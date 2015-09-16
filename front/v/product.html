@@ -57,18 +57,18 @@ $imgurl = oo::cfg('common.imgurl');
                           产品分类： <span>雪纺、乱麻、弹性丝系列</span>
                       </div> -->
                       <div class="pd_short">
-                      	  <?=$data['res']['seller']['name'] ? "厂家名称：<a href='".NFS::url('seller', array('id'=>$data['res']['seller']['id']))."'>{$data['res']['seller']['name']}</a><br/>" : ""?>
-						  <?=$data['res']['seller']['shop_address'] ? "门市地址：{$data['res']['seller']['shop_address']}<br/>" : ""?>
-						  <?=$data['res']['seller']['tel'] ? "门市电话：{$data['res']['seller']['tel']}<br/>" : ""?>
-						  <?=$data['res']['seller']['depot_address'] ? "仓库地址：{$data['res']['seller']['depot_address']}<br/>" : ""?>
-						  <?=$data['res']['seller']['mobile'] ? "手机号码：{$data['res']['seller']['mobile']}<br/>" : ""?>
-						  <?=$data['res']['seller']['fax'] ? "传真：{$data['res']['seller']['fax']}<br/>" : ""?>
-						  <?=$data['res']['product']['huohao'] ? "货号：{$data['res']['product']['huohao']}<br/>" : ""?>
- 						  <?=$data['res']['product']['chengfen'] ? "成分及含量：{$data['res']['product']['chengfen']}<br/>" : ""?>
-						  <?=$data['res']['product']['fukuan'] ? "幅宽：{$data['res']['product']['fukuan']}<br/>" : ""?>
-						  <?=$data['res']['product']['kezhong'] ? "克重：{$data['res']['product']['kezhong']}<br/>" : ""?>
-						  <?=$data['res']['product']['yongtu'] ? "主要用途：{$data['res']['product']['yongtu']}<br/>" : ""?>
-						  <?=$data['res']['product']['price'] ? "参考价：{$data['res']['product']['price']}<br/>" : ""?>
+                      	  <?=$data['res']['seller']['name'] ? "<p class='pd_link'>厂家名称：<a href='".NFS::url('seller', array('id'=>$data['res']['seller']['id']))."'>{$data['res']['seller']['name']}</a><br/>" : ""?></p>
+						  <?=$data['res']['seller']['shop_address'] ? "<p>门市地址：{$data['res']['seller']['shop_address']}</p>" : ""?>
+						  <?=$data['res']['seller']['tel'] ? "<p>门市电话：{$data['res']['seller']['tel']}</p>" : ""?>
+						  <?=$data['res']['seller']['depot_address'] ? "<p>仓库地址：{$data['res']['seller']['depot_address']}</p>" : ""?>
+						  <?=$data['res']['seller']['mobile'] ? "<p>手机号码：{$data['res']['seller']['mobile']}</p>" : ""?>
+						  <?=$data['res']['seller']['fax'] ? "<p>传真：{$data['res']['seller']['fax']}</p>" : ""?>
+						  <?=$data['res']['product']['huohao'] ? "<p>货号：{$data['res']['product']['huohao']}</p>" : ""?>
+ 						  <?=$data['res']['product']['chengfen'] ? "<p>成分及含量：{$data['res']['product']['chengfen']}</p>" : ""?>
+						  <?=$data['res']['product']['fukuan'] ? "<p>幅宽：{$data['res']['product']['fukuan']}</p>" : ""?>
+						  <?=$data['res']['product']['kezhong'] ? "<p>克重：{$data['res']['product']['kezhong']}</p>" : ""?>
+						  <?=$data['res']['product']['yongtu'] ? "<p>主要用途：{$data['res']['product']['yongtu']}</p>" : ""?>
+						  <?=$data['res']['product']['price'] ? "<p class='pd_price'>参考价：<span>￥{$data['res']['product']['price']}</span></p>" : ""?>
                       </div>
                   </div>
                 </div>

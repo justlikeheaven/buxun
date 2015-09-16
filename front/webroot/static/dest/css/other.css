@@ -75,3 +75,6 @@
 .form .button{height: 21px; width: 43px; border: solid 1px #ededed; text-align: center; line-height: 21px; cursor: pointer;vertical-align: 1px;margin-left: 10px;}
 .form .button:hover{background: #992360;color: #fff;}
 .page .total, .page .form{display: inline-block;font-size: 12px;}
+
+.pd_link a{color: #0066cc;border-bottom:#333 1px dotted;padding:0 3px;}
+.pd_price span{color: #ff0000;font-size:18px;line-height:30px;}
