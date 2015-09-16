@@ -2,3 +2,4 @@
 admin/webroot/data/
 front/webroot/data/
 db_pro.php
+db_dev.php

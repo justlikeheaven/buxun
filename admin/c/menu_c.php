@@ -9,6 +9,7 @@ class menu_c extends base_form_c {
 			$v['pid'] = $menu[$v['pid']];
 		}
 	}
+	
 	protected function before_save(&$res){
 		//找到一级菜单
 		$pids = oo::m('menu')->where(array('pid'=>0))->getall();
