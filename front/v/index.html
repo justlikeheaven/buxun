@@ -11,7 +11,7 @@ $imgurl = oo::cfg('common.imgurl');
 			$index=0;
 			foreach($data['banner'] as $v){
 			?>
-            <a href='<?=$v['href']?>' title="<?=$v['desc']?>">
+            <a href="<?=$v['href']?>" title="<?=$v['desc']?>">
                 <div title="" src="<?=$imgurl.$v['img']?>" alt="" class="bgitem" id="flashbg<?=$index;?>" style="height:400px; width: 100%; margin:auto;"></div>
             </a>
             <?php $index++;} ?>
