@@ -29,7 +29,7 @@
 /*最热模块*/
 .hot-pro ul{width: 1200px;}
 .hot-pro ul li{width:268px;height:268px;position:relative; float: left;margin: 0 10px 10px 0; overflow: hidden; }
-.hot-pro ul li img{display: block;width: 268px;height: 268px;}
+.hot-pro ul li img{display: block;width: 268px;height: 268px;border-radius: 12px;}
 .hot-pro ul li span{background: #000; opacity: .6; position: absolute; width: 262px; height: 28px; display: block; line-height: 28px; text-align: center; left: 3px; bottom: 3px; color: #fffeff; font-size: 12px; border-radius: 0 0 12px 12px;}
 .hot-pro ul li em{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;width: 140px;display: block;float: left;margin-left: 10px;}
 .hot-pro .bg{width:305px;height:305px;position:absolute;left:0;top:0;z-index:50;  display:none;cursor: pointer;}

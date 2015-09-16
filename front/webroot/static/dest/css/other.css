@@ -76,5 +76,5 @@
 .form .button:hover{background: #992360;color: #fff;}
 .page .total, .page .form{display: inline-block;font-size: 12px;}
 
-.pd_link a{color: #0066cc;border-bottom:#333 1px dotted;padding:0 3px;}
-.pd_price span{color: #ff0000;font-size:18px;line-height:30px;}
+.pd_link a{color: #0066cc;padding:0 3px;}
+.pd_price span{color: #ff0000;font-size:26px;line-height:40px;}
