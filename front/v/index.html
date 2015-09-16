@@ -7,11 +7,14 @@ $imgurl = oo::cfg('common.imgurl');
     <link href="static/dest/css/index.css" rel="stylesheet" type="text/css"/>
 <!-- endbuild -->
         <div class="ban_bg" style="height:400px; width:100%;" id="flashs">
-			<?php foreach($data['banner'] as $v){ ?>
+			<?php
+			$index=0;
+			foreach($data['banner'] as $v){
+			?>
             <a href='<?=$v['href']?>' title="<?=$v['desc']?>">
-                <div title="" src="<?=$imgurl.$v['img']?>" alt="" class="bgitem" id="flashbg0" style="height:400px; width: 100%; margin:auto;"></div>
+                <div title="" src="<?=$imgurl.$v['img']?>" alt="" class="bgitem" id="flashbg<?=$index;?>" style="height:400px; width: 100%; margin:auto;"></div>
             </a>
-            <?php } ?>
+            <?php $index++;} ?>
         </div>
         <!-- 最热 start [[ -->
         <div class="area-title clearfix">
