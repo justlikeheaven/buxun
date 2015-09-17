@@ -24,6 +24,7 @@ $imgurl = oo::cfg('common.imgurl');
 
     </div>
     <!-- 爆款推荐 -->
+	<?php if($data['product_hot']){ ?>
     <div class="seller-show bg-hot">
        <div class="layout">
            <div class="recommend-line"><a>爆款推荐</a></div>
@@ -48,7 +49,10 @@ $imgurl = oo::cfg('common.imgurl');
            </div>
        </div>
     </div>
+	<?php } ?>
+	
     <!-- 最新推荐 -->
+	<?php if($data['product_new']){ ?>
     <div class="seller-show bg-news">
         <div class="layout">
             <div class="recommend-line"><a>最新发布</a></div>
@@ -73,6 +77,8 @@ $imgurl = oo::cfg('common.imgurl');
             </div>
         </div>
     </div>
+	<?php } ?>
+	
     <!-- 商家介绍 -->
     <div class="seller-about clearfix">
         <div class="layout clearfix">
