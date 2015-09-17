@@ -94,20 +94,23 @@ class controller_form extends controller {
 	}
 	
 	public function upload(){
+		
 		foreach ($this->form['fields'] as $k=>$v){
-			if($v['type']=='img' && is_array($_FILES[$k])){
+			if($v['type']=='uploadify' && is_array($_FILES[$k])){
 				$imgfield = $k;
 				break;
 			}
 		}
-		
+		if(!$imgfield){
+			echo -1;
+		}
 		$upload = file::upload($imgfield, 'data/pics/');//上传图片
 		if($upload['error']){
-			echo -1;
+			echo -2;
 		}else if($upload['success']){
 			echo $upload['success'][0];
 		}else{
-			echo -1;
+			echo -3;
 		}
 	}
 	

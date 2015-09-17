@@ -22,6 +22,8 @@ return array(
 			'mobile'=>array('type'=>'text', 'str'=>'手机号码', 'default'=>''),
 			'fax'=>array('type'=>'text', 'str'=>'传真', 'hide'=>array('list'), 'default'=>''),
 			'img'=>array('type'=>'file', 'str'=>'logo', 'hide'=>array('list'), 'default'=>''),
+			'banner'=>array('type'=>'file', 'str'=>'banner', 'hide'=>array('list'), 'default'=>''),
+			'photo'=>array('type'=>'uploadify', 'str'=>'介绍图', 'hide'=>array('list'), 'default'=>''),
 		),
 	),
 	

@@ -53,8 +53,8 @@ EOF;
 				$imgnum++;
 				$imghtml='';
 				$imgnum <2 && $staticstr = <<<EOF
-				<script src="/static/base/plug/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
-				<link rel="stylesheet" type="text/css" href="/static/base/plug/uploadify/uploadify.css">
+				<script src="static/base/plug/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+				<link rel="stylesheet" type="text/css" href="static/base/plug/uploadify/uploadify.css">
 EOF;
 				$upload_url = NFS::url("{$ctl}.upload");
 				if(!empty($data['res'][$field])){
@@ -62,7 +62,7 @@ EOF;
 					foreach($imgs as $v){
 						if(!empty($v)){
 							$imghtml .= <<<EOF
-							<img width="100px" height="100px" src="/data/pics/{$v}" />
+							<img width="100px" height="100px" src="data/pics/{$v}" />
 EOF;
 						}
 					}
@@ -83,7 +83,7 @@ EOF;
 							},*/
 							'fileObjName' : '{$field}',
 							'buttonText'  : '上传',
-							'swf'      : '/static/base/plug/uploadify/uploadify.swf',
+							'swf'      : 'static/base/plug/uploadify/uploadify.swf',
 							'method'   : 'post',	
 							'uploader' : '{$upload_url}',
 						
@@ -91,7 +91,7 @@ EOF;
 								if(input.val()==''){
 									prew.html('');
 								}
-								prew.append('<img width="100px" height="100px" src="/data/pics/'+data+'" />');
+								prew.append('<img width="100px" height="100px" src="data/pics/'+data+'" />');
 								 
 								input.val(input.val()+','+data);
 							},
