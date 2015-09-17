@@ -19,6 +19,18 @@ class seller_c extends controller{
 		$product_new = oo::m('product')->where(array('sellerid'=>$id))->limit(12)->getall();
 		$this->assign('product_new', $product_new);
 		
+		//根据点击量获取最热商品
+		$hotid = cacheredis::init()->zrevrange(keys_m::product_clicknum($id), 0, 9);
+		$product_hot = array();
+		if(!$hotid){
+			//$hotid = array(1,2);
+		}
+		if($hotid){
+			$hotid_str = implode(', ', $hotid);
+			$product_hot = oo::m('product')->where("id in ({$hotid_str})")->limit(12)->getall();
+		}
+		$this->assign('product_hot', $product_hot);
+		
 		$this->display('seller');
 	}
 	

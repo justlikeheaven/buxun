@@ -29,13 +29,21 @@ $imgurl = oo::cfg('common.imgurl');
            <div class="recommend-line"><a>爆款推荐</a></div>
            <div class="sell-list clearfix">
                <ul>
-                   <li>
-                       <a href="">
-                           <img src="static/dest/temp/sell.jpg" alt=""/>
-                           <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                       </a>
-                   </li>
-                   
+                <?php
+				foreach($data['product_hot'] as $v){
+				?>
+                    <li>
+                        <a href="<?=NFS::url('product', array('id'=>$v['id']))?>">
+                            <?php if($v['img_model']){?>
+								<img src="<?=$imgurl.$v['img_model']?>" />
+							<?php } ?>
+                            <p class="sell-txt clearfix">
+								<span class="fl"><?=$v['name']?></span>
+								<span class="fr sell-price">￥<?=$v['price']?></span>
+							</p>
+                        </a>
+                    </li>
+                <?php } ?> 
                </ul>
            </div>
        </div>
