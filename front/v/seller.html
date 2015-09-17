@@ -112,9 +112,14 @@ $imgurl = oo::cfg('common.imgurl');
     </div>
     <!-- 商家介绍 -->
     <div class="seller-about clearfix">
-        <div class="layout">
+        <div class="layout clearfix">
             <h3>关于商家</h3>
-            <img src="static/dest/temp/about.jpg" alt=""/>
+            <div class ="seller-about-pic" id="flashs">
+                <div class="bgitem" id="flashbg0" style="background: url('static/dest/temp/about.jpg')"></div>
+                <div class="bgitem" id="flashbg1" style="background: url('static/dest/temp/about.jpg')"></div>
+                <div class="bgitem" id="flashbg2" style="background: url('static/dest/temp/about1.jpg')"></div>
+                <div class="bgitem" id="flashbg3" style="background: url('static/dest/temp/about.jpg')"></div>
+            </div>
             <div class="seller-txt">绍兴县俪森纺织品有限公司成立于2007年，位于亚洲最大的纺织品集散中心—中国轻纺城。地理位置优越，交通便利。公司主要经营、仿醋酸系列、针织系列、经编、经编印花系列，粘棉交织系列，及差异化印花系列面料，是一家集研发、生产、加工、贸易于一体的具有自己独特风格…</div>
 			<div class="seller-contact">
 				<h4>广州市布讯纺织品有限公司</h4>
@@ -128,6 +133,6 @@ $imgurl = oo::cfg('common.imgurl');
 
 
     <?php view::display('footer');?>
-
+<script type="text/javascript" src="static/dest/js/slider.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ class pager{
 		self::$tpl = $tpl;
 	}
 	
-	public static function init($page, $total, $num=1){
+	public static function init($page, $total, $num=10){
 		
 		$tpl_default = array(
 			'prev'=>'<li><a href=\'{$href}\'>&lt;</a></li>',
