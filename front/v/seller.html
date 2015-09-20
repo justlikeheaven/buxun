@@ -8,7 +8,7 @@ $imgurl = oo::cfg('common.imgurl');
 <!-- endbuild -->
 
     <!-- 商家信息 -->
-   <div class="seller-header">
+   <div class="seller-header" style='background: url("static/dest/images/bg-sell-top.png") repeat-x;'>
        <div class="layout">
            <h1 class="seller-logo">
 		   <?php if($data['seller']['img']){?>
@@ -16,11 +16,10 @@ $imgurl = oo::cfg('common.imgurl');
 			<?php } ?>
 			<span><?=$data['seller']['name'];?></span>
 			</h1>
-           <span class="bg-sell-txt"></span>
        </div>
    </div>
     <!-- 宣传图 -->
-    <div class="seller-banner">
+    <div class="seller-banner" style='background: url("static/dest/temp/seller-banner.jpg") center;'>
 
     </div>
     <!-- 爆款推荐 -->
