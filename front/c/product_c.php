@@ -11,6 +11,7 @@ class product_c extends controller{
 		if(is_array($product_detail)){
 			$product = array_merge($product, $product_detail);
 		}
+		empty($product['danwei']) && $product['danwei'] = '米';
 		$res['product'] = $product;
 		$res['seller'] = oo::m('seller')->where(array('id'=>$product['sellerid']))->get();
 		$this->assign('res', $res);

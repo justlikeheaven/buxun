@@ -68,7 +68,7 @@ $imgurl = oo::cfg('common.imgurl');
 						  <?=$data['res']['product']['fukuan'] ? "<p>幅宽：{$data['res']['product']['fukuan']}</p>" : ""?>
 						  <?=$data['res']['product']['kezhong'] ? "<p>克重：{$data['res']['product']['kezhong']}</p>" : ""?>
 						  <?=$data['res']['product']['yongtu'] ? "<p>主要用途：{$data['res']['product']['yongtu']}</p>" : ""?>
-						  <?=$data['res']['product']['price'] ? "<p class='pd_price'>参考价：<span>￥{$data['res']['product']['price']}</span></p>" : ""?>
+						  <?=$data['res']['product']['price'] ? "<p class='pd_price'>参考价：<span>￥{$data['res']['product']['price']}/{$data['res']['product']['danwei']}</span></p>" : ""?>
                       </div>
                   </div>
                 </div>

@@ -44,6 +44,7 @@ return array(
 			'hot' => array('type'=>'select', 'str'=>'最热', 'hide'=>array('list'), 'desc'=>'最热商品将会推到首页显示'),
 			'name'=>array('type'=>'text', 'str'=>'名称'),
 			'price'=>array('type'=>'text', 'str'=>'价格'),
+			'danwei'=>array('type'=>'text', 'str'=>'单位'),
 			'chengfen'=>array('type'=>'text', 'str'=>'成分', 'hide'=>array('list'), 'default'=>''),
 			'fukuan'=>array('type'=>'text', 'str'=>'幅宽', 'hide'=>array('list'), 'default'=>''),
 			'kezhong'=>array('type'=>'text', 'str'=>'克重', 'hide'=>array('list'), 'default'=>''),

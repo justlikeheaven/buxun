@@ -11,7 +11,7 @@ class index_c extends controller{
 
 		//获取最热
 		//if(!$hot = cacheredis::init()->get(keys_m::$index_hot)){
-			$hot = db::getall("SELECT * FROM `product_hot` AS ph, `product` AS p WHERE ph.product_id=p.id AND ph.hot=1");
+			$hot = db::getall("SELECT * FROM `product_hot` AS ph, `product` AS p WHERE ph.product_id=p.id AND ph.hot=1 order by p.id desc limit 12");
 			//cacheredis::init()->set(keys_m::$index_hot, json_encode($hot));
 		//}else{
 			//$hot = json_decode($hot, true);

@@ -19,8 +19,9 @@ $imgurl = oo::cfg('common.imgurl');
        </div>
    </div>
     <!-- 宣传图 -->
-    <div class="seller-banner" style='background: url("static/dest/temp/seller-banner.jpg") center;'>
-
+    <?php if($data['seller']['banner']){ ?>
+    <div class="seller-banner" style='background: url("<?=$imgurl.$data['seller']['banner']?>") center;'>
+	<?php } ?>
     </div>
     <!-- 爆款推荐 -->
 	<?php if($data['product_hot']){ ?>
