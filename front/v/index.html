@@ -24,7 +24,8 @@ $imgurl = oo::cfg('common.imgurl');
         <div class="hot-pro content">
             <ul class="clearifx">
 	<?php
-	foreach($data['hot'] as $v){
+	if(is_array($data['product_hot']) && !empty($data['product_hot'])){
+	foreach($data['product_hot'] as $v){
 		$href = NFS::url('product', array('id'=>$v['id']));
 		echo <<<EOF
                 <li>
@@ -39,7 +40,7 @@ $imgurl = oo::cfg('common.imgurl');
                     </a>
                 </li>
 EOF;
-} ?>
+} } ?>
             </ul>
         </div>
         <!-- 最热 end ]] -->
@@ -98,42 +99,20 @@ EOF;
 
         <div class="content link">
             <ul class="clearfix">
+            <?php
+			if(is_array($data['seller_hot']) && !empty($data['seller_hot'])){
+			foreach($data['seller_hot'] as $v){
+			$href = NFS::url('seller', array('id'=>$v['id']));
+			$img = $imgurl.$v['img'];
+			echo <<<EOF
                 <li>
-                    <a href="/hzpp/lshzppqsyr_1.html" title="布讯合作品牌-秋水伊人" target="_blank">
-                        <img src="static/temp/link4.jpg" alt="布讯合作品牌-秋水伊人" title="布讯合作品牌-秋水伊人">
+                    <a href="{$href}" title="{$v['name']}">
+                        <img src="{$img}" alt="{$v['name']}" title="{$v['name']}">
                         <em>布讯合作品牌-秋水伊人</em>
                     </a>
                 </li>
-                <li>
-                    <a href="/hzpp/lsfzhzkhyy_1.html" title="布讯纺织合作客户-逸阳女裤" target="_blank">
-                        <img src="static/temp/link2.jpg" alt="布讯纺织合作客户-逸阳女裤" title="布讯纺织合作客户-逸阳女裤">
-                        <em>布讯纺织合作客户-逸阳女裤</em>
-                    </a>
-                </li>
-                <li>
-                    <a href="/hzpp/lshzppmzs_1.html" title="布讯合作品牌-名之尚" target="_blank">
-                        <img src="static/temp/link3.jpg" alt="布讯合作品牌-名之尚" title="布讯合作品牌-名之尚">
-                        <em>布讯合作品牌-名之尚</em>
-                    </a>
-                </li>
-                <li>
-                    <a href="/hzpp/lshzppqsyr_1.html" title="布讯合作品牌-秋水伊人" target="_blank">
-                        <img src="static/temp/link4.jpg" alt="布讯合作品牌-秋水伊人" title="布讯合作品牌-秋水伊人">
-                        <em>布讯合作品牌-秋水伊人</em>
-                    </a>
-                </li>
-                <li>
-                    <a href="/hzpp/lshzppyxly_1.html" title="布讯合作品牌-衣香丽影" target="_blank">
-                        <img src="static/temp/link2.jpg" alt="布讯合作品牌-衣香丽影" title="布讯合作品牌-衣香丽影">
-                        <em>布讯合作品牌-衣香丽影</em>
-                    </a>
-                </li>
-                <li class="lastli">
-                    <a href="/hzpp/lshzppnw_1.html" title="布讯合作品牌-纳纹" target="_blank">
-                        <img src="static/temp/link3.jpg" alt="布讯合作品牌-纳纹" title="布讯合作品牌-纳纹">
-                        <em>布讯合作品牌-纳纹</em>
-                    </a>
-                </li>
+EOF;
+	} } ?>
             </ul>
         </div>
         <!-- 推荐商家 end -->

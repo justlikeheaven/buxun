@@ -14,6 +14,7 @@ return array(
 	'seller'=>array(
 		'desc'=>'商家',
 		'fields'=>array(
+			'hot' => array('type'=>'select', 'data'=>array(array('value'=>0,'str'=>'否'), array('value'=>1,'str'=>'是')), 'str'=>'最热', 'hide'=>array('list'), 'desc'=>'最热商家将会推到首页显示'),
 			'name'=>array('type'=>'text', 'str'=>'名称'),
 			'desc'=>array('type'=>'textarea', 'str'=>'描述', 'hide'=>array('list'), 'default'=>''),
 			'shop_address'=>array('type'=>'textarea', 'str'=>'门市地址'),
@@ -41,7 +42,7 @@ return array(
 		'fields'=>array(
 			'cateid'=>array('type'=>'select', 'str'=>'分类'),
 			'sellerid'=>array('type'=>'select', 'str'=>'商家'),
-			'hot' => array('type'=>'select', 'str'=>'最热', 'hide'=>array('list'), 'desc'=>'最热商品将会推到首页显示'),
+			'hot' => array('type'=>'select', 'data'=>array(array('value'=>0,'str'=>'否'), array('value'=>1,'str'=>'是')), 'str'=>'最热', 'hide'=>array('list'), 'desc'=>'最热商品将会推到首页显示'),
 			'name'=>array('type'=>'text', 'str'=>'名称'),
 			'price'=>array('type'=>'text', 'str'=>'价格'),
 			'danwei'=>array('type'=>'text', 'str'=>'单位'),

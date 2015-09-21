@@ -4,7 +4,7 @@ class product_c extends base_form_c {
 	protected function before_save(&$res){
 		$res['form']['cateid']['list'] = oo::m('product_cate')->fields('id as value, name as str')->getall();
 		$res['form']['sellerid']['list'] = oo::m('seller')->fields('id as value, name as str')->getall();
-		$res['form']['hot']['list'] = array(array('value'=>0,'str'=>'否'), array('value'=>1,'str'=>'是'));
+		//$res['form']['hot']['list'] = array(array('value'=>0,'str'=>'否'), array('value'=>1,'str'=>'是'));
 		
 	}
 	
@@ -46,9 +46,9 @@ class product_c extends base_form_c {
 		
 	}
 
-	protected function after_post(&$data, $id=0){
+	protected function after_post(&$data){
 		$hot = intval($data['hot']) ? 1 : 0;
-		if($id || (!$id && $hot)){
+		if($this->id || (!$this->id && $hot)){
 			$sql = "INSERT INTO #table (`product_id`, `hot`) VALUES ({$this->id}, {$hot}) ON DUPLICATE KEY UPDATE `hot`={$hot}";
 			oo::m('product_hot')->execute($sql);
 		}
