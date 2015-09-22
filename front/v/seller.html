@@ -4,21 +4,15 @@ $imgurl = oo::cfg('common.imgurl');
 ?>
 <link href="static/css/global.css" rel="stylesheet" type="text/css"/>
 <link href="static/css/seller.css" rel="stylesheet" type="text/css"/>
-
     <!-- 商家信息 -->
    <div class="seller-header" style='background: url("static/dest/images/bg-sell-top.png") repeat-x;'>
        <div class="layout">
-<<<<<<< HEAD
-           <h1 class="seller-logo"><img src="static/temp/link2.jpg" alt=""/><span>逸阳官方旗舰店</span></h1>
-           <span class="bg-sell-txt"></span>
-=======
            <h1 class="seller-logo">
 		   <?php if($data['seller']['img']){?>
 			<img src="<?=$imgurl.$data['seller']['img'];?>" />
 			<?php } ?>
 			<span><?=$data['seller']['name'];?></span>
 			</h1>
->>>>>>> a532645930638c7c39483a119c2fa98ee19ed909
        </div>
    </div>
     <!-- 宣传图 -->
@@ -33,44 +27,6 @@ $imgurl = oo::cfg('common.imgurl');
            <div class="recommend-line"><a>爆款推荐</a></div>
            <div class="sell-list clearfix">
                <ul>
-<<<<<<< HEAD
-                   <li>
-                       <a href="">
-                           <img src="static/temp/sell.jpg" alt=""/>
-                           <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                       </a>
-                   </li>
-                   <li>
-                       <a href="">
-                           <img src="static/temp/sell.jpg" alt=""/>
-                           <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                       </a>
-                   </li>
-                   <li>
-                       <a href="">
-                           <img src="static/temp/sell.jpg" alt=""/>
-                           <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                       </a>
-                   </li>
-                   <li>
-                       <a href="">
-                           <img src="static/temp/sell.jpg" alt=""/>
-                           <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                       </a>
-                   </li>
-                   <li>
-                       <a href="">
-                           <img src="static/temp/sell.jpg" alt=""/>
-                           <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                       </a>
-                   </li>
-                   <li>
-                       <a href="">
-                           <img src="static/temp/sell.jpg" alt=""/>
-                           <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                       </a>
-                   </li>
-=======
                 <?php
 				foreach($data['product_hot'] as $v){
 				?>
@@ -86,7 +42,6 @@ $imgurl = oo::cfg('common.imgurl');
                         </a>
                     </li>
                 <?php } ?> 
->>>>>>> a532645930638c7c39483a119c2fa98ee19ed909
                </ul>
            </div>
        </div>
@@ -104,41 +59,6 @@ $imgurl = oo::cfg('common.imgurl');
 				foreach($data['product_new'] as $v){
 				?>
                     <li>
-<<<<<<< HEAD
-                        <a href="">
-                            <img src="static/temp/sell.jpg" alt=""/>
-                            <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="static/temp/sell.jpg" alt=""/>
-                            <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="static/temp/sell.jpg" alt=""/>
-                            <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="static/temp/sell.jpg" alt=""/>
-                            <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="static/temp/sell.jpg" alt=""/>
-                            <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="static/temp/sell.jpg" alt=""/>
-                            <p class="sell-txt clearfix"><span class="fl">亮片面料亮片面料亮片面料</span><span class="fr sell-price">￥100.88</span></p>
-=======
                         <a href="<?=NFS::url('product', array('id'=>$v['id']))?>">
                             <?php if($v['img_model']){?>
 								<img src="<?=$imgurl.$v['img_model']?>" />
@@ -147,7 +67,7 @@ $imgurl = oo::cfg('common.imgurl');
 								<span class="fl"><?=$v['name']?></span>
 								<span class="fr sell-price">￥<?=$v['price']?></span>
 							</p>
->>>>>>> a532645930638c7c39483a119c2fa98ee19ed909
+
                         </a>
                     </li>
                 <?php } ?>   
@@ -162,12 +82,6 @@ $imgurl = oo::cfg('common.imgurl');
         <div class="layout clearfix">
             <h3>关于商家</h3>
             <div class ="seller-about-pic" id="flashs">
-<<<<<<< HEAD
-                <div class="bgitem" id="flashbg0" style="background: url('static/temp/about.jpg')"></div>
-                <div class="bgitem" id="flashbg1" style="background: url('static/temp/about.jpg')"></div>
-                <div class="bgitem" id="flashbg2" style="background: url('static/temp/about1.jpg')"></div>
-                <div class="bgitem" id="flashbg3" style="background: url('static/temp/about.jpg')"></div>
-=======
 			<?php
 			if(!empty($data['seller']['photo']) && is_array($data['seller']['photo'])){
 				$index = 0;
@@ -176,7 +90,6 @@ $imgurl = oo::cfg('common.imgurl');
 			?>
             <div class="bgitem" id="flashbg<?=$index?>" style="background: url('<?=$imgurl.$v?>')"></div>
             <?php $index++;} } } ?>
->>>>>>> a532645930638c7c39483a119c2fa98ee19ed909
             </div>
             <div class="seller-txt"><?=$data['seller']['desc']?></div>
 			<div class="seller-contact">
@@ -189,8 +102,6 @@ $imgurl = oo::cfg('common.imgurl');
 			</div>
         </div>
     </div>
-
-
     <?php view::display('footer');?>
 <script type="text/javascript" src="static/js/slider.js"></script>
 </body>
