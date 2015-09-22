@@ -66,11 +66,7 @@ $imgurl = oo::cfg('common.imgurl');
 						  <?=$data['res']['product']['fukuan'] ? "<p>幅宽：{$data['res']['product']['fukuan']}</p>" : ""?>
 						  <?=$data['res']['product']['kezhong'] ? "<p>克重：{$data['res']['product']['kezhong']}</p>" : ""?>
 						  <?=$data['res']['product']['yongtu'] ? "<p>主要用途：{$data['res']['product']['yongtu']}</p>" : ""?>
-<<<<<<< HEAD
-						  <?=$data['res']['product']['price'] ? "<p class='pd_price'>参考价：<span><span style='font-size: 18px'>￥</span>{$data['res']['product']['price']}</span><em style='margin-left: 5px'>/米</em></p>" : ""?>
-=======
-						  <?=$data['res']['product']['price'] ? "<p class='pd_price'>参考价：<span>￥{$data['res']['product']['price']}/{$data['res']['product']['danwei']}</span></p>" : ""?>
->>>>>>> a532645930638c7c39483a119c2fa98ee19ed909
+						  <?=$data['res']['product']['price'] ? "<p class='pd_price'>参考价：<span><span style='font-size: 18px'>￥</span>{$data['res']['product']['price']}</span><em style='margin-left: 5px'>/{$data['res']['product']['danwei']}</em></p>" : ""?>
                       </div>
                   </div>
                 </div>
