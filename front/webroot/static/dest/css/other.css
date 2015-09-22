@@ -12,7 +12,7 @@
 
 
 /* -- 产品详细页__产品详细参数 -- */
-.propar{float: left;margin-left: 20px;width:310px;}
+.propar{float: left;margin-left: 20px;width: 310px;}
 .propar h4 { color:#333;font-size: 16px; line-height:44px; border-bottom:1px dashed #ccc;margin-bottom: 10px;}
 .propar div , .proshop div {padding:5px; padding-bottom:0; line-height:22px;}
 .propar div span { font-weight:bold;}
