@@ -77,6 +77,13 @@ class controller_form extends controller {
 			method_exists($this, 'before_add') && $this->before_add($res);
 		}
 		method_exists($this, 'before_save') && $this->before_save($res);
+		foreach ($this->form['fields'] as $field=>$info){
+			if($info['type']=='select'){
+				if(!empty($info['data']) && is_array($info['data'])){
+					$res['form'][$field]['list']=$info['data'];
+				}
+			}
+		}
 		$this->assign('res', $res);
 		$this->display("{$this->form['tpl']}_save");
 	}
