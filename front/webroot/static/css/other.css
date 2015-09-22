@@ -34,11 +34,7 @@
 .wrapper{background: #fff;max-width: 1060px;margin: 20px auto;padding: 20px;}
 .pro-detail, .pro_column{float: left;width: 720px;}
 .pro-list{float: right;width: 300px;}
-<<<<<<< HEAD:front/webroot/static/css/other.css
 .pro-list .tit{color: #fff; font-size: 14px; background: #ba0d2a; height: 36px; line-height: 36px; padding-left: 18px; overflow: hidden; font-weight: bold;}
-=======
-.pro-list .tit{color: #fff; font-size: 14px; background: #992360; height: 36px; line-height: 36px; padding-left: 18px; overflow: hidden; font-weight: bold;}
->>>>>>> a532645930638c7c39483a119c2fa98ee19ed909:front/webroot/static/dest/css/other.css
 .pro-pic img{margin: 10px auto;display: block;width: 300px;height: 300px;}
 .pro_column ul{width: 800px;}
 .pro_column ul li{float: left;width: 234px;margin: 0 10px 20px 0;text-align: center;padding: 0 0 10px;}

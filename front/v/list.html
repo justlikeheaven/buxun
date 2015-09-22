@@ -28,6 +28,14 @@ $imgurl = oo::cfg('common.imgurl');
 EOF;
 				}?>
                 </ul>
+				<!-- page[[ -->
+					<!-- 根据hide来控制显示隐藏 -->
+					<div class="page clearfix">
+						<?=$data['pager'];?>
+						
+						
+					</div>
+					<!-- page]] -->
             </div>
             <div class="pro-list">
                 <div class="tit">
@@ -44,14 +52,7 @@ EOF;
                 </div>
             </div>
        </div>
-        <!-- page[[ -->
-        <!-- 根据hide来控制显示隐藏 -->
-        <div class="page clearfix">
-            <?=$data['pager'];?>
-            
-			
-        </div>
-        <!-- page]] -->
+        
     </div>
     <!-- product list]] -->
 
