@@ -1,6 +1,5 @@
 <?php
 class seller_c extends controller{
-	
 	public function index(){
 		$id = $this->req('id', 0, 'intval');
 		if(!$id)	$this->redirect('index');

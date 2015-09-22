@@ -7,7 +7,7 @@ class pager{
 	public static $total; //总共有多少个记录
 	public static $last; //总共多少页
 	
-	public function settpl($tpl){
+	public static function settpl($tpl){
 		self::$tpl = $tpl;
 	}
 	
