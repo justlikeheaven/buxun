@@ -11,11 +11,12 @@ class product_c extends controller{
 		if(is_array($product_detail)){
 			$product = array_merge($product, $product_detail);
 		}
+		empty($product['danwei']) && $product['danwei'] = '米';
 		$res['product'] = $product;
 		$res['seller'] = oo::m('seller')->where(array('id'=>$product['sellerid']))->get();
 		$this->assign('res', $res);
 		
-		$seller_products = oo::m()->where(array('sellerid'=>$product['sellerid']))->orderby('id desc')->limit(5)->getall();
+		$seller_products = oo::m()->where("sellerid={$product['sellerid']} and id!={$id}")->orderby('id desc')->limit(5)->getall();
 		$this->assign('seller_products', $seller_products);
 		
 		$this->display('product');

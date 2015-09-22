@@ -5,7 +5,7 @@ class controller_form extends controller {
 	protected $m;
 	
 	public function __construct(){
-		$this->id = $this->req('id');
+		$this->id = $this->req('id', 0, 'intval');
 		if(!$this->form = oo::cfg('form.'.NFS::$controller)){
 			echo 'no '.NFS::$controller.' cfg in form.php';
 		}
@@ -62,7 +62,7 @@ class controller_form extends controller {
 			}
 		}
 		$data = array_merge($odata, $data);
-		method_exists($this, 'after_post') && $this->after_post($data);
+		method_exists($this, 'after_post') && $this->after_post($data, $this->id);
 		$this->assign('msg', $msg);
 		$this->assign('url', NFS::url());
 		$this->display('msg');

@@ -2,10 +2,8 @@
 view::display('header');
 $imgurl = oo::cfg('common.imgurl');
 ?>
-<!-- build:css css/other.css -->
-    <link href="static/dest/css/global.css" rel="stylesheet" type="text/css"/>
-    <link href="static/dest/css/other.css" rel="stylesheet" type="text/css"/>
-<!-- endbuild -->
+    <link href="static/css/global.css" rel="stylesheet" type="text/css"/>
+    <link href="static/css/other.css" rel="stylesheet" type="text/css"/>
     <!-- product details[[ -->
     <div class="wrapper">
     <!-- 
@@ -68,15 +66,19 @@ $imgurl = oo::cfg('common.imgurl');
 						  <?=$data['res']['product']['fukuan'] ? "<p>幅宽：{$data['res']['product']['fukuan']}</p>" : ""?>
 						  <?=$data['res']['product']['kezhong'] ? "<p>克重：{$data['res']['product']['kezhong']}</p>" : ""?>
 						  <?=$data['res']['product']['yongtu'] ? "<p>主要用途：{$data['res']['product']['yongtu']}</p>" : ""?>
-						  <?=$data['res']['product']['price'] ? "<p class='pd_price'>参考价：<span>￥{$data['res']['product']['price']}</span></p>" : ""?>
+<<<<<<< HEAD
+						  <?=$data['res']['product']['price'] ? "<p class='pd_price'>参考价：<span><span style='font-size: 18px'>￥</span>{$data['res']['product']['price']}</span><em style='margin-left: 5px'>/米</em></p>" : ""?>
+=======
+						  <?=$data['res']['product']['price'] ? "<p class='pd_price'>参考价：<span>￥{$data['res']['product']['price']}/{$data['res']['product']['danwei']}</span></p>" : ""?>
+>>>>>>> a532645930638c7c39483a119c2fa98ee19ed909
                       </div>
                   </div>
                 </div>
                 <!-- 详情 -->
-                <div class="proinfo" style="margin-top: 30px;">
-				  <div style="height:74px; background:url(static/images/bg-detail.jpg) no-repeat scroll 0 0; text-align:center;">
-					  <p style="color: #99235f;font-size: 24px;font-weight: bold;padding: 12px 0 5px 0;margin: 0;"> 面料展示</p>
-					  <p style="margin: 0;color: #5b5b5b;font-weight: bold;font-size: 16px;">WHOLESALE FABRIC DISPLAY</p>
+                <div class="proinfo">
+				  <div class="proinfo-title">
+					  <p class="p-title-1"> 面料展示</p>
+					  <p class="p-title-2">WHOLESALE FABRIC DISPLAY</p>
 				  </div>
 				  <?=$data['res']['product']['desc']?>
 				  <?php view::display('product_notice');?>
@@ -98,6 +100,6 @@ $imgurl = oo::cfg('common.imgurl');
     <!-- product details]] -->
     
 <?php view::display('footer');?>
-<script type="text/javascript" src="static/dest/js/zoom.js?v=20150901"></script>
+<script type="text/javascript" src="static/js/zoom.js"></script>
 </body>
 </html>

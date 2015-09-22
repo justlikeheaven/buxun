@@ -39,7 +39,7 @@ EOF;
 EOF;
 			}else if($info['type']=='select'){
 				$option = '';
-				foreach($data['res']['form'][$field]['list'] as $v){
+				foreach($info['data'] as $v){
 					if($v['value']==$data['res'][$field])	$selected='selected';
 					else $selected = '';
 					$option .= <<<EOF
