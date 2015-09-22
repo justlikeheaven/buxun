@@ -13,7 +13,8 @@ $imgurl = oo::cfg('common.imgurl');
         </div>
 		-->
         <div class="clearfix">
-            <div class="pro_column">
+			<div class="pro_column">
+            <div class="clearfix">
                 <ul>
                 <?php
 				foreach($data['list'] as $v){
@@ -28,15 +29,16 @@ $imgurl = oo::cfg('common.imgurl');
 EOF;
 				}?>
                 </ul>
-				<!-- page[[ -->
-					<!-- 根据hide来控制显示隐藏 -->
-					<div class="page clearfix">
-						<?=$data['pager'];?>
-						
-						
-					</div>
-					<!-- page]] -->
             </div>
+			<!-- page[[ -->
+        <!-- 根据hide来控制显示隐藏 -->
+        <div class="page clearfix">
+            <?=$data['pager'];?>
+            
+			
+        </div>
+        <!-- page]] -->
+		</div>
             <div class="pro-list">
                 <div class="tit">
                     推荐商家
