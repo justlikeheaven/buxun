@@ -14,6 +14,7 @@ return array(
 	'seller'=>array(
 		'desc'=>'商家',
 		'fields'=>array(
+			'hot' => array('type'=>'select', 'data'=>array(array('value'=>0,'str'=>'否'), array('value'=>1,'str'=>'是')), 'str'=>'最热', 'hide'=>array('list'), 'desc'=>'最热商家将会推到首页显示'),
 			'name'=>array('type'=>'text', 'str'=>'名称'),
 			'desc'=>array('type'=>'textarea', 'str'=>'描述', 'hide'=>array('list'), 'default'=>''),
 			'shop_address'=>array('type'=>'textarea', 'str'=>'门市地址'),
@@ -22,6 +23,8 @@ return array(
 			'mobile'=>array('type'=>'text', 'str'=>'手机号码', 'default'=>''),
 			'fax'=>array('type'=>'text', 'str'=>'传真', 'hide'=>array('list'), 'default'=>''),
 			'img'=>array('type'=>'file', 'str'=>'logo', 'hide'=>array('list'), 'default'=>''),
+			'banner'=>array('type'=>'file', 'str'=>'banner', 'hide'=>array('list'), 'default'=>''),
+			'photo'=>array('type'=>'uploadify', 'str'=>'介绍图', 'hide'=>array('list'), 'default'=>''),
 		),
 	),
 	
@@ -39,9 +42,10 @@ return array(
 		'fields'=>array(
 			'cateid'=>array('type'=>'select', 'str'=>'分类'),
 			'sellerid'=>array('type'=>'select', 'str'=>'商家'),
-			'hot' => array('type'=>'select', 'str'=>'最热', 'hide'=>array('list'), 'desc'=>'最热商品将会推到首页显示'),
+			'hot' => array('type'=>'select', 'data'=>array(array('value'=>0,'str'=>'否'), array('value'=>1,'str'=>'是')), 'str'=>'最热', 'hide'=>array('list'), 'desc'=>'最热商品将会推到首页显示'),
 			'name'=>array('type'=>'text', 'str'=>'名称'),
 			'price'=>array('type'=>'text', 'str'=>'价格'),
+			'danwei'=>array('type'=>'text', 'str'=>'单位'),
 			'chengfen'=>array('type'=>'text', 'str'=>'成分', 'hide'=>array('list'), 'default'=>''),
 			'fukuan'=>array('type'=>'text', 'str'=>'幅宽', 'hide'=>array('list'), 'default'=>''),
 			'kezhong'=>array('type'=>'text', 'str'=>'克重', 'hide'=>array('list'), 'default'=>''),

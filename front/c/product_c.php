@@ -6,18 +6,22 @@ class product_c extends controller{
 		
 		$product = oo::m()->where(array('id'=>$id))->get();
 		if(empty($product))	$this->redirect('index');
+		
 		$product_detail = oo::m('product_detail')->where(array('product_id'=>$id))->get();
 		if(is_array($product_detail)){
 			$product = array_merge($product, $product_detail);
 		}
+		empty($product['danwei']) && $product['danwei'] = '米';
 		$res['product'] = $product;
 		$res['seller'] = oo::m('seller')->where(array('id'=>$product['sellerid']))->get();
 		$this->assign('res', $res);
 		
-		$seller_products = oo::m()->where(array('sellerid'=>$product['sellerid']))->orderby('id desc')->limit(5)->getall();
+		$seller_products = oo::m()->where("sellerid={$product['sellerid']} and id!={$id}")->orderby('id desc')->limit(5)->getall();
 		$this->assign('seller_products', $seller_products);
 		
 		$this->display('product');
+		
+		$r = cacheredis::init()->zincrby(keys_m::product_clicknum($product['sellerid']), 1, $id); //累加商家的商品点击量
 	}
 	
 	

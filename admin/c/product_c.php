@@ -4,7 +4,7 @@ class product_c extends base_form_c {
 	protected function before_save(&$res){
 		$res['form']['cateid']['list'] = oo::m('product_cate')->fields('id as value, name as str')->getall();
 		$res['form']['sellerid']['list'] = oo::m('seller')->fields('id as value, name as str')->getall();
-		$res['form']['hot']['list'] = array(array('value'=>0,'str'=>'否'), array('value'=>1,'str'=>'是'));
+		//$res['form']['hot']['list'] = array(array('value'=>0,'str'=>'否'), array('value'=>1,'str'=>'是'));
 		
 	}
 	
@@ -39,7 +39,7 @@ class product_c extends base_form_c {
 			}
 		}
 		
-		$unset_fields = array('hot', 'chengfen', 'fukuan', 'kezhong', 'yongtu', 'huohao');
+		$unset_fields = array('hot', 'chengfen', 'fukuan', 'kezhong', 'yongtu', 'huohao', 'danwei');
 		foreach ($unset_fields as $v){
 			unset($data[$v]);
 		}
@@ -48,14 +48,18 @@ class product_c extends base_form_c {
 
 	protected function after_post(&$data){
 		$hot = intval($data['hot']) ? 1 : 0;
-		$sql = "INSERT INTO #table (`product_id`, `hot`) VALUES ({$this->id}, {$hot}) ON DUPLICATE KEY UPDATE `hot`={$hot}";
-		oo::m('product_hot')->execute($sql);
+		if($this->id || (!$this->id && $hot)){
+			$sql = "INSERT INTO #table (`product_id`, `hot`) VALUES ({$this->id}, {$hot}) ON DUPLICATE KEY UPDATE `hot`={$hot}";
+			oo::m('product_hot')->execute($sql);
+		}
 		
 		
-		$sql = "INSERT INTO #table (`product_id`, `chengfen`, `fukuan`, `kezhong`, `yongtu`, `huohao`) VALUES 
-		({$this->id}, '{$data['chengfen']}', '{$data['fukuan']}', '{$data['kezhong']}', '{$data['yongtu']}', '{$data['huohao']}') 
+		
+		$sql = "INSERT INTO #table (`product_id`, `chengfen`, `fukuan`, `kezhong`, `yongtu`, `huohao`, `danwei`) VALUES 
+		({$this->id}, '{$data['chengfen']}', '{$data['fukuan']}', '{$data['kezhong']}', '{$data['yongtu']}', '{$data['huohao']}', '{$data['danwei']}') 
 		ON DUPLICATE KEY UPDATE `chengfen`='{$data['chengfen']}', `fukuan`='{$data['fukuan']}',
-		`kezhong`='{$data['kezhong']}', `yongtu`='{$data['yongtu']}',`huohao`='{$data['huohao']}'";
+		`kezhong`='{$data['kezhong']}', `yongtu`='{$data['yongtu']}',`huohao`='{$data['huohao']}',
+		`danwei`='{$data['danwei']}'";
 		oo::m('product_detail')->execute($sql);
 	}
 }

@@ -5,7 +5,7 @@ class controller_form extends controller {
 	protected $m;
 	
 	public function __construct(){
-		$this->id = $this->req('id');
+		$this->id = $this->req('id', 0, 'intval');
 		if(!$this->form = oo::cfg('form.'.NFS::$controller)){
 			echo 'no '.NFS::$controller.' cfg in form.php';
 		}
@@ -62,7 +62,7 @@ class controller_form extends controller {
 			}
 		}
 		$data = array_merge($odata, $data);
-		method_exists($this, 'after_post') && $this->after_post($data);
+		method_exists($this, 'after_post') && $this->after_post($data, $this->id);
 		$this->assign('msg', $msg);
 		$this->assign('url', NFS::url());
 		$this->display('msg');
@@ -94,20 +94,23 @@ class controller_form extends controller {
 	}
 	
 	public function upload(){
+		
 		foreach ($this->form['fields'] as $k=>$v){
-			if($v['type']=='img' && is_array($_FILES[$k])){
+			if($v['type']=='uploadify' && is_array($_FILES[$k])){
 				$imgfield = $k;
 				break;
 			}
 		}
-		
+		if(!$imgfield){
+			echo -1;
+		}
 		$upload = file::upload($imgfield, 'data/pics/');//上传图片
 		if($upload['error']){
-			echo -1;
+			echo -2;
 		}else if($upload['success']){
 			echo $upload['success'][0];
 		}else{
-			echo -1;
+			echo -3;
 		}
 	}
 	
