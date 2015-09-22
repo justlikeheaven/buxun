@@ -1115,6 +1115,7 @@ pre code {
   .col-md-4 {
     width: 33.33333333%;
   }
+  #cke_editor_desc{width: 720px!important} /*强制改变输入框宽度*/
   .col-md-3 {
     width: 25%;
   }
