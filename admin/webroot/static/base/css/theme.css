@@ -915,10 +915,10 @@ table.table.list tr:first-child td {
 .pagination .next i{background-position: -65px 0}
 .pagination a{display:inline-block;line-height: 32px;border: #ededed 1px solid; height: 32px;width: 32px;text-align: center;cursor: pointer;vertical-align:top;}
 .pagination span.dot{padding: 0 10px;height: 34px;line-height: 34px;display: inline-block;}
-.pagination a.current, .page a:hover{background: #992360;color: #fff;}
+.pagination a.active, .page a:hover{background: #357ebd;color: #fff;}
 .total{margin: 0 5px; display: inline-block; vertical-align: top; height: 32px;}
 .form{display: inline;}
 .form .input { width: 35px; border: solid 1px #ededed; height: 21px; line-height:21px;text-align: center; color: #999;vertical-align: middle;}
-.form .button{height: 21px; width: 43px; border: solid 1px #ededed; text-align: center; line-height: 21px; cursor: pointer;vertical-align: 1px;margin-left: 10px;}
-.form .button:hover{background: #992360;color: #fff;}
+.form .button{height: 21px; width: 50px; border: solid 1px #ededed; text-align: center; line-height: 21px; cursor: pointer;vertical-align: middle;margin-left: 10px;}
+.form .button:hover{background: #357ebd;color: #fff;}
 .page .total, .page .form{display: inline-block;font-size: 12px;}

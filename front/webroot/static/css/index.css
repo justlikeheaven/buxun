@@ -23,7 +23,7 @@
 .new-pro-r ul li{position: relative; width: 214px;float: left;height: 216px;background: #fff;margin-right: 8px;margin-bottom: 10px;}
 .new-pro-r ul li .bg{width:214px;height:214px;position:absolute;left:0;top:0;z-index:50;  display:none;cursor: pointer;}
 .new-pro-r ul li img{width: 216px;height: 216px;border-radius: 12px;}
-.new-pro-r ul li span{background: #fff; position: absolute; width: 215px; height: 30px; display: block; line-height: 30px; text-align: right; left: -1px; bottom: -3px; color: #333; font-size: 12px; border-radius: 0 0 12px 12px; border: #f1f1f1 1px solid;}
+.new-pro-r ul li span{background: #fff;opacity: .8; position: absolute; width: 215px; height: 30px; display: block; line-height: 30px; text-align: right; left: -1px; bottom: -3px; color: #333; font-size: 12px; border-radius: 0 0 12px 12px; border: #f1f1f1 1px solid;}
 .new-pro-r ul li span em{float: left;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;width: 120px;display: block;margin-left: 10px;text-align: left;opacity: .8;}
 .new-pro-r ul li span strong{color: #f60;font-size: 14px;padding-right: 10px;}
 
