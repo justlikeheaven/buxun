@@ -29,11 +29,11 @@ $imgurl = oo::cfg('common.imgurl');
                 <li>
                     <div class="bg">
                         <a href="{$href}" title="{$v['name']}">
-                            <img src="{$imgurl}{$v['img_product']}" alt="{$v['name']}" title="{$v['name']}"/>
+                            <img class="scrollLoading" src="static/images/pixel.gif" data-url="{$imgurl}{$v['img_product']}" alt="{$v['name']}" title="{$v['name']}"/>
                         </a>
                     </div>
                     <a href="{$href}" title="{$v['name']}">
-                        <img src="{$imgurl}{$v['img_model']}" alt="{$v['name']}" title="{$v['name']}"/>
+                        <img class="scrollLoading" src="static/images/pixel.gif" data-url="{$imgurl}{$v['img_model']}" alt="{$v['name']}" title="{$v['name']}"/>
                         <span><em>{$v['name']}</em><strong>￥{$v['price']}</strong></span>
                     </a>
                 </li>
@@ -50,7 +50,7 @@ EOF;
         </div>
         <div class="new-pro content clearfix"><!-- 针织 -->
             <div class="new-pro-l">
-                <img src="<?=$imgurl.$data['list']['sz']['img']?>" alt=""/>
+                <img class="scrollLoading" src="static/images/pixel.gif" data-url="<?=$imgurl.$data['list']['sz']['img']?>" alt=""/>
                 <div class="info-tra-right"></div>
             </div>
             <div class="new-pro-r">
@@ -60,7 +60,7 @@ EOF;
 					?>
                     <li>
                         <a href="<?=NFS::url('product', array('id'=>$v['id']))?>" title="<?=$v['name']?>">
-                            <img src="<?=$imgurl.$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
+                            <img class="scrollLoading" data-url="<?=$imgurl.$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
                             <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
                         </a>
                     </li>
@@ -70,7 +70,7 @@ EOF;
         </div>
         <div class="new-pro content clearfix"><!-- 梭织 -->
             <div class="new-pro-l">
-                <img src="<?=$imgurl.$data['list']['zz']['img']?>" alt=""/>
+                <img class="scrollLoading" src="static/images/pixel.gif" data-url="<?=$imgurl.$data['list']['zz']['img']?>" alt=""/>
             </div>
             <div class="new-pro-r">
                 <ul class="clearfix">
@@ -79,7 +79,7 @@ EOF;
 		?>
                     <li>
                         <a href="<?=NFS::url('product', array('id'=>$v['id']))?>" title="<?=$v['name']?>">
-                            <img src="<?=$imgurl.$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
+                            <img class="scrollLoading" src="static/images/pixel.gif" data-url="<?=$imgurl.$v['img_model']?>" alt="<?=$v['name']?>" title="<?=$v['name']?>"/>
                             <span><em><?=$v['name']?></em><strong>￥<?=$v['price']?></strong></span>
                         </a>
                     </li>
@@ -105,7 +105,7 @@ EOF;
 			echo <<<EOF
                 <li>
                     <a href="{$href}" title="{$v['name']}">
-                        <img src="{$img}" />
+                        <img class="scrollLoading" src="static/images/pixel.gif" data-url="{$img}" />
                         <em>{$v['name']}</em>
                     </a>
                 </li>
@@ -123,7 +123,7 @@ EOF;
        <div class="content clearfix">
            <div class="m_zjimg fl">
                <p class="zj tp0" id="shk0">
-                   <a href="<?=NFS::url('product')?>" target="_blank" title="布讯纺织"><img title="布讯纺织" src="static/temp/test1.jpg" width="435" height="288" alt="布讯纺织"/></a>
+                   <a href="<?=NFS::url('product')?>" target="_blank" title="布讯纺织"><img title="布讯纺织" src="static/images/pixel.gif" data-url="static/temp/test1.jpg" width="435" height="288" alt="布讯纺织"/></a>
                </p>
                <ul class="u_lst3  f_pa jiaul3">
                    <li class="tp0 cur" id="chk0" onmouseover="ShowproCheckCP(this);" onmouseout="fnStartInterval()"></li>
@@ -157,6 +157,8 @@ EOF;
            </div>
        </div>
 <?php view::display('footer');?>
+<script type="text/javascript" src="static/js/jquery.scrollLoading-min.js"></script>
 <script type="text/javascript" src="static/js/index.js"></script>
+
 </body>
 </html>

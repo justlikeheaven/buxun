@@ -86,7 +86,7 @@ $imgurl = oo::cfg('common.imgurl');
                 </div>
                 <div class="pro-pic">
                     <?php foreach($data['seller_products'] as $v){?>
-					<a href="<?=NFS::url('product', array('id'=>$v['id']))?>"><img src="<?=$imgurl.$v['img_model']?>" alt="<?=$v['name']?>" /></a>
+					<a href="<?=NFS::url('product', array('id'=>$v['id']))?>"><img data-url="<?=$imgurl.$v['img_model']?>" alt="<?=$v['name']?>" /></a>
 					<?php } ?>
                 </div>
             </div>

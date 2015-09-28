@@ -1,5 +1,9 @@
 /*banner轮播*/
 $(document).ready(function () {
+
+    //动态加载
+    $(".scrollLoading").scrollLoading();
+
     //鼠标经过切换图片
     $(".hot-pro ul li").hover(function () {
         $(this).find('.bg').show();

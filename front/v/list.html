@@ -22,7 +22,7 @@ $imgurl = oo::cfg('common.imgurl');
 				echo <<<EOF
                 <li>
                     <a href="{$href}" title="{$v['name']}">
-                        <img src="{$imgurl}{$v['img_model']}" alt="{$v['name']}" title="{$v['name']}" />
+                        <img class="scrollLoading" src="static/images/pixel.gif" data-url="{$imgurl}{$v['img_model']}" alt="{$v['name']}" title="{$v['name']}" />
                         <span><em>{$v['name']}</em><strong>￥{$v['price']}</strong></span>
                     </a>
                 </li>
@@ -48,7 +48,7 @@ EOF;
 				foreach($data['seller'] as $v){
 				$href = NFS::url('seller', array('id'=>$v['id']));
 				echo <<<EOF
-                    <a href="{$href}" title="{$v['name']}"><img src="{$imgurl}{$v['img']}" alt="{$v['name']}" /></a>
+                    <a href="{$href}" title="{$v['name']}"><img class="scrollLoading" src="static/images/pixel.gif" data-url="{$imgurl}{$v['img']}" alt="{$v['name']}" /></a>
 EOF;
 				}?>
                 </div>
@@ -60,6 +60,9 @@ EOF;
 
 
     <?php view::display('footer');?>
-
+<script type="text/javascript" src="static/js/jquery.scrollLoading-min.js"></script>
+<script>
+    $(".scrollLoading").scrollLoading();
+</script>
 </body>
 </html>

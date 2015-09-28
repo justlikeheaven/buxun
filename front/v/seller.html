@@ -33,7 +33,7 @@ $imgurl = oo::cfg('common.imgurl');
                     <li>
                         <a href="<?=NFS::url('product', array('id'=>$v['id']))?>">
                             <?php if($v['img_model']){?>
-								<img src="<?=$imgurl.$v['img_model']?>" />
+								<img class="scrollLoading" src="static/images/pixel.gif" data-url="<?=$imgurl.$v['img_model']?>" />
 							<?php } ?>
                             <p class="sell-txt clearfix">
 								<span class="fl"><?=$v['name']?></span>
@@ -61,7 +61,7 @@ $imgurl = oo::cfg('common.imgurl');
                     <li>
                         <a href="<?=NFS::url('product', array('id'=>$v['id']))?>">
                             <?php if($v['img_model']){?>
-								<img src="<?=$imgurl.$v['img_model']?>" />
+								<img class="scrollLoading" src="static/images/pixel.gif" data-url="<?=$imgurl.$v['img_model']?>" />
 							<?php } ?>
                             <p class="sell-txt clearfix">
 								<span class="fl"><?=$v['name']?></span>
@@ -103,6 +103,10 @@ $imgurl = oo::cfg('common.imgurl');
         </div>
     </div>
     <?php view::display('footer');?>
+<script type="text/javascript" src="static/js/jquery.scrollLoading-min.js"></script>
+<script>
+    $(".scrollLoading").scrollLoading();
+</script>
 <script type="text/javascript" src="static/js/slider.js"></script>
 </body>
 </html>
