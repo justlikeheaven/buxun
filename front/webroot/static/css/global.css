@@ -29,7 +29,7 @@ h6 { font-size:10px;}
 a{blr:expression(this.onFocus=this.blur())}/*去掉a标签的虚线框，避免出现奇怪的选中区域*/
 a { color:#666; text-decoration:none;}
 a:focus{outline:0;} /*for*/
-a:hover {color: #c81623;}
+a:hover {color: #f40;}
 
 
 .fl { float:left;}
