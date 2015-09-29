@@ -45,7 +45,7 @@ a:hover {color: #c81623;}
 .header h1{ float:left; padding: 20px 0 0 20px;width: 189px;}
 .header h2{ float:left; height:60px; margin:40px 0 0 0; color: #939393; font-size: 18px; font-weight: normal;}
 .logo{background: url("../images/logo.png") no-repeat;width: 150px;height: 79px;display: block;}
-.header h2 span{display: block; font-weight: normal;padding-top: 5px;color:#c81623;font-size: 20px;}
+.header h2 span{display: block; font-weight: normal;padding-top: 5px;color:#ff4400;font-size: 20px;}
 
 
 .footer{background: #282828;color: #fff;width:100%;margin:0 auto;overflow:hidden;text-align: center;padding: 20px 0;margin-top: 20px;}
